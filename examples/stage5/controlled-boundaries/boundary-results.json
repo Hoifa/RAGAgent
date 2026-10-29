@@ -1,0 +1,120 @@
+{
+  "description": "Controlled executor checks; scripted actions do not prove model decisions.",
+  "runs": [
+    {
+      "case_id": "B05-model-budget",
+      "mode": "mock",
+      "react_proven": false,
+      "directory": "examples\\stage5\\controlled-boundaries\\B05-model-budget\\20261028T131816Z-4be39c1b43bd",
+      "checks": {
+        "status_matches": true,
+        "reason_matches": true,
+        "bounded": true
+      },
+      "passed": true
+    },
+    {
+      "case_id": "B05-tool-budget",
+      "mode": "mock",
+      "react_proven": false,
+      "directory": "examples\\stage5\\controlled-boundaries\\B05-tool-budget\\20261028T131816Z-932449bd1f3e",
+      "checks": {
+        "status_matches": true,
+        "reason_matches": true,
+        "bounded": true
+      },
+      "passed": true
+    },
+    {
+      "case_id": "B06-forged-quote",
+      "mode": "mock",
+      "react_proven": false,
+      "directory": "examples\\stage5\\controlled-boundaries\\B06-forged-quote\\20261028T131816Z-56e77bf83618",
+      "checks": {
+        "status_matches": true,
+        "reason_matches": true,
+        "bounded": true,
+        "forgery_rejected": true,
+        "no_forged_final_quote": true
+      },
+      "passed": true
+    },
+    {
+      "case_id": "B06-repair",
+      "mode": "mock",
+      "react_proven": false,
+      "directory": "examples\\stage5\\controlled-boundaries\\B06-repair\\20261028T131816Z-e074a692540a",
+      "checks": {
+        "status_matches": true,
+        "reason_matches": true,
+        "bounded": true,
+        "forgery_rejected": true,
+        "no_forged_final_quote": true
+      },
+      "passed": true
+    },
+    {
+      "case_id": "B13-final-allowed-call",
+      "mode": "mock",
+      "react_proven": false,
+      "directory": "examples\\stage5\\controlled-boundaries\\B13-final-allowed-call\\20261028T131816Z-bdd2bead096c",
+      "checks": {
+        "status_matches": true,
+        "reason_matches": true,
+        "bounded": true
+      },
+      "passed": true
+    },
+    {
+      "case_id": "B10-empty",
+      "mode": "controlled_input",
+      "react_proven": false,
+      "directory": "examples\\stage5\\controlled-boundaries\\B10-empty",
+      "checks": {
+        "exit_code_2": true,
+        "invalid_request": true,
+        "model_not_loaded": true,
+        "no_business_output": true
+      },
+      "passed": true
+    },
+    {
+      "case_id": "B10-whitespace",
+      "mode": "controlled_input",
+      "react_proven": false,
+      "directory": "examples\\stage5\\controlled-boundaries\\B10-whitespace",
+      "checks": {
+        "exit_code_2": true,
+        "invalid_request": true,
+        "model_not_loaded": true,
+        "no_business_output": true
+      },
+      "passed": true
+    },
+    {
+      "case_id": "B10-invalid-role",
+      "mode": "controlled_input",
+      "react_proven": false,
+      "directory": "examples\\stage5\\controlled-boundaries\\B10-invalid-role",
+      "checks": {
+        "exit_code_2": true,
+        "invalid_request": true,
+        "model_not_loaded": true,
+        "no_business_output": true
+      },
+      "passed": true
+    },
+    {
+      "case_id": "B14-write-failure",
+      "mode": "mock",
+      "react_proven": false,
+      "directory": "examples\\stage5\\controlled-boundaries\\B14-write-failure",
+      "checks": {
+        "exit_code_3": true,
+        "explicit_write_error": true,
+        "no_false_saved_message": true
+      },
+      "passed": true
+    }
+  ]
+}

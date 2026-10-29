@@ -1,0 +1,18 @@
+{
+  "engine_revision": "418fa95eeeba5be011a09300202397407254b01e033cfd69af6bdcdf4b0be91d",
+  "files": {
+    "src/kb_agent/__init__.py": "68495e3faa2805c9f73fa97a25b79d4b91561f73c5ab48decd944075187cb495",
+    "src/kb_agent/__main__.py": "82676f927505628b58de7101a44a69e49b091b1179e00b69b55b62ccfed80e69",
+    "src/kb_agent/agent.py": "5439c40b9b9edffaa069029e63e7924649cf5b953ca5638847e828147da524ce",
+    "src/kb_agent/assessment.py": "4d8e14efbca0f87b2570261b224bad358983f99fa20b7e46318ddfcfa7730ed6",
+    "src/kb_agent/conflicts.py": "34d9fae5ffb4f13cf2bef2bc8bf01c6aaabb20bbcbc531310f0360d1e219e890",
+    "src/kb_agent/contracts.py": "bf83d755041a30054e4d36359e487be8a5c8e5a2501a8621a15e624a00d4fab6",
+    "src/kb_agent/evaluate.py": "10a87ca8a6d27bd9c06648762d2ea70dedb9057ba55812f5339b4c4dcddf3b83",
+    "src/kb_agent/knowledge.py": "bf55d51fe4f81d24733a124e96775070b100e8dd3d04deebfa67b3a8951d4d3b",
+    "src/kb_agent/models.py": "75a110b34655f87a34b3cc11e10e35e2afe3679c77c485ddad5d9bd8c36d358f",
+    "src/kb_agent/native.py": "122005921e00079a2b563c0bcd34d4fcfd6b4ee63ef55c739b4c0535139d36e5",
+    "src/kb_agent/progress.py": "fd2654698323d55feacd2cc8a06d8d15feee61e6d9cfe7d0e9b6e7d40d11efdd",
+    "src/kb_agent/prompts.py": "9c22cdb36630d122c875541743af690fe1ea570338680e10faf8d04b8244947e"
+  },
+  "note": "Audit-time source hashes, not a signed archive. No credentials included."
+}

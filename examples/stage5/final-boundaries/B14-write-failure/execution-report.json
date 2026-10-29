@@ -1,0 +1,6 @@
+{
+  "exit_code": 3,
+  "stdout": "{\n  \"run_id\": \"20261028T132713Z-080440b118e8\",\n  \"mode\": \"mock\",\n  \"model\": \"scripted-offline-mock\",\n  \"resolved_question\": \"差旅报销应在行程结束后多久内提交？\",\n  \"runtime_version\": \"1.1\",\n  \"engine_revision\": \"4b3d4915243f8013c3cf7dc7ca57b63589ccf74176a21ab14cc1cbaa1392e32c\",\n  \"model_configuration\": {},\n  \"corpus_revision\": \"42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5\",\n  \"budgets\": {\n    \"max_model_calls\": 12,\n    \"max_tool_calls\": 6,\n    \"model_timeout\": 60,\n    \"tool_timeout\": 10,\n    \"max_validation_errors\": 3\n  },\n  \"model_calls\": 3,\n  \"tool_calls\": 2,\n  \"result\": {\n    \"status\": \"answered\",\n    \"reason_code\": null,\n    \"answer\": \"依据D01，差旅报销应在行程结束后30天内提交。[C1]\",\n    \"citations\": [\n      {\n        \"citation_id\": \"C1\",\n        \"document_id\": \"D01\",\n        \"passage_id\": \"P01\",\n        \"version_date\": \"2026-01-10\",\n        \"quote\": \"差旅报销应在行程结束后30天内提交。\"\n      }\n    ],\n    \"gaps\": [],\n    \"follow_up_question\": null\n  }\n}\n",
+  "stderr": "{\"error\": {\"code\": \"artifact_write_failed\", \"message\": \"Output or trace could not be saved; partial files may exist\"}}\n",
+  "boundary": "Output was printed; artifact saving failed. No saved Trace is claimed."
+}

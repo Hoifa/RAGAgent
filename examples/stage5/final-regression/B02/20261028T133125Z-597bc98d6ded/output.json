@@ -1,0 +1,60 @@
+{
+  "run_id": "20261028T133125Z-597bc98d6ded",
+  "mode": "real",
+  "model": "qwen-flash",
+  "resolved_question": "差旅报销应在行程结束后多久内提交？",
+  "runtime_version": "1.1",
+  "engine_revision": "4b3d4915243f8013c3cf7dc7ca57b63589ccf74176a21ab14cc1cbaa1392e32c",
+  "model_configuration": {
+    "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+    "stream": true,
+    "enable_thinking": false,
+    "json_mode": true,
+    "prompt_revision": "98da97877d3f0699d87285d866ebdbc62535e36198e39fbc020f6f3f0b8bebe0",
+    "action_protocol": "native",
+    "action_stream": false,
+    "review_prompt_revision": "3ca53b41df967e84934206d8c6c57ae65b26ec600f8e8b0b228f0f791d31e4c3",
+    "context_prompt_revision": "a5ed23b3e75a4d61a2cfbca310e05a1e39956a559181614293ee47c45586e51c",
+    "applicability_prompt_revision": "6983bb53022cea107ecfc9db52aafa6157e347399ae5e6f3e684ddbe2b37ac30",
+    "evidence_review": "answered_only",
+    "reference_resolution": "action_loop",
+    "conversation_protocol": "native-tool-messages-v1"
+  },
+  "corpus_revision": "801490841d72e569f8061c9ece1aee2cf4429afb22281ae4841b2e8b1da51b94",
+  "budgets": {
+    "max_model_calls": 12,
+    "max_tool_calls": 6,
+    "model_timeout": 60,
+    "tool_timeout": 10,
+    "max_validation_errors": 3
+  },
+  "model_calls": 9,
+  "tool_calls": 6,
+  "result": {
+    "status": "needs_clarification",
+    "reason_code": "document_conflict",
+    "answer": "存在两份冲突的规定：一份要求差旅报销在行程结束后30天内提交（[C1]），另一份要求在15天内提交（[C2]）。目前未找到明确的优先级、替代关系或适用范围说明，无法判断应适用哪一版规定。此外，两份文件的版本日期分别为2026-01-10和2026-03-15，但未说明生效时间或覆盖关系。需确认哪一份制度适用于当前情况，或提供事件发生的具体日期以判断规则适用性。",
+    "citations": [
+      {
+        "citation_id": "C1",
+        "document_id": "D01",
+        "passage_id": "P01",
+        "version_date": "2026-01-10",
+        "quote": "差旅报销应在行程结束后30天内提交。"
+      },
+      {
+        "citation_id": "C2",
+        "document_id": "D02",
+        "passage_id": "P01",
+        "version_date": "2026-03-15",
+        "quote": "差旅报销应在行程结束后15天内提交。"
+      }
+    ],
+    "gaps": [
+      "未明确两份文件之间的优先级或替代关系",
+      "未说明制度生效时间或适用范围",
+      "未提供事件发生的具体日期"
+    ],
+    "follow_up_question": "请确认应适用哪一版差旅报销规定，或提供差旅行程结束的具体日期，以便判断适用规则。"
+  }
+}

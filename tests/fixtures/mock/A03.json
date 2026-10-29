@@ -1,0 +1,34 @@
+[
+  {
+    "action": "tool",
+    "tool_name": "search_documents",
+    "arguments": {
+      "query": "育儿假",
+      "top_k": 5
+    },
+    "reason": "离线预设动作：检索资料；不代表模型决策。"
+  },
+  {
+    "action": "tool",
+    "tool_name": "search_documents",
+    "arguments": {
+      "query": "育儿 假期 天数",
+      "top_k": 5
+    },
+    "reason": "离线预设动作：检索资料；不代表模型决策。"
+  },
+  {
+    "action": "finish",
+    "reason": "离线预设最终结果，仅验证执行与校验链路。",
+    "result": {
+      "status": "unanswerable",
+      "reason_code": "out_of_scope",
+      "answer": "当前知识库未找到育儿假天数的依据，无法给出天数。",
+      "citations": [],
+      "gaps": [
+        "缺少企业育儿假制度。"
+      ],
+      "follow_up_question": null
+    }
+  }
+]

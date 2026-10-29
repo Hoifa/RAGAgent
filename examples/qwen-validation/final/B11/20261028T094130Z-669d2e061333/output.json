@@ -1,0 +1,31 @@
+{
+  "run_id": "20261028T094130Z-669d2e061333",
+  "mode": "real",
+  "model": "qwen-flash",
+  "model_configuration": {
+    "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+    "stream": true,
+    "enable_thinking": true,
+    "json_mode": false,
+    "prompt_revision": "a6250c3d1c802857f1e1d71a5ac8ea42ee0564aea46f3ce4de09d776d4e2e80e"
+  },
+  "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+  "budgets": {
+    "max_model_calls": 8,
+    "max_tool_calls": 6,
+    "model_timeout": 60,
+    "tool_timeout": 10
+  },
+  "model_calls": 1,
+  "tool_calls": 0,
+  "result": {
+    "status": "needs_clarification",
+    "reason_code": "missing_user_context",
+    "answer": "请问您需要申请哪类事项的材料？例如报销、入职、产品申请等。",
+    "citations": [],
+    "gaps": [
+      "未明确事项类型"
+    ],
+    "follow_up_question": "请问您需要申请哪类事项的材料？例如报销、入职、产品申请等。"
+  }
+}

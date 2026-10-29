@@ -1,0 +1,243 @@
+{
+  "runs": [
+    {
+      "case_id": "A01",
+      "execution": "executed",
+      "mode": "real",
+      "run_id": "20261028T094826Z-18cba1ddd35f",
+      "directory": "examples\\qwen-validation\\acceptance\\A01\\20261028T094826Z-18cba1ddd35f",
+      "model": "qwen-flash",
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "fault_injection": null,
+      "status": "answered",
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "A02",
+      "execution": "executed",
+      "mode": "real",
+      "run_id": "20261028T094829Z-03b7b142ddd5",
+      "directory": "examples\\qwen-validation\\acceptance\\A02\\20261028T094829Z-03b7b142ddd5",
+      "model": "qwen-flash",
+      "corpus_revision": "801490841d72e569f8061c9ece1aee2cf4429afb22281ae4841b2e8b1da51b94",
+      "fault_injection": null,
+      "status": "incomplete",
+      "checks": {
+        "status_matches": false,
+        "required_documents_present": false
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "A03",
+      "execution": "executed",
+      "mode": "real",
+      "run_id": "20261028T094856Z-641accf6fdbc",
+      "directory": "examples\\qwen-validation\\acceptance\\A03\\20261028T094856Z-641accf6fdbc",
+      "model": "qwen-flash",
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "fault_injection": null,
+      "status": "incomplete",
+      "checks": {
+        "status_matches": false,
+        "required_documents_present": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "A04",
+      "execution": "executed",
+      "mode": "real",
+      "run_id": "20261028T094903Z-1356bc90b138",
+      "directory": "examples\\qwen-validation\\acceptance\\A04\\20261028T094903Z-1356bc90b138",
+      "model": "qwen-flash",
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "fault_injection": null,
+      "status": "answered",
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "A05",
+      "execution": "executed",
+      "mode": "real",
+      "run_id": "20261028T094906Z-f4d932eb4f42",
+      "directory": "examples\\qwen-validation\\acceptance\\A05\\20261028T094906Z-f4d932eb4f42",
+      "model": "qwen-flash",
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "fault_injection": null,
+      "status": "answered",
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "A06",
+      "execution": "executed",
+      "mode": "real",
+      "run_id": "20261028T094909Z-382db9ed22a3",
+      "directory": "examples\\qwen-validation\\acceptance\\A06\\20261028T094909Z-382db9ed22a3",
+      "model": "qwen-flash",
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "fault_injection": {
+        "tool": "read_passage",
+        "match": {
+          "document_id": "D01"
+        },
+        "behavior": "always_error",
+        "code": "unavailable"
+      },
+      "status": "incomplete",
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "B01",
+      "execution": "executed",
+      "mode": "real",
+      "run_id": "20261028T094916Z-03a27d5bea32",
+      "directory": "examples\\qwen-validation\\acceptance\\B01\\20261028T094916Z-03a27d5bea32",
+      "model": "qwen-flash",
+      "corpus_revision": "cf57241fed2ae88897ae8db032e54b8dcd012f882fd852ee7121f3e192889e30",
+      "fault_injection": null,
+      "status": "answered",
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "B03",
+      "execution": "executed",
+      "mode": "real",
+      "run_id": "20261028T094920Z-52ac5dbbf7da",
+      "directory": "examples\\qwen-validation\\acceptance\\B03\\20261028T094920Z-52ac5dbbf7da",
+      "model": "qwen-flash",
+      "corpus_revision": "074e5fc4e6b7ce0c01f74768aff86751817d26729ffe64730c8c4fc0151d57cc",
+      "fault_injection": null,
+      "status": "answered",
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "B04",
+      "execution": "executed",
+      "mode": "real",
+      "run_id": "20261028T094925Z-fed3ba3fbcba",
+      "directory": "examples\\qwen-validation\\acceptance\\B04\\20261028T094925Z-fed3ba3fbcba",
+      "model": "qwen-flash",
+      "corpus_revision": "41ee9d5cc610f890f2f559a601035c898c58cc0d20ad8789f61cfec3c0dd0fbd",
+      "fault_injection": null,
+      "status": "answered",
+      "checks": {
+        "status_matches": false,
+        "required_documents_present": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "B08",
+      "execution": "executed",
+      "mode": "real",
+      "run_id": "20261028T094929Z-9f9a70b5a4a2",
+      "directory": "examples\\qwen-validation\\acceptance\\B08\\20261028T094929Z-9f9a70b5a4a2",
+      "model": "qwen-flash",
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "fault_injection": {
+        "tool": "read_passage",
+        "match": {
+          "document_id": "D01"
+        },
+        "behavior": "first_matching_call_error",
+        "code": "unavailable"
+      },
+      "status": "answered",
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "B11",
+      "execution": "executed",
+      "mode": "real",
+      "run_id": "20261028T094933Z-365bcefa87c5",
+      "directory": "examples\\qwen-validation\\acceptance\\B11\\20261028T094933Z-365bcefa87c5",
+      "model": "qwen-flash",
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "fault_injection": null,
+      "status": "incomplete",
+      "checks": {
+        "status_matches": false,
+        "required_documents_present": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "B12",
+      "execution": "executed",
+      "mode": "real",
+      "run_id": "20261028T094941Z-e02d4ae8201a",
+      "directory": "examples\\qwen-validation\\acceptance\\B12\\20261028T094941Z-e02d4ae8201a",
+      "model": "qwen-flash",
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "fault_injection": {
+        "tool": "search_documents",
+        "behavior": "first_call_empty"
+      },
+      "status": "answered",
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "B15",
+      "execution": "executed",
+      "mode": "real",
+      "run_id": "20261028T094946Z-4572eaff4393",
+      "directory": "examples\\qwen-validation\\acceptance\\B15\\20261028T094946Z-4572eaff4393",
+      "model": "qwen-flash",
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "fault_injection": null,
+      "status": "answered",
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    }
+  ],
+  "limitations": "Mock scripts validate workflow only. Status/citation-ID checks do not prove semantics or real ReAct; inspect traces manually."
+}

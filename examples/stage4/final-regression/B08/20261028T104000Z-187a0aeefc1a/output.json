@@ -1,0 +1,42 @@
+{
+  "run_id": "20261028T104000Z-187a0aeefc1a",
+  "mode": "real",
+  "model": "qwen-flash",
+  "resolved_question": "差旅报销应在行程结束后多久内提交？",
+  "runtime_version": "1.1",
+  "engine_revision": "957343424e60fe5d4ec43ca83572073996de0b7bef05043e4cd3578da1d15d7f",
+  "model_configuration": {
+    "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+    "stream": true,
+    "enable_thinking": false,
+    "json_mode": true,
+    "prompt_revision": "921a7fea9fdf57524a0052a7144d537b54e24f77303cbf07fba38d0ba5dcea1f",
+    "action_protocol": "native",
+    "action_stream": false,
+    "review_prompt_revision": "a171d3050a3282ad4c45ce752ed229f98e1c82408c9f3fba2011d7a501378b6b",
+    "context_prompt_revision": "8b914d763b3316659edae9c6937ab34f036aa3b9009f069ffe29cb402d4f1e39",
+    "applicability_prompt_revision": "eba1da303baa64092b1537bd3e337dd363012ba391aeee6ac30a91bf886eb2dc",
+    "evidence_review": "answered_only",
+    "conversation_protocol": "native-tool-messages-v1"
+  },
+  "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+  "budgets": {
+    "max_model_calls": 12,
+    "max_tool_calls": 6,
+    "model_timeout": 60,
+    "tool_timeout": 10,
+    "max_validation_errors": 3
+  },
+  "model_calls": 6,
+  "tool_calls": 4,
+  "result": {
+    "status": "needs_clarification",
+    "reason_code": "missing_user_context",
+    "answer": "差旅报销应在行程结束后多久内提交，现有资料中未明确说明。虽然有文档提及30天内提交，但该内容因读取失败无法验证。其他相关文档仅规定报销材料要求，未涉及时限。",
+    "citations": [],
+    "gaps": [
+      "缺少对差旅报销提交时限的具体规定依据，特别是对文档D01中所述30天规定的验证"
+    ],
+    "follow_up_question": "请确认是否需补充查阅其他制度文件以确定差旅报销提交时限？或是否有其他来源可提供此信息？"
+  }
+}

@@ -1,0 +1,304 @@
+{
+  "description": "测试侧配置，不得作为模型输入；预期不是实际结果。故障字段由测试适配器读取，注入记录到Trace。",
+  "cases": [
+    {
+      "case_id": "B02",
+      "corpus": "data/corpora/conflict.json",
+      "input": "tests/fixtures/inputs/B02.json",
+      "expected_status": "needs_clarification",
+      "required_document_ids": ["D01", "D02"],
+      "assertions": {
+        "reason_codes": ["document_conflict"],
+        "required_passages": [{"document_id": "D01", "passage_id": "P01"}, {"document_id": "D02", "passage_id": "P01"}],
+        "answer_patterns": ["30\\s*天", "15\\s*天"]
+      }
+    },
+    {
+      "case_id": "B07",
+      "corpus": "data/corpora/normal.json",
+      "input": "tests/fixtures/inputs/B07.json",
+      "expected_status": "needs_clarification",
+      "required_document_ids": [],
+      "assertions": {"reason_codes": ["ambiguous_reference", "missing_user_context"], "max_tool_calls": 0}
+    },
+    {
+      "case_id": "B09",
+      "corpus": "data/corpora/normal.json",
+      "input": "tests/fixtures/inputs/B09.json",
+      "expected_status": "answered",
+      "required_document_ids": ["D01"],
+      "assertions": {
+        "required_passages": [{"document_id": "D01", "passage_id": "P01"}],
+        "answer_patterns": ["30\\s*天"]
+      }
+    },
+    {
+      "case_id": "B16",
+      "corpus": "data/corpora/resolved.json",
+      "input": "tests/fixtures/inputs/B16.json",
+      "expected_status": "needs_clarification",
+      "required_document_ids": [],
+      "assertions": {"reason_codes": ["missing_user_context"]}
+    },
+    {
+      "case_id": "B17",
+      "corpus": "data/corpora/resolved.json",
+      "input": "tests/fixtures/inputs/B17.json",
+      "expected_status": "needs_clarification",
+      "required_document_ids": ["D01", "D02"],
+      "assertions": {
+        "reason_codes": ["document_conflict"],
+        "answer_patterns": ["30\\s*天", "15\\s*天"]
+      }
+    },
+    {
+      "case_id": "A01",
+      "corpus": "data/corpora/normal.json",
+      "input": "tests/fixtures/inputs/A01.json",
+      "expected_status": "answered",
+      "required_document_ids": [
+        "D01"
+      ],
+      "assertions": {
+        "required_passages": [
+          {
+            "document_id": "D01",
+            "passage_id": "P01"
+          }
+        ],
+        "answer_patterns": [
+          "30\\s*天"
+        ]
+      }
+    },
+    {
+      "case_id": "A02",
+      "corpus": "data/corpora/conflict.json",
+      "input": "tests/fixtures/inputs/A02.json",
+      "expected_status": "needs_clarification",
+      "required_document_ids": [
+        "D01",
+        "D02"
+      ],
+      "assertions": {
+        "reason_codes": [
+          "document_conflict"
+        ],
+        "required_passages": [
+          {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          {
+            "document_id": "D02",
+            "passage_id": "P01"
+          }
+        ],
+        "answer_patterns": [
+          "30\\s*天",
+          "15\\s*天"
+        ]
+      }
+    },
+    {
+      "case_id": "A03",
+      "corpus": "data/corpora/normal.json",
+      "input": "tests/fixtures/inputs/A03.json",
+      "expected_status": "unanswerable",
+      "required_document_ids": [],
+      "assertions": {
+        "reason_codes": [
+          "out_of_scope",
+          "insufficient_evidence"
+        ]
+      }
+    },
+    {
+      "case_id": "A04",
+      "corpus": "data/corpora/normal.json",
+      "input": "tests/fixtures/inputs/A04.json",
+      "expected_status": "answered",
+      "required_document_ids": [
+        "D01"
+      ],
+      "assertions": {
+        "required_passages": [
+          {
+            "document_id": "D01",
+            "passage_id": "P01"
+          }
+        ],
+        "answer_patterns": [
+          "30\\s*天"
+        ]
+      }
+    },
+    {
+      "case_id": "A05",
+      "corpus": "data/corpora/normal.json",
+      "input": "tests/fixtures/inputs/A05.json",
+      "expected_status": "answered",
+      "required_document_ids": [
+        "D03"
+      ],
+      "assertions": {
+        "required_passages": [
+          {
+            "document_id": "D03",
+            "passage_id": "P01"
+          }
+        ],
+        "answer_patterns": [
+          "发票",
+          "申请单",
+          "费用明细表"
+        ]
+      }
+    },
+    {
+      "case_id": "A06",
+      "corpus": "data/corpora/normal.json",
+      "input": "tests/fixtures/inputs/A06.json",
+      "expected_status": "incomplete",
+      "required_document_ids": [],
+      "fault_injection": {
+        "tool": "read_passage",
+        "match": {
+          "document_id": "D01"
+        },
+        "behavior": "always_error",
+        "code": "unavailable"
+      },
+      "assertions": {
+        "reason_codes": [
+          "tool_failure"
+        ],
+        "tool_failure_observed": true
+      }
+    },
+    {
+      "case_id": "B01",
+      "corpus": "data/corpora/changed.json",
+      "input": "tests/fixtures/inputs/B01.json",
+      "expected_status": "answered",
+      "required_document_ids": [
+        "D01"
+      ],
+      "assertions": {
+        "answer_patterns": [
+          "45\\s*天"
+        ]
+      }
+    },
+    {
+      "case_id": "B03",
+      "corpus": "data/corpora/resolved.json",
+      "input": "tests/fixtures/inputs/B03.json",
+      "expected_status": "answered",
+      "required_document_ids": [
+        "D06"
+      ],
+      "assertions": {
+        "required_passages": [
+          {
+            "document_id": "D06",
+            "passage_id": "P01"
+          },
+          {
+            "document_id": "D06",
+            "passage_id": "P02"
+          }
+        ],
+        "answer_patterns": [
+          "15\\s*天"
+        ]
+      }
+    },
+    {
+      "case_id": "B04",
+      "corpus": "data/corpora/scoped.json",
+      "input": "tests/fixtures/inputs/B04.json",
+      "expected_status": "needs_clarification",
+      "required_document_ids": [
+        "D01",
+        "D02"
+      ],
+      "assertions": {
+        "reason_codes": [
+          "missing_user_context"
+        ]
+      }
+    },
+    {
+      "case_id": "B08",
+      "corpus": "data/corpora/normal.json",
+      "input": "tests/fixtures/inputs/B08.json",
+      "expected_status": [
+        "answered",
+        "incomplete"
+      ],
+      "required_document_ids": [],
+      "fault_injection": {
+        "tool": "read_passage",
+        "match": {
+          "document_id": "D01"
+        },
+        "behavior": "first_matching_call_error",
+        "code": "unavailable"
+      },
+      "assertions": {
+        "tool_failure_observed": true
+      }
+    },
+    {
+      "case_id": "B11",
+      "corpus": "data/corpora/normal.json",
+      "input": "tests/fixtures/inputs/B11.json",
+      "expected_status": "needs_clarification",
+      "required_document_ids": [],
+      "assertions": {
+        "reason_codes": [
+          "ambiguous_reference",
+          "missing_user_context"
+        ],
+        "max_tool_calls": 0
+      }
+    },
+    {
+      "case_id": "B12",
+      "corpus": "data/corpora/normal.json",
+      "input": "tests/fixtures/inputs/B12.json",
+      "expected_status": [
+        "answered",
+        "needs_clarification",
+        "unanswerable"
+      ],
+      "required_document_ids": [],
+      "fault_injection": {
+        "tool": "search_documents",
+        "behavior": "first_call_empty"
+      }
+    },
+    {
+      "case_id": "B15",
+      "corpus": "data/corpora/normal.json",
+      "input": "tests/fixtures/inputs/B15.json",
+      "expected_status": "answered",
+      "required_document_ids": [
+        "D05"
+      ],
+      "assertions": {
+        "required_passages": [
+          {
+            "document_id": "D05",
+            "passage_id": "P01"
+          }
+        ],
+        "answer_patterns": [
+          "SRT",
+          "TXT"
+        ]
+      }
+    }
+  ]
+}

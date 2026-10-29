@@ -1,0 +1,42 @@
+{
+  "run_id": "20261028T131907Z-add87d9135c6",
+  "mode": "real",
+  "model": "qwen-flash",
+  "resolved_question": "公司的育儿假有多少天？",
+  "runtime_version": "1.1",
+  "engine_revision": "21041db581e05578c435b05fef222908753c2e5657ba481ff6f85f9a79fd1e12",
+  "model_configuration": {
+    "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+    "stream": true,
+    "enable_thinking": false,
+    "json_mode": true,
+    "prompt_revision": "ce532bc1ebd39d30211c799fb48c27f710cc942dcee4ca22ae0be6104a1e75fa",
+    "action_protocol": "native",
+    "action_stream": false,
+    "review_prompt_revision": "3ca53b41df967e84934206d8c6c57ae65b26ec600f8e8b0b228f0f791d31e4c3",
+    "context_prompt_revision": "3ae348a33b0321c2df28afd5b8e51d58aa5fd7576a7dda4986eff0fb3ad31611",
+    "applicability_prompt_revision": "6983bb53022cea107ecfc9db52aafa6157e347399ae5e6f3e684ddbe2b37ac30",
+    "evidence_review": "answered_only",
+    "conversation_protocol": "native-tool-messages-v1"
+  },
+  "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+  "budgets": {
+    "max_model_calls": 12,
+    "max_tool_calls": 6,
+    "model_timeout": 60,
+    "tool_timeout": 10,
+    "max_validation_errors": 3
+  },
+  "model_calls": 4,
+  "tool_calls": 2,
+  "result": {
+    "status": "unanswerable",
+    "reason_code": "insufficient_evidence",
+    "answer": "目前未找到关于公司育儿假具体天数的相关规定。请确认是否有具体的政策文件或补充说明，以便进一步查询。",
+    "citations": [],
+    "gaps": [
+      "缺乏关于公司育儿假天数的具体制度依据"
+    ],
+    "follow_up_question": null
+  }
+}

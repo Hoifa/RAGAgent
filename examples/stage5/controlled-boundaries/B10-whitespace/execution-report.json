@@ -1,0 +1,11 @@
+{
+  "exit_code": 2,
+  "error": {
+    "error": {
+      "code": "invalid_request",
+      "message": "Invalid request JSON, question or history"
+    }
+  },
+  "model_load_count": 0,
+  "boundary": "Rejected before model/tool execution; no Agent Trace exists."
+}

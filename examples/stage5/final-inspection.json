@@ -1,0 +1,7 @@
+{
+  "broken_links": [],
+  "secret_value_matches_outside_local_env": [],
+  "source_files_match_frozen_manifest": true,
+  "local_test_report": "examples/stage5/test-results.txt",
+  "note": "No secret values printed or stored; checks do not establish complete semantic correctness."
+}

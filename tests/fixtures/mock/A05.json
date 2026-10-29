@@ -1,0 +1,40 @@
+[
+  {
+    "action": "tool",
+    "tool_name": "search_documents",
+    "arguments": {
+      "query": "差旅报销 材料",
+      "top_k": 5
+    },
+    "reason": "离线预设动作：检索资料；不代表模型决策。"
+  },
+  {
+    "action": "tool",
+    "tool_name": "read_passage",
+    "arguments": {
+      "document_id": "D03",
+      "passage_id": "P01"
+    },
+    "reason": "离线预设动作：读取原文；不代表模型决策。"
+  },
+  {
+    "action": "finish",
+    "reason": "离线预设最终结果，仅验证执行与校验链路。",
+    "result": {
+      "status": "answered",
+      "reason_code": null,
+      "answer": "差旅报销需要已审批的出差申请单、费用明细表和对应发票；涉及交通或住宿费用时，还需对应行程凭证或住宿账单。[C1]",
+      "citations": [
+        {
+          "citation_id": "C1",
+          "document_id": "D03",
+          "passage_id": "P01",
+          "version_date": "2026-01-12",
+          "quote": "申请差旅报销时，应提交已审批的出差申请单、费用明细表及与费用对应的发票。涉及交通或住宿费用的，还应提交对应的行程凭证或住宿账单。"
+        }
+      ],
+      "gaps": [],
+      "follow_up_question": null
+    }
+  }
+]

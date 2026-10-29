@@ -1,0 +1,13 @@
+test_case_inputs_and_manifest_references (test_knowledge_data.KnowledgeDataTests) ... ok
+test_change_is_only_deadline_text (test_knowledge_data.KnowledgeDataTests) ... ok
+test_conflict_has_no_implicit_resolution (test_knowledge_data.KnowledgeDataTests) ... ok
+test_document_contract_and_unique_ids (test_knowledge_data.KnowledgeDataTests) ... ok
+test_product_scope_and_out_of_scope_topics (test_knowledge_data.KnowledgeDataTests) ... ok
+test_scope_and_replacement_are_in_citable_text (test_knowledge_data.KnowledgeDataTests) ... ok
+test_shared_documents_do_not_drift (test_knowledge_data.KnowledgeDataTests) ... ok
+test_snapshot_membership_and_isolation (test_knowledge_data.KnowledgeDataTests) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.006s
+
+OK

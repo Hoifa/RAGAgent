@@ -1,0 +1,24 @@
+{
+  "run_id": "20261028T054427Z-25e8433ce87a",
+  "mode": "mock",
+  "model": "scripted-offline-mock",
+  "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+  "budgets": {
+    "max_model_calls": 8,
+    "max_tool_calls": 6,
+    "model_timeout": 60,
+    "tool_timeout": 10
+  },
+  "model_calls": 3,
+  "tool_calls": 2,
+  "result": {
+    "status": "unanswerable",
+    "reason_code": "out_of_scope",
+    "answer": "当前知识库未找到育儿假天数的依据，无法给出天数。",
+    "citations": [],
+    "gaps": [
+      "缺少企业育儿假制度。"
+    ],
+    "follow_up_question": null
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "run_id": "20261028T093956Z-f15f3a7de822",
+  "mode": "real",
+  "model": "qwen-flash",
+  "model_configuration": {
+    "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+    "stream": true,
+    "enable_thinking": true,
+    "json_mode": false,
+    "prompt_revision": "a6250c3d1c802857f1e1d71a5ac8ea42ee0564aea46f3ce4de09d776d4e2e80e"
+  },
+  "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+  "budgets": {
+    "max_model_calls": 8,
+    "max_tool_calls": 6,
+    "model_timeout": 60,
+    "tool_timeout": 10
+  },
+  "model_calls": 7,
+  "tool_calls": 4,
+  "result": {
+    "status": "incomplete",
+    "reason_code": "tool_failure",
+    "answer": "无法确认差旅报销提交时限，因文档内容读取失败。",
+    "citations": [],
+    "gaps": [
+      "无法成功读取文档D01的差旅报销提交时限条款内容"
+    ],
+    "follow_up_question": null
+  }
+}

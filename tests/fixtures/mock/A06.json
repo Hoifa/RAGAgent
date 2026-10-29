@@ -1,0 +1,43 @@
+[
+  {
+    "action": "tool",
+    "tool_name": "search_documents",
+    "arguments": {
+      "query": "差旅报销期限",
+      "top_k": 5
+    },
+    "reason": "离线预设动作：检索资料；不代表模型决策。"
+  },
+  {
+    "action": "tool",
+    "tool_name": "read_passage",
+    "arguments": {
+      "document_id": "D01",
+      "passage_id": "P01"
+    },
+    "reason": "离线预设动作：读取原文；不代表模型决策。"
+  },
+  {
+    "action": "tool",
+    "tool_name": "read_passage",
+    "arguments": {
+      "document_id": "D01",
+      "passage_id": "P01"
+    },
+    "reason": "离线预设动作：读取原文；不代表模型决策。"
+  },
+  {
+    "action": "finish",
+    "reason": "离线预设最终结果，仅验证执行与校验链路。",
+    "result": {
+      "status": "incomplete",
+      "reason_code": "tool_failure",
+      "answer": "原文读取持续失败，无法核验报销期限，任务未完成。",
+      "citations": [],
+      "gaps": [
+        "需要成功读取报销期限原文。"
+      ],
+      "follow_up_question": null
+    }
+  }
+]

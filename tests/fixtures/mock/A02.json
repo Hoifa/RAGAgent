@@ -1,0 +1,67 @@
+[
+  {
+    "action": "tool",
+    "tool_name": "search_documents",
+    "arguments": {
+      "query": "差旅报销期限",
+      "top_k": 5
+    },
+    "reason": "离线预设动作：检索资料；不代表模型决策。"
+  },
+  {
+    "action": "tool",
+    "tool_name": "read_passage",
+    "arguments": {
+      "document_id": "D01",
+      "passage_id": "P01"
+    },
+    "reason": "离线预设动作：读取原文；不代表模型决策。"
+  },
+  {
+    "action": "tool",
+    "tool_name": "read_passage",
+    "arguments": {
+      "document_id": "D02",
+      "passage_id": "P01"
+    },
+    "reason": "离线预设动作：读取原文；不代表模型决策。"
+  },
+  {
+    "action": "tool",
+    "tool_name": "search_documents",
+    "arguments": {
+      "query": "差旅报销期限 适用范围 优先级 替代关系",
+      "top_k": 5
+    },
+    "reason": "离线预设动作：检索资料；不代表模型决策。"
+  },
+  {
+    "action": "finish",
+    "reason": "离线预设最终结果，仅验证执行与校验链路。",
+    "result": {
+      "status": "needs_clarification",
+      "reason_code": "document_conflict",
+      "answer": "D01规定行程结束后30天内提交[C1]，D02规定15天内提交[C2]。现有资料未明确两份规定的适用范围或优先级，不能确定统一期限。",
+      "citations": [
+        {
+          "citation_id": "C1",
+          "document_id": "D01",
+          "passage_id": "P01",
+          "version_date": "2026-01-10",
+          "quote": "差旅报销应在行程结束后30天内提交。"
+        },
+        {
+          "citation_id": "C2",
+          "document_id": "D02",
+          "passage_id": "P01",
+          "version_date": "2026-03-15",
+          "quote": "差旅报销应在行程结束后15天内提交。"
+        }
+      ],
+      "gaps": [
+        "两份制度的适用范围、优先级或替代关系不明。"
+      ],
+      "follow_up_question": "请确认本次报销适用哪份制度，或补充制度适用与优先级说明。"
+    }
+  }
+]

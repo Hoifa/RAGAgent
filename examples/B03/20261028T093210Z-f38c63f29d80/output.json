@@ -1,0 +1,31 @@
+{
+  "run_id": "20261028T093210Z-f38c63f29d80",
+  "mode": "real",
+  "model": "qwen-flash",
+  "model_configuration": {
+    "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+    "stream": true,
+    "enable_thinking": true,
+    "json_mode": false,
+    "prompt_revision": "a86bc43217e505984a9421735c10708fa508c7b73ec5b3f35408bc74474f614c"
+  },
+  "corpus_revision": "074e5fc4e6b7ce0c01f74768aff86751817d26729ffe64730c8c4fc0151d57cc",
+  "budgets": {
+    "max_model_calls": 8,
+    "max_tool_calls": 6,
+    "model_timeout": 60,
+    "tool_timeout": 10
+  },
+  "model_calls": 3,
+  "tool_calls": 2,
+  "result": {
+    "status": "unanswerable",
+    "reason_code": "insufficient_evidence",
+    "answer": "根据提供的文档，没有明确2026年4月1日之后差旅报销期限的具体规定。'差旅报销期限统一执行通知'（2026-04-01生效）仅说明行程结束日期在2026年4月1日之后的差旅报销适用本通知，但未指定具体期限。其他相关制度如'差旅报销提交规定'（2026-01-10）规定30天内提交、'差旅费用报销办理说明'（2026-03-15）规定15天内提交，但这些制度的生效日期早于2026-04-01，可能已被新制度取代，而新制度未明确期限。因此，无法确定2026年5月10日结束行程的适用报销期限。",
+    "citations": [],
+    "gaps": [
+      "未指定2026年4月1日之后差旅报销期限的具体规定"
+    ],
+    "follow_up_question": "请确认是否需参考旧制度或是否有其他适用规定以明确报销期限。"
+  }
+}

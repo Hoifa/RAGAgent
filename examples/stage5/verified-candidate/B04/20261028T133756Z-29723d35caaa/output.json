@@ -1,0 +1,58 @@
+{
+  "run_id": "20261028T133756Z-29723d35caaa",
+  "mode": "real",
+  "model": "qwen-flash",
+  "resolved_question": "差旅报销期限多久？",
+  "runtime_version": "1.1",
+  "engine_revision": "418fa95eeeba5be011a09300202397407254b01e033cfd69af6bdcdf4b0be91d",
+  "model_configuration": {
+    "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+    "stream": true,
+    "enable_thinking": false,
+    "json_mode": true,
+    "prompt_revision": "be084aa13b2f5f8e4a285e44e717947776020cfbc3bca7468f4a5f3ea4689a5f",
+    "action_protocol": "native",
+    "action_stream": false,
+    "review_prompt_revision": "3ca53b41df967e84934206d8c6c57ae65b26ec600f8e8b0b228f0f791d31e4c3",
+    "context_prompt_revision": "a5ed23b3e75a4d61a2cfbca310e05a1e39956a559181614293ee47c45586e51c",
+    "applicability_prompt_revision": "6983bb53022cea107ecfc9db52aafa6157e347399ae5e6f3e684ddbe2b37ac30",
+    "evidence_review": "answered_only",
+    "reference_resolution": "action_loop",
+    "conversation_protocol": "native-tool-messages-v1"
+  },
+  "corpus_revision": "41ee9d5cc610f890f2f559a601035c898c58cc0d20ad8789f61cfec3c0dd0fbd",
+  "budgets": {
+    "max_model_calls": 12,
+    "max_tool_calls": 6,
+    "model_timeout": 60,
+    "tool_timeout": 10,
+    "max_validation_errors": 3
+  },
+  "model_calls": 5,
+  "tool_calls": 3,
+  "result": {
+    "status": "needs_clarification",
+    "reason_code": "missing_user_context",
+    "answer": "差旅报销期限根据员工所属部门不同而有所区别：总部员工应在行程结束后30天内提交报销，海外分支机构员工则需在15天内提交。由于您未说明所属部门，无法确定具体期限，请确认您的岗位归属以便获取准确要求。[C1][C2]",
+    "citations": [
+      {
+        "citation_id": "C1",
+        "document_id": "D01",
+        "passage_id": "P01",
+        "version_date": "2026-01-10",
+        "quote": "本条适用于总部员工：差旅报销应在行程结束后30天内提交。"
+      },
+      {
+        "citation_id": "C2",
+        "document_id": "D02",
+        "passage_id": "P01",
+        "version_date": "2026-03-15",
+        "quote": "本条适用于海外分支机构员工：差旅报销应在行程结束后15天内提交。"
+      }
+    ],
+    "gaps": [
+      "用户所属部门未明确"
+    ],
+    "follow_up_question": "请问您是总部员工还是海外分支机构员工？"
+  }
+}

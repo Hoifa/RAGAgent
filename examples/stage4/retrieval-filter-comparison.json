@@ -1,0 +1,16 @@
+{
+  "source_trace": "examples\\stage4\\native-pilot\\A03\\20261028T102547Z-5d1bca7c2943\\trace.jsonl",
+  "query": {
+    "query": "公司育儿假天数规定",
+    "top_k": 5
+  },
+  "same_snapshot": true,
+  "before_hits": [
+    "D01/P01",
+    "D03/P02"
+  ],
+  "after_hits": [],
+  "before_unrelated_hits": 2,
+  "after_unrelated_hits": 0,
+  "limitations": "One outside-corpus query from a real trace. Not a general precision or recall estimate."
+}

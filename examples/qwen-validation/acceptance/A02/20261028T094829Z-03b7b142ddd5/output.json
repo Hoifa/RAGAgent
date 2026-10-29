@@ -1,0 +1,31 @@
+{
+  "run_id": "20261028T094829Z-03b7b142ddd5",
+  "mode": "real",
+  "model": "qwen-flash",
+  "model_configuration": {
+    "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+    "stream": true,
+    "enable_thinking": false,
+    "json_mode": true,
+    "prompt_revision": "67580098f0b005e6881c0f2337980888d77569f0a160c0a38959035bd7dbd4d3"
+  },
+  "corpus_revision": "801490841d72e569f8061c9ece1aee2cf4429afb22281ae4841b2e8b1da51b94",
+  "budgets": {
+    "max_model_calls": 8,
+    "max_tool_calls": 6,
+    "model_timeout": 60,
+    "tool_timeout": 10
+  },
+  "model_calls": 8,
+  "tool_calls": 3,
+  "result": {
+    "status": "incomplete",
+    "reason_code": "budget_exhausted",
+    "answer": "任务未完成：模型调用额度已用尽，尚未得到通过校验的最终结果。",
+    "citations": [],
+    "gaps": [
+      "模型调用额度已用尽，尚未得到通过校验的最终结果。"
+    ],
+    "follow_up_question": null
+  }
+}

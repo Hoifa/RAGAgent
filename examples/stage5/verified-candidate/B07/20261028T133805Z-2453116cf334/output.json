@@ -1,0 +1,44 @@
+{
+  "run_id": "20261028T133805Z-2453116cf334",
+  "mode": "real",
+  "model": "qwen-flash",
+  "resolved_question": "刚才说的两个事项里，那个需要多久？",
+  "runtime_version": "1.1",
+  "engine_revision": "418fa95eeeba5be011a09300202397407254b01e033cfd69af6bdcdf4b0be91d",
+  "model_configuration": {
+    "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+    "stream": true,
+    "enable_thinking": false,
+    "json_mode": true,
+    "prompt_revision": "be084aa13b2f5f8e4a285e44e717947776020cfbc3bca7468f4a5f3ea4689a5f",
+    "action_protocol": "native",
+    "action_stream": false,
+    "review_prompt_revision": "3ca53b41df967e84934206d8c6c57ae65b26ec600f8e8b0b228f0f791d31e4c3",
+    "context_prompt_revision": "a5ed23b3e75a4d61a2cfbca310e05a1e39956a559181614293ee47c45586e51c",
+    "applicability_prompt_revision": "6983bb53022cea107ecfc9db52aafa6157e347399ae5e6f3e684ddbe2b37ac30",
+    "evidence_review": "answered_only",
+    "reference_resolution": "action_loop",
+    "conversation_protocol": "native-tool-messages-v1"
+  },
+  "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+  "budgets": {
+    "max_model_calls": 12,
+    "max_tool_calls": 6,
+    "model_timeout": 60,
+    "tool_timeout": 10,
+    "max_validation_errors": 3
+  },
+  "model_calls": 2,
+  "tool_calls": 0,
+  "result": {
+    "status": "needs_clarification",
+    "reason_code": "missing_user_context",
+    "answer": "请明确您想了解的差旅报销具体事件发生时间，以及星帧剪辑2.0桌面版字幕导出的具体操作场景，以便我准确查询相关制度或流程期限。",
+    "citations": [],
+    "gaps": [
+      "事件发生时间",
+      "具体操作场景"
+    ],
+    "follow_up_question": "请提供差旅报销的起止日期和字幕导出的操作背景，以便我进一步核实相关规定。"
+  }
+}

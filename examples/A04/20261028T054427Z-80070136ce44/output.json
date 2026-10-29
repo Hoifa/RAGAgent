@@ -1,0 +1,30 @@
+{
+  "run_id": "20261028T054427Z-80070136ce44",
+  "mode": "mock",
+  "model": "scripted-offline-mock",
+  "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+  "budgets": {
+    "max_model_calls": 8,
+    "max_tool_calls": 6,
+    "model_timeout": 60,
+    "tool_timeout": 10
+  },
+  "model_calls": 3,
+  "tool_calls": 2,
+  "result": {
+    "status": "answered",
+    "reason_code": null,
+    "answer": "依据D01，差旅报销应在行程结束后30天内提交。[C1]",
+    "citations": [
+      {
+        "citation_id": "C1",
+        "document_id": "D01",
+        "passage_id": "P01",
+        "version_date": "2026-01-10",
+        "quote": "差旅报销应在行程结束后30天内提交。"
+      }
+    ],
+    "gaps": [],
+    "follow_up_question": null
+  }
+}

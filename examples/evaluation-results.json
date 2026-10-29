@@ -1,0 +1,386 @@
+{
+  "runs": [
+    {
+      "case_id": "A01",
+      "execution": "executed",
+      "mode": "mock",
+      "run_id": "20261028T054427Z-66d398e067e0",
+      "directory": "examples\\A01\\20261028T054427Z-66d398e067e0",
+      "model": "scripted-offline-mock",
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "fault_injection": null,
+      "status": "answered",
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "A02",
+      "execution": "executed",
+      "mode": "mock",
+      "run_id": "20261028T054427Z-d67db758d600",
+      "directory": "examples\\A02\\20261028T054427Z-d67db758d600",
+      "model": "scripted-offline-mock",
+      "corpus_revision": "801490841d72e569f8061c9ece1aee2cf4429afb22281ae4841b2e8b1da51b94",
+      "fault_injection": null,
+      "status": "needs_clarification",
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "A03",
+      "execution": "executed",
+      "mode": "mock",
+      "run_id": "20261028T054427Z-25e8433ce87a",
+      "directory": "examples\\A03\\20261028T054427Z-25e8433ce87a",
+      "model": "scripted-offline-mock",
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "fault_injection": null,
+      "status": "unanswerable",
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "A04",
+      "execution": "executed",
+      "mode": "mock",
+      "run_id": "20261028T054427Z-80070136ce44",
+      "directory": "examples\\A04\\20261028T054427Z-80070136ce44",
+      "model": "scripted-offline-mock",
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "fault_injection": null,
+      "status": "answered",
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "A05",
+      "execution": "executed",
+      "mode": "mock",
+      "run_id": "20261028T054427Z-c958f67621a1",
+      "directory": "examples\\A05\\20261028T054427Z-c958f67621a1",
+      "model": "scripted-offline-mock",
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "fault_injection": null,
+      "status": "answered",
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "A06",
+      "execution": "executed",
+      "mode": "mock",
+      "run_id": "20261028T054427Z-8b15fad08bfb",
+      "directory": "examples\\A06\\20261028T054427Z-8b15fad08bfb",
+      "model": "scripted-offline-mock",
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "fault_injection": {
+        "tool": "read_passage",
+        "match": {
+          "document_id": "D01"
+        },
+        "behavior": "always_error",
+        "code": "unavailable"
+      },
+      "status": "incomplete",
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "A01",
+      "execution": "executed",
+      "mode": "real",
+      "run_id": "20261028T084048Z-379e13f60ba1",
+      "directory": "examples\\A01\\20261028T084048Z-379e13f60ba1",
+      "model": "qwen-flash",
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "fault_injection": null,
+      "status": "incomplete",
+      "checks": {
+        "status_matches": false,
+        "required_documents_present": false
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "A01",
+      "execution": "executed",
+      "mode": "real",
+      "run_id": "20261028T092638Z-fc6fa39321c6",
+      "directory": "examples\\A01\\20261028T092638Z-fc6fa39321c6",
+      "model": "qwen-flash",
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "fault_injection": null,
+      "status": "incomplete",
+      "checks": {
+        "status_matches": false,
+        "required_documents_present": false
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "A01",
+      "execution": "executed",
+      "mode": "real",
+      "run_id": "20261028T092849Z-f96d6b1653df",
+      "directory": "examples\\A01\\20261028T092849Z-f96d6b1653df",
+      "model": "qwen-flash",
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "fault_injection": null,
+      "status": "answered",
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "A02",
+      "execution": "executed",
+      "mode": "real",
+      "run_id": "20261028T092921Z-80835e53c5fc",
+      "directory": "examples\\A02\\20261028T092921Z-80835e53c5fc",
+      "model": "qwen-flash",
+      "corpus_revision": "801490841d72e569f8061c9ece1aee2cf4429afb22281ae4841b2e8b1da51b94",
+      "fault_injection": null,
+      "status": "needs_clarification",
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "A03",
+      "execution": "executed",
+      "mode": "real",
+      "run_id": "20261028T093026Z-b09d9f12079f",
+      "directory": "examples\\A03\\20261028T093026Z-b09d9f12079f",
+      "model": "qwen-flash",
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "fault_injection": null,
+      "status": "unanswerable",
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "A04",
+      "execution": "executed",
+      "mode": "real",
+      "run_id": "20261028T093038Z-dc180de2e6fe",
+      "directory": "examples\\A04\\20261028T093038Z-dc180de2e6fe",
+      "model": "qwen-flash",
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "fault_injection": null,
+      "status": "answered",
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "A05",
+      "execution": "executed",
+      "mode": "real",
+      "run_id": "20261028T093053Z-3f15184e3880",
+      "directory": "examples\\A05\\20261028T093053Z-3f15184e3880",
+      "model": "qwen-flash",
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "fault_injection": null,
+      "status": "answered",
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "A06",
+      "execution": "executed",
+      "mode": "real",
+      "run_id": "20261028T093118Z-ee48c1a3b4d8",
+      "directory": "examples\\A06\\20261028T093118Z-ee48c1a3b4d8",
+      "model": "qwen-flash",
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "fault_injection": {
+        "tool": "read_passage",
+        "match": {
+          "document_id": "D01"
+        },
+        "behavior": "always_error",
+        "code": "unavailable"
+      },
+      "status": "unanswerable",
+      "checks": {
+        "status_matches": false,
+        "required_documents_present": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "B01",
+      "execution": "executed",
+      "mode": "real",
+      "run_id": "20261028T093151Z-ee04018d59c6",
+      "directory": "examples\\B01\\20261028T093151Z-ee04018d59c6",
+      "model": "qwen-flash",
+      "corpus_revision": "cf57241fed2ae88897ae8db032e54b8dcd012f882fd852ee7121f3e192889e30",
+      "fault_injection": null,
+      "status": "answered",
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "B03",
+      "execution": "executed",
+      "mode": "real",
+      "run_id": "20261028T093210Z-f38c63f29d80",
+      "directory": "examples\\B03\\20261028T093210Z-f38c63f29d80",
+      "model": "qwen-flash",
+      "corpus_revision": "074e5fc4e6b7ce0c01f74768aff86751817d26729ffe64730c8c4fc0151d57cc",
+      "fault_injection": null,
+      "status": "unanswerable",
+      "checks": {
+        "status_matches": false,
+        "required_documents_present": false
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "B04",
+      "execution": "executed",
+      "mode": "real",
+      "run_id": "20261028T093305Z-a5d6fa68927e",
+      "directory": "examples\\B04\\20261028T093305Z-a5d6fa68927e",
+      "model": "qwen-flash",
+      "corpus_revision": "41ee9d5cc610f890f2f559a601035c898c58cc0d20ad8789f61cfec3c0dd0fbd",
+      "fault_injection": null,
+      "status": "needs_clarification",
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "B08",
+      "execution": "executed",
+      "mode": "real",
+      "run_id": "20261028T093355Z-92ffb25dbafc",
+      "directory": "examples\\B08\\20261028T093355Z-92ffb25dbafc",
+      "model": "qwen-flash",
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "fault_injection": {
+        "tool": "read_passage",
+        "match": {
+          "document_id": "D01"
+        },
+        "behavior": "first_matching_call_error",
+        "code": "unavailable"
+      },
+      "status": "answered",
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "B11",
+      "execution": "executed",
+      "mode": "real",
+      "run_id": "20261028T093424Z-cd0f530f5ccd",
+      "directory": "examples\\B11\\20261028T093424Z-cd0f530f5ccd",
+      "model": "qwen-flash",
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "fault_injection": null,
+      "status": "answered",
+      "checks": {
+        "status_matches": false,
+        "required_documents_present": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "B12",
+      "execution": "executed",
+      "mode": "real",
+      "run_id": "20261028T093445Z-a14b08fc749e",
+      "directory": "examples\\B12\\20261028T093445Z-a14b08fc749e",
+      "model": "qwen-flash",
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "fault_injection": {
+        "tool": "search_documents",
+        "behavior": "first_call_empty"
+      },
+      "status": "answered",
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    },
+    {
+      "case_id": "B15",
+      "execution": "executed",
+      "mode": "real",
+      "run_id": "20261028T093519Z-af61680f6d49",
+      "directory": "examples\\B15\\20261028T093519Z-af61680f6d49",
+      "model": "qwen-flash",
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "fault_injection": null,
+      "status": "answered",
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    }
+  ],
+  "limitations": "Mock scripts validate workflow only. Status/citation-ID checks do not prove semantics or real ReAct; inspect traces manually."
+}

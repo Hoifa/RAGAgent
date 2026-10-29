@@ -1,0 +1,57 @@
+{
+  "run_id": "20261028T132248Z-f5e2a1d40130",
+  "mode": "real",
+  "model": "qwen-flash",
+  "resolved_question": "差旅报销应在行程结束后多久内提交？",
+  "runtime_version": "1.1",
+  "engine_revision": "21041db581e05578c435b05fef222908753c2e5657ba481ff6f85f9a79fd1e12",
+  "model_configuration": {
+    "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+    "stream": true,
+    "enable_thinking": false,
+    "json_mode": true,
+    "prompt_revision": "ce532bc1ebd39d30211c799fb48c27f710cc942dcee4ca22ae0be6104a1e75fa",
+    "action_protocol": "native",
+    "action_stream": false,
+    "review_prompt_revision": "3ca53b41df967e84934206d8c6c57ae65b26ec600f8e8b0b228f0f791d31e4c3",
+    "context_prompt_revision": "3ae348a33b0321c2df28afd5b8e51d58aa5fd7576a7dda4986eff0fb3ad31611",
+    "applicability_prompt_revision": "6983bb53022cea107ecfc9db52aafa6157e347399ae5e6f3e684ddbe2b37ac30",
+    "evidence_review": "answered_only",
+    "conversation_protocol": "native-tool-messages-v1"
+  },
+  "corpus_revision": "801490841d72e569f8061c9ece1aee2cf4429afb22281ae4841b2e8b1da51b94",
+  "budgets": {
+    "max_model_calls": 12,
+    "max_tool_calls": 6,
+    "model_timeout": 60,
+    "tool_timeout": 10,
+    "max_validation_errors": 3
+  },
+  "model_calls": 8,
+  "tool_calls": 4,
+  "result": {
+    "status": "needs_clarification",
+    "reason_code": "document_conflict",
+    "answer": "根据现有资料，差旅报销提交时限存在冲突：一份规定为行程结束后30天内提交（[C1]），另一份规定为15天内提交（[C2]）。目前未找到关于D01与D02之间优先级、适用范围或替代关系的制度依据，无法判断哪一规定适用于当前情况。请确认差旅行程的具体结束日期，并明确应适用的制度版本，以便准确答复。",
+    "citations": [
+      {
+        "citation_id": "C1",
+        "document_id": "D01",
+        "passage_id": "P01",
+        "version_date": "2026-01-10",
+        "quote": "差旅报销应在行程结束后30天内提交。"
+      },
+      {
+        "citation_id": "C2",
+        "document_id": "D02",
+        "passage_id": "P01",
+        "version_date": "2026-03-15",
+        "quote": "差旅报销应在行程结束后15天内提交。"
+      }
+    ],
+    "gaps": [
+      "缺少关于D01与D02之间优先级、适用范围或替代关系的制度依据"
+    ],
+    "follow_up_question": "请提供差旅行程的具体结束日期，并确认应适用的制度版本（如是否为新规定生效后发生的差旅），以便确定正确的报销时限。"
+  }
+}

@@ -1,0 +1,3567 @@
+{
+  "limitations": [
+    "Finite assertions only; no automatic full semantic verdict.",
+    "Observed next actions are evidence for review, not proof of internal reasoning.",
+    "Groups may span code revisions; paired checks require equal code/configuration.",
+    "Checksums capture audit-time bytes; they are not authenticated provenance."
+  ],
+  "runs": [
+    {
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true,
+        "snapshot_matches": true,
+        "budgets_respected": true,
+        "read_observations_match_corpus": true,
+        "result_and_evidence_valid": true,
+        "required_passages_cited": true,
+        "expected_facts_present": true,
+        "trace_envelope": true,
+        "trace_sequence": true,
+        "report_matches_artifacts": true,
+        "input_matches_fixture": true,
+        "fault_config_matches": true,
+        "actual_tool_counts": true,
+        "model_count_has_trace_markers": true,
+        "tool_call_links": true,
+        "tool_observations_replay": true
+      },
+      "passed": true,
+      "status": "answered",
+      "reason_code": null,
+      "answer": "差旅报销应在行程结束后30天内提交[C1]。",
+      "follow_up_question": null,
+      "gaps": [],
+      "citations": [
+        {
+          "citation_id": "C1",
+          "document_id": "D01",
+          "passage_id": "P01",
+          "version_date": "2026-01-10",
+          "quote": "差旅报销应在行程结束后30天内提交。"
+        }
+      ],
+      "model_calls": 8,
+      "tool_calls": 2,
+      "duration_seconds": 6.671,
+      "observed_action_after_tool": true,
+      "transitions": [
+        {
+          "step": 2,
+          "tool": "search_documents",
+          "arguments": {
+            "query": "差旅报销提交时限 行程结束后",
+            "top_k": 5
+          },
+          "purpose": "查找差旅报销应在行程结束后多久内提交的相关规定",
+          "observation_summary": "hits=5",
+          "injected": false,
+          "next_step": 3,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "next_basis": "读取差旅报销提交时限的具体规定"
+        },
+        {
+          "step": 3,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "purpose": "读取差旅报销提交时限的具体规定",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 5,
+          "next_action": "finish:answered",
+          "next_arguments": null,
+          "next_basis": "差旅报销应在行程结束后30天内提交。"
+        }
+      ],
+      "mode": "real",
+      "model": "qwen-flash",
+      "engine_revision": "45e43d27c1e5e696c902b378c88f631e6685b321e034ac6af0a05de867e36981",
+      "model_configuration": {
+        "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+        "stream": true,
+        "enable_thinking": false,
+        "json_mode": true,
+        "prompt_revision": "8fef82a485cf47e9e07ed12592ff2c6d3e3347eadfe5443c925c93e55a8aa448",
+        "action_protocol": "native",
+        "action_stream": false,
+        "review_prompt_revision": "a171d3050a3282ad4c45ce752ed229f98e1c82408c9f3fba2011d7a501378b6b",
+        "context_prompt_revision": "8b914d763b3316659edae9c6937ab34f036aa3b9009f069ffe29cb402d4f1e39",
+        "applicability_prompt_revision": "74c926f3c766628d138c131fe1896150a795d40a59d2636cc4f6dcf4a5a5bbed",
+        "evidence_review": "answered_only",
+        "conversation_protocol": "native-tool-messages-v1"
+      },
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "budgets": {
+        "max_model_calls": 12,
+        "max_tool_calls": 6,
+        "model_timeout": 60,
+        "tool_timeout": 10,
+        "max_validation_errors": 3
+      },
+      "request": {
+        "question": "差旅报销应在行程结束后多久内提交？"
+      },
+      "case_id": "A01",
+      "source_report": "examples\\stage4\\verified-release\\evaluation-results.json",
+      "repeat_index": 1,
+      "run_id": "20261028T105940Z-e980e0c567a1",
+      "directory": "examples\\stage4\\verified-release\\A01\\20261028T105940Z-e980e0c567a1",
+      "artifact_sha256": {
+        "input.json": "d1e103bb5ef245c070f2eb26fef01e447036e5743a02af1f4e22f30497ce175e",
+        "output.json": "d121e75b3b970c7e52e2f0ba9f98fd8c6d718b8a225a79d4798709384a9acaa5",
+        "trace.jsonl": "a5f01b91dcaa66b8a59b0fc33b6ddd191f03058571a4488460d4501893b701e4"
+      }
+    },
+    {
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true,
+        "snapshot_matches": true,
+        "budgets_respected": true,
+        "read_observations_match_corpus": true,
+        "result_and_evidence_valid": true,
+        "reason_code_matches": true,
+        "required_passages_cited": true,
+        "expected_facts_present": true,
+        "trace_envelope": true,
+        "trace_sequence": true,
+        "report_matches_artifacts": true,
+        "input_matches_fixture": true,
+        "fault_config_matches": true,
+        "actual_tool_counts": true,
+        "model_count_has_trace_markers": true,
+        "tool_call_links": true,
+        "tool_observations_replay": true
+      },
+      "passed": true,
+      "status": "needs_clarification",
+      "reason_code": "document_conflict",
+      "answer": "差旅报销期限存在冲突规定：一份要求在行程结束后30天内提交，[C1] 另一份要求在15天内提交。[C2] 两份文件均未说明优先级或替代关系，且补查未发现制度间适用范围或替代依据。因此，无法确定应遵循哪一规定。",
+      "follow_up_question": "请确认应遵循《差旅报销提交规定》（2026-01-10）还是《差旅费用报销办理说明》（2026-03-15）？或补充说明制度适用范围与优先级。",
+      "gaps": [
+        "未提供制度适用范围、优先级或替代关系的依据"
+      ],
+      "citations": [
+        {
+          "citation_id": "C1",
+          "document_id": "D01",
+          "passage_id": "P01",
+          "version_date": "2026-01-10",
+          "quote": "差旅报销应在行程结束后30天内提交。"
+        },
+        {
+          "citation_id": "C2",
+          "document_id": "D02",
+          "passage_id": "P01",
+          "version_date": "2026-03-15",
+          "quote": "差旅报销应在行程结束后15天内提交。"
+        }
+      ],
+      "model_calls": 8,
+      "tool_calls": 4,
+      "duration_seconds": 12.64,
+      "observed_action_after_tool": true,
+      "transitions": [
+        {
+          "step": 2,
+          "tool": "search_documents",
+          "arguments": {
+            "query": "差旅报销期限",
+            "top_k": 5
+          },
+          "purpose": "查找差旅报销的期限规定",
+          "observation_summary": "hits=5",
+          "injected": false,
+          "next_step": 3,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "next_basis": "确认差旅报销期限的具体规定"
+        },
+        {
+          "step": 3,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "purpose": "确认差旅报销期限的具体规定",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 4,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D02",
+            "passage_id": "P01"
+          },
+          "next_basis": "确认差旅报销期限的具体规定"
+        },
+        {
+          "step": 4,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D02",
+            "passage_id": "P01"
+          },
+          "purpose": "确认差旅报销期限的具体规定",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 5,
+          "next_action": "finish:needs_clarification",
+          "next_arguments": null,
+          "next_basis": "差旅报销期限存在冲突规定：一份要求30天内提交，另一份要求15天内提交。由于两份文件未明确优先级或替代关系，无法确定适用条款。"
+        },
+        {
+          "step": 7,
+          "tool": "search_documents",
+          "arguments": {
+            "query": "差旅报销提交规定 与 差旅费用报销办理说明 优先级 或 替代关系",
+            "top_k": 5
+          },
+          "purpose": "查找两份文件之间的优先级或替代关系，以解决报销期限冲突",
+          "observation_summary": "hits=5",
+          "injected": false,
+          "next_step": 8,
+          "next_action": "finish:needs_clarification",
+          "next_arguments": null,
+          "next_basis": "差旅报销期限存在冲突规定：一份要求在行程结束后30天内提交，[C1] 另一份要求在15天内提交。[C2] 两份文件均未说明优先级或替代关系，且补查未发现制度间适用范围或替代依据。因此，无法确定应遵循哪一规定。"
+        }
+      ],
+      "mode": "real",
+      "model": "qwen-flash",
+      "engine_revision": "45e43d27c1e5e696c902b378c88f631e6685b321e034ac6af0a05de867e36981",
+      "model_configuration": {
+        "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+        "stream": true,
+        "enable_thinking": false,
+        "json_mode": true,
+        "prompt_revision": "8fef82a485cf47e9e07ed12592ff2c6d3e3347eadfe5443c925c93e55a8aa448",
+        "action_protocol": "native",
+        "action_stream": false,
+        "review_prompt_revision": "a171d3050a3282ad4c45ce752ed229f98e1c82408c9f3fba2011d7a501378b6b",
+        "context_prompt_revision": "8b914d763b3316659edae9c6937ab34f036aa3b9009f069ffe29cb402d4f1e39",
+        "applicability_prompt_revision": "74c926f3c766628d138c131fe1896150a795d40a59d2636cc4f6dcf4a5a5bbed",
+        "evidence_review": "answered_only",
+        "conversation_protocol": "native-tool-messages-v1"
+      },
+      "corpus_revision": "801490841d72e569f8061c9ece1aee2cf4429afb22281ae4841b2e8b1da51b94",
+      "budgets": {
+        "max_model_calls": 12,
+        "max_tool_calls": 6,
+        "model_timeout": 60,
+        "tool_timeout": 10,
+        "max_validation_errors": 3
+      },
+      "request": {
+        "question": "差旅报销期限多久？"
+      },
+      "case_id": "A02",
+      "source_report": "examples\\stage4\\verified-release\\evaluation-results.json",
+      "repeat_index": 1,
+      "run_id": "20261028T105946Z-2938ac7a2ea6",
+      "directory": "examples\\stage4\\verified-release\\A02\\20261028T105946Z-2938ac7a2ea6",
+      "artifact_sha256": {
+        "input.json": "993f4b79bc666dfea794e8e9e0015d73c23db9e98c937935c012f024961e1470",
+        "output.json": "d6991b0aadefd1c38d38c721d64b71e129f9ab725f1a592f13e497d9d5d1be10",
+        "trace.jsonl": "abbf2e661cb2af2790de8cc256a16e9e42aa4f48d224e4fe09a163636f8796ca"
+      }
+    },
+    {
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true,
+        "snapshot_matches": true,
+        "budgets_respected": true,
+        "read_observations_match_corpus": true,
+        "result_and_evidence_valid": true,
+        "reason_code_matches": true,
+        "trace_envelope": true,
+        "trace_sequence": true,
+        "report_matches_artifacts": true,
+        "input_matches_fixture": true,
+        "fault_config_matches": true,
+        "actual_tool_counts": true,
+        "model_count_has_trace_markers": true,
+        "tool_call_links": true,
+        "tool_observations_replay": true
+      },
+      "passed": true,
+      "status": "unanswerable",
+      "reason_code": "insufficient_evidence",
+      "answer": "未找到关于公司育儿假天数的具体规定。现有文档中未提及育儿假相关条款，无法提供准确天数信息。",
+      "follow_up_question": null,
+      "gaps": [
+        "缺乏关于育儿假天数的制度依据"
+      ],
+      "citations": [],
+      "model_calls": 6,
+      "tool_calls": 3,
+      "duration_seconds": 5.677,
+      "observed_action_after_tool": true,
+      "transitions": [
+        {
+          "step": 2,
+          "tool": "search_documents",
+          "arguments": {
+            "query": "公司育儿假天数规定",
+            "top_k": 5
+          },
+          "purpose": "查找关于公司育儿假具体天数的政策文件",
+          "observation_summary": "hits=0",
+          "injected": false,
+          "next_step": 3,
+          "next_action": "search_documents",
+          "next_arguments": {
+            "query": "员工育儿假天数 标准规定",
+            "top_k": 5
+          },
+          "next_basis": "尝试更广泛的关键词组合以获取相关制度文件"
+        },
+        {
+          "step": 3,
+          "tool": "search_documents",
+          "arguments": {
+            "query": "员工育儿假天数 标准规定",
+            "top_k": 5
+          },
+          "purpose": "尝试更广泛的关键词组合以获取相关制度文件",
+          "observation_summary": "hits=1",
+          "injected": false,
+          "next_step": 4,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D04",
+            "passage_id": "P01"
+          },
+          "next_basis": "读取文档D04中关于出差申请的内容，确认是否包含育儿假相关条款"
+        },
+        {
+          "step": 4,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D04",
+            "passage_id": "P01"
+          },
+          "purpose": "读取文档D04中关于出差申请的内容，确认是否包含育儿假相关条款",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 6,
+          "next_action": "finish:unanswerable",
+          "next_arguments": null,
+          "next_basis": "未找到关于公司育儿假天数的具体规定。现有文档中未提及育儿假相关条款，无法提供准确天数信息。"
+        }
+      ],
+      "mode": "real",
+      "model": "qwen-flash",
+      "engine_revision": "45e43d27c1e5e696c902b378c88f631e6685b321e034ac6af0a05de867e36981",
+      "model_configuration": {
+        "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+        "stream": true,
+        "enable_thinking": false,
+        "json_mode": true,
+        "prompt_revision": "8fef82a485cf47e9e07ed12592ff2c6d3e3347eadfe5443c925c93e55a8aa448",
+        "action_protocol": "native",
+        "action_stream": false,
+        "review_prompt_revision": "a171d3050a3282ad4c45ce752ed229f98e1c82408c9f3fba2011d7a501378b6b",
+        "context_prompt_revision": "8b914d763b3316659edae9c6937ab34f036aa3b9009f069ffe29cb402d4f1e39",
+        "applicability_prompt_revision": "74c926f3c766628d138c131fe1896150a795d40a59d2636cc4f6dcf4a5a5bbed",
+        "evidence_review": "answered_only",
+        "conversation_protocol": "native-tool-messages-v1"
+      },
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "budgets": {
+        "max_model_calls": 12,
+        "max_tool_calls": 6,
+        "model_timeout": 60,
+        "tool_timeout": 10,
+        "max_validation_errors": 3
+      },
+      "request": {
+        "question": "公司的育儿假有多少天？"
+      },
+      "case_id": "A03",
+      "source_report": "examples\\stage4\\verified-release\\evaluation-results.json",
+      "repeat_index": 1,
+      "run_id": "20261028T105959Z-08512463e5a3",
+      "directory": "examples\\stage4\\verified-release\\A03\\20261028T105959Z-08512463e5a3",
+      "artifact_sha256": {
+        "input.json": "de0264d0287136b3da7d7aa9e6d7f7029b37eb414528013d2163cca5ac8c6652",
+        "output.json": "f173059d30cbe8cd5d054edbe10809a8d0f4f099e47ef4e44700775ce2295a1a",
+        "trace.jsonl": "91260babf073348e2ee7d1e0fca176a1775848025fd92b24b9d4d534ddaa5d1e"
+      }
+    },
+    {
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true,
+        "snapshot_matches": true,
+        "budgets_respected": true,
+        "read_observations_match_corpus": true,
+        "result_and_evidence_valid": true,
+        "required_passages_cited": true,
+        "expected_facts_present": true,
+        "trace_envelope": true,
+        "trace_sequence": true,
+        "report_matches_artifacts": true,
+        "input_matches_fixture": true,
+        "fault_config_matches": true,
+        "actual_tool_counts": true,
+        "model_count_has_trace_markers": true,
+        "tool_call_links": true,
+        "tool_observations_replay": true
+      },
+      "passed": true,
+      "status": "answered",
+      "reason_code": null,
+      "answer": "出差结束后最晚应在30天内提交报销申请[C1]。",
+      "follow_up_question": null,
+      "gaps": [],
+      "citations": [
+        {
+          "citation_id": "C1",
+          "document_id": "D01",
+          "passage_id": "P01",
+          "version_date": "2026-01-10",
+          "quote": "差旅报销应在行程结束后30天内提交。"
+        }
+      ],
+      "model_calls": 7,
+      "tool_calls": 2,
+      "duration_seconds": 5.499,
+      "observed_action_after_tool": true,
+      "transitions": [
+        {
+          "step": 2,
+          "tool": "search_documents",
+          "arguments": {
+            "query": "出差报销申请提交期限 最晚时间",
+            "top_k": 5
+          },
+          "purpose": "查找关于出差结束后提交报销申请最晚时限的规定",
+          "observation_summary": "hits=5",
+          "injected": false,
+          "next_step": 3,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "next_basis": "确认出差报销申请提交期限的具体规定"
+        },
+        {
+          "step": 3,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "purpose": "确认出差报销申请提交期限的具体规定",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 4,
+          "next_action": "finish:answered",
+          "next_arguments": null,
+          "next_basis": "出差结束后最晚应在30天内提交报销申请。"
+        }
+      ],
+      "mode": "real",
+      "model": "qwen-flash",
+      "engine_revision": "45e43d27c1e5e696c902b378c88f631e6685b321e034ac6af0a05de867e36981",
+      "model_configuration": {
+        "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+        "stream": true,
+        "enable_thinking": false,
+        "json_mode": true,
+        "prompt_revision": "8fef82a485cf47e9e07ed12592ff2c6d3e3347eadfe5443c925c93e55a8aa448",
+        "action_protocol": "native",
+        "action_stream": false,
+        "review_prompt_revision": "a171d3050a3282ad4c45ce752ed229f98e1c82408c9f3fba2011d7a501378b6b",
+        "context_prompt_revision": "8b914d763b3316659edae9c6937ab34f036aa3b9009f069ffe29cb402d4f1e39",
+        "applicability_prompt_revision": "74c926f3c766628d138c131fe1896150a795d40a59d2636cc4f6dcf4a5a5bbed",
+        "evidence_review": "answered_only",
+        "conversation_protocol": "native-tool-messages-v1"
+      },
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "budgets": {
+        "max_model_calls": 12,
+        "max_tool_calls": 6,
+        "model_timeout": 60,
+        "tool_timeout": 10,
+        "max_validation_errors": 3
+      },
+      "request": {
+        "question": "出差结束后最晚多久交报销？"
+      },
+      "case_id": "A04",
+      "source_report": "examples\\stage4\\verified-release\\evaluation-results.json",
+      "repeat_index": 1,
+      "run_id": "20261028T110005Z-e681265ede4b",
+      "directory": "examples\\stage4\\verified-release\\A04\\20261028T110005Z-e681265ede4b",
+      "artifact_sha256": {
+        "input.json": "a2400bf086b3cf44fe8c9d069e5acb3f00cf89ba7bb624dbe7d30ce7df866ea0",
+        "output.json": "fc5f1ae8f61b5955bb99344e9aa3d2311f714d5088a29e20a7d76ae918fff644",
+        "trace.jsonl": "bd3d01c18b0489270f814ebe5fa60f9130b09e25d26b202105dae0cc6c85271b"
+      }
+    },
+    {
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true,
+        "snapshot_matches": true,
+        "budgets_respected": true,
+        "read_observations_match_corpus": true,
+        "result_and_evidence_valid": true,
+        "required_passages_cited": true,
+        "expected_facts_present": true,
+        "trace_envelope": true,
+        "trace_sequence": true,
+        "report_matches_artifacts": true,
+        "input_matches_fixture": true,
+        "fault_config_matches": true,
+        "actual_tool_counts": true,
+        "model_count_has_trace_markers": true,
+        "tool_call_links": true,
+        "tool_observations_replay": true
+      },
+      "passed": true,
+      "status": "answered",
+      "reason_code": null,
+      "answer": "申请差旅报销时，应提交已审批的出差申请单、费用明细表及与费用对应的发票。涉及交通或住宿费用的，还应提交对应的行程凭证或住宿账单 [C1]。若缺少发票或其他报销材料，应联系财务服务台确认补充要求；本清单未规定材料缺失时可以免除提交义务 [C2]。",
+      "follow_up_question": null,
+      "gaps": [],
+      "citations": [
+        {
+          "citation_id": "C1",
+          "document_id": "D03",
+          "passage_id": "P01",
+          "version_date": "2026-01-12",
+          "quote": "申请差旅报销时，应提交已审批的出差申请单、费用明细表及与费用对应的发票。涉及交通或住宿费用的，还应提交对应的行程凭证或住宿账单。"
+        },
+        {
+          "citation_id": "C2",
+          "document_id": "D03",
+          "passage_id": "P02",
+          "version_date": "2026-01-12",
+          "quote": "缺少发票或其他报销材料时，应联系财务服务台确认补充材料要求；本清单未规定材料缺失时可以免除提交义务。"
+        }
+      ],
+      "model_calls": 10,
+      "tool_calls": 3,
+      "duration_seconds": 12.887,
+      "observed_action_after_tool": true,
+      "transitions": [
+        {
+          "step": 2,
+          "tool": "search_documents",
+          "arguments": {
+            "query": "差旅报销需要提交的材料",
+            "top_k": 5
+          },
+          "purpose": "查找差旅报销所需材料清单",
+          "observation_summary": "hits=5",
+          "injected": false,
+          "next_step": 3,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D03",
+            "passage_id": "P01"
+          },
+          "next_basis": "获取差旅报销所需材料的完整说明"
+        },
+        {
+          "step": 3,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D03",
+            "passage_id": "P01"
+          },
+          "purpose": "获取差旅报销所需材料的完整说明",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 5,
+          "next_action": "finish:answered",
+          "next_arguments": null,
+          "next_basis": "申请差旅报销时，应提交已审批的出差申请单、费用明细表及与费用对应的发票。涉及交通或住宿费用的，还应提交对应的行程凭证或住宿账单。"
+        },
+        {
+          "step": 6,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D03",
+            "passage_id": "P02"
+          },
+          "purpose": "获取材料缺失时的补充要求，以确保完整性",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 7,
+          "next_action": "finish:answered",
+          "next_arguments": null,
+          "next_basis": "申请差旅报销时，应提交已审批的出差申请单、费用明细表及与费用对应的发票。涉及交通或住宿费用的，还应提交对应的行程凭证或住宿账单。若缺少发票或其他报销材料，应联系财务服务台确认补充要求；本清单未规定材料缺失时可以免除提交义务。"
+        }
+      ],
+      "mode": "real",
+      "model": "qwen-flash",
+      "engine_revision": "45e43d27c1e5e696c902b378c88f631e6685b321e034ac6af0a05de867e36981",
+      "model_configuration": {
+        "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+        "stream": true,
+        "enable_thinking": false,
+        "json_mode": true,
+        "prompt_revision": "8fef82a485cf47e9e07ed12592ff2c6d3e3347eadfe5443c925c93e55a8aa448",
+        "action_protocol": "native",
+        "action_stream": false,
+        "review_prompt_revision": "a171d3050a3282ad4c45ce752ed229f98e1c82408c9f3fba2011d7a501378b6b",
+        "context_prompt_revision": "8b914d763b3316659edae9c6937ab34f036aa3b9009f069ffe29cb402d4f1e39",
+        "applicability_prompt_revision": "74c926f3c766628d138c131fe1896150a795d40a59d2636cc4f6dcf4a5a5bbed",
+        "evidence_review": "answered_only",
+        "conversation_protocol": "native-tool-messages-v1"
+      },
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "budgets": {
+        "max_model_calls": 12,
+        "max_tool_calls": 6,
+        "model_timeout": 60,
+        "tool_timeout": 10,
+        "max_validation_errors": 3
+      },
+      "request": {
+        "question": "那需要哪些材料？",
+        "history": [
+          {
+            "role": "user",
+            "content": "差旅报销应在行程结束后多久内提交？"
+          },
+          {
+            "role": "assistant",
+            "content": "依据D01，应在行程结束后30天内提交。"
+          }
+        ]
+      },
+      "case_id": "A05",
+      "source_report": "examples\\stage4\\verified-release\\evaluation-results.json",
+      "repeat_index": 1,
+      "run_id": "20261028T110010Z-80e47ae266ab",
+      "directory": "examples\\stage4\\verified-release\\A05\\20261028T110010Z-80e47ae266ab",
+      "artifact_sha256": {
+        "input.json": "cf34fb8056d107f22c4a653326ca32185c3d230c07f0c776289535cf9699d583",
+        "output.json": "9e97ff9401445c8775e810de1e4a3084fc4638fb7b0bd37911155721a9d5a1c5",
+        "trace.jsonl": "275c091e6b6ecaead4c5c1344661584a7d406c25809eb0a9a91bf44e376efac0"
+      }
+    },
+    {
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true,
+        "snapshot_matches": true,
+        "budgets_respected": true,
+        "read_observations_match_corpus": true,
+        "result_and_evidence_valid": true,
+        "reason_code_matches": true,
+        "failure_observed": true,
+        "model_acted_after_failure": true,
+        "trace_envelope": true,
+        "trace_sequence": true,
+        "report_matches_artifacts": true,
+        "input_matches_fixture": true,
+        "fault_config_matches": true,
+        "actual_tool_counts": true,
+        "model_count_has_trace_markers": true,
+        "tool_call_links": true,
+        "tool_observations_replay": true
+      },
+      "passed": true,
+      "status": "incomplete",
+      "reason_code": "tool_failure",
+      "answer": "无法获取差旅报销提交时限的完整证据，因核心文档D01的P01片段读取失败且无其他可替代来源。",
+      "follow_up_question": null,
+      "gaps": [
+        "关键规定文档读取失败"
+      ],
+      "citations": [],
+      "model_calls": 10,
+      "tool_calls": 5,
+      "duration_seconds": 10.633,
+      "observed_action_after_tool": true,
+      "transitions": [
+        {
+          "step": 2,
+          "tool": "search_documents",
+          "arguments": {
+            "query": "差旅报销提交时限 行程结束后",
+            "top_k": 5
+          },
+          "purpose": "查找差旅报销应在行程结束后多久内提交的相关规定",
+          "observation_summary": "hits=5",
+          "injected": false,
+          "next_step": 3,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "next_basis": "读取差旅报销提交时限的具体规定"
+        },
+        {
+          "step": 3,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "purpose": "读取差旅报销提交时限的具体规定",
+          "observation_summary": "unavailable",
+          "injected": true,
+          "next_step": 4,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D03",
+            "passage_id": "P01"
+          },
+          "next_basis": "读取差旅报销材料清单中的相关要求"
+        },
+        {
+          "step": 4,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D03",
+            "passage_id": "P01"
+          },
+          "purpose": "读取差旅报销材料清单中的相关要求",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 5,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D03",
+            "passage_id": "P02"
+          },
+          "next_basis": "读取差旅报销材料清单中关于材料缺失的说明"
+        },
+        {
+          "step": 5,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D03",
+            "passage_id": "P02"
+          },
+          "purpose": "读取差旅报销材料清单中关于材料缺失的说明",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 7,
+          "next_action": "finish:answered",
+          "next_arguments": null,
+          "next_basis": "差旅报销应在行程结束后30天内提交。"
+        },
+        {
+          "step": 8,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "purpose": "读取差旅报销提交时限的具体规定，该文档为检索结果中排名第一的候选",
+          "observation_summary": "unavailable",
+          "injected": true,
+          "next_step": 9,
+          "next_action": "finish:unanswerable",
+          "next_arguments": null,
+          "next_basis": "无法确定差旅报销应在行程结束后多久内提交，因核心规定文档（D01）的片段读取失败且无其他可替代证据。"
+        }
+      ],
+      "mode": "real",
+      "model": "qwen-flash",
+      "engine_revision": "45e43d27c1e5e696c902b378c88f631e6685b321e034ac6af0a05de867e36981",
+      "model_configuration": {
+        "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+        "stream": true,
+        "enable_thinking": false,
+        "json_mode": true,
+        "prompt_revision": "8fef82a485cf47e9e07ed12592ff2c6d3e3347eadfe5443c925c93e55a8aa448",
+        "action_protocol": "native",
+        "action_stream": false,
+        "review_prompt_revision": "a171d3050a3282ad4c45ce752ed229f98e1c82408c9f3fba2011d7a501378b6b",
+        "context_prompt_revision": "8b914d763b3316659edae9c6937ab34f036aa3b9009f069ffe29cb402d4f1e39",
+        "applicability_prompt_revision": "74c926f3c766628d138c131fe1896150a795d40a59d2636cc4f6dcf4a5a5bbed",
+        "evidence_review": "answered_only",
+        "conversation_protocol": "native-tool-messages-v1"
+      },
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "budgets": {
+        "max_model_calls": 12,
+        "max_tool_calls": 6,
+        "model_timeout": 60,
+        "tool_timeout": 10,
+        "max_validation_errors": 3
+      },
+      "request": {
+        "question": "差旅报销应在行程结束后多久内提交？"
+      },
+      "case_id": "A06",
+      "source_report": "examples\\stage4\\verified-release\\evaluation-results.json",
+      "repeat_index": 1,
+      "run_id": "20261028T110023Z-2de350b4f35b",
+      "directory": "examples\\stage4\\verified-release\\A06\\20261028T110023Z-2de350b4f35b",
+      "artifact_sha256": {
+        "input.json": "d1e103bb5ef245c070f2eb26fef01e447036e5743a02af1f4e22f30497ce175e",
+        "output.json": "60590c3fe7c7bc6dd5706f1a716d7a946b503d836d8dbfb6c93cf7ca8fc493a5",
+        "trace.jsonl": "17adf2ee7f004001dd278fdfd93d9857826b99f74dea62c058f233553e7e0bae"
+      }
+    },
+    {
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true,
+        "snapshot_matches": true,
+        "budgets_respected": true,
+        "read_observations_match_corpus": true,
+        "result_and_evidence_valid": true,
+        "expected_facts_present": true,
+        "trace_envelope": true,
+        "trace_sequence": true,
+        "report_matches_artifacts": true,
+        "input_matches_fixture": true,
+        "fault_config_matches": true,
+        "actual_tool_counts": true,
+        "model_count_has_trace_markers": true,
+        "tool_call_links": true,
+        "tool_observations_replay": true
+      },
+      "passed": true,
+      "status": "answered",
+      "reason_code": null,
+      "answer": "差旅报销应在行程结束后45天内提交[C1]。",
+      "follow_up_question": null,
+      "gaps": [],
+      "citations": [
+        {
+          "citation_id": "C1",
+          "document_id": "D01",
+          "passage_id": "P01",
+          "version_date": "2026-01-10",
+          "quote": "差旅报销应在行程结束后45天内提交。"
+        }
+      ],
+      "model_calls": 8,
+      "tool_calls": 2,
+      "duration_seconds": 6.791,
+      "observed_action_after_tool": true,
+      "transitions": [
+        {
+          "step": 2,
+          "tool": "search_documents",
+          "arguments": {
+            "query": "差旅报销提交期限 行程结束后",
+            "top_k": 5
+          },
+          "purpose": "查找差旅报销应在行程结束后多久内提交的相关规定",
+          "observation_summary": "hits=5",
+          "injected": false,
+          "next_step": 3,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "next_basis": "确认差旅报销应在行程结束后45天内提交的具体规定"
+        },
+        {
+          "step": 3,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "purpose": "确认差旅报销应在行程结束后45天内提交的具体规定",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 5,
+          "next_action": "finish:answered",
+          "next_arguments": null,
+          "next_basis": "差旅报销应在行程结束后45天内提交。"
+        }
+      ],
+      "mode": "real",
+      "model": "qwen-flash",
+      "engine_revision": "45e43d27c1e5e696c902b378c88f631e6685b321e034ac6af0a05de867e36981",
+      "model_configuration": {
+        "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+        "stream": true,
+        "enable_thinking": false,
+        "json_mode": true,
+        "prompt_revision": "8fef82a485cf47e9e07ed12592ff2c6d3e3347eadfe5443c925c93e55a8aa448",
+        "action_protocol": "native",
+        "action_stream": false,
+        "review_prompt_revision": "a171d3050a3282ad4c45ce752ed229f98e1c82408c9f3fba2011d7a501378b6b",
+        "context_prompt_revision": "8b914d763b3316659edae9c6937ab34f036aa3b9009f069ffe29cb402d4f1e39",
+        "applicability_prompt_revision": "74c926f3c766628d138c131fe1896150a795d40a59d2636cc4f6dcf4a5a5bbed",
+        "evidence_review": "answered_only",
+        "conversation_protocol": "native-tool-messages-v1"
+      },
+      "corpus_revision": "cf57241fed2ae88897ae8db032e54b8dcd012f882fd852ee7121f3e192889e30",
+      "budgets": {
+        "max_model_calls": 12,
+        "max_tool_calls": 6,
+        "model_timeout": 60,
+        "tool_timeout": 10,
+        "max_validation_errors": 3
+      },
+      "request": {
+        "question": "差旅报销应在行程结束后多久内提交？"
+      },
+      "case_id": "B01",
+      "source_report": "examples\\stage4\\verified-release\\evaluation-results.json",
+      "repeat_index": 1,
+      "run_id": "20261028T110034Z-b4766b4caf79",
+      "directory": "examples\\stage4\\verified-release\\B01\\20261028T110034Z-b4766b4caf79",
+      "artifact_sha256": {
+        "input.json": "d1e103bb5ef245c070f2eb26fef01e447036e5743a02af1f4e22f30497ce175e",
+        "output.json": "90aa37e08d873c44895eb5238378b0078f243bea3252d43d075c28c5619d81a6",
+        "trace.jsonl": "5c68aa8367fbcb1bfb1b3ab066b53fd62ed76e046859a0babce874010b393bb9"
+      }
+    },
+    {
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true,
+        "snapshot_matches": true,
+        "budgets_respected": true,
+        "read_observations_match_corpus": true,
+        "result_and_evidence_valid": true,
+        "required_passages_cited": true,
+        "expected_facts_present": true,
+        "trace_envelope": true,
+        "trace_sequence": true,
+        "report_matches_artifacts": true,
+        "input_matches_fixture": true,
+        "fault_config_matches": true,
+        "actual_tool_counts": true,
+        "model_count_has_trace_markers": true,
+        "tool_call_links": true,
+        "tool_observations_replay": true
+      },
+      "passed": true,
+      "status": "answered",
+      "reason_code": null,
+      "answer": "根据《差旅报销期限统一执行通知》（2026年4月1日发布），您于2026年5月10日结束的出差，应在行程结束后15天内提交差旅报销。因此，报销期限为15天 [C1]。该规定已替代此前相关条款 [C2]。",
+      "follow_up_question": null,
+      "gaps": [],
+      "citations": [
+        {
+          "citation_id": "C1",
+          "document_id": "D06",
+          "passage_id": "P01",
+          "version_date": "2026-04-01",
+          "quote": "自2026年4月1日起，行程结束日期在2026年4月1日及以后的差旅报销，统一在行程结束后15天内提交，适用于本企业所有部门和地区的员工。"
+        },
+        {
+          "citation_id": "C2",
+          "document_id": "D06",
+          "passage_id": "P02",
+          "version_date": "2026-04-01",
+          "quote": "对于行程结束日期在2026年4月1日及以后的差旅报销，本通知替代D01《差旅报销提交规定》和D02《差旅费用报销办理说明》中的报销提交期限条款。"
+        }
+      ],
+      "model_calls": 8,
+      "tool_calls": 3,
+      "duration_seconds": 10.627,
+      "observed_action_after_tool": true,
+      "transitions": [
+        {
+          "step": 2,
+          "tool": "search_documents",
+          "arguments": {
+            "query": "差旅报销期限 规定 2026年5月10日 结束",
+            "top_k": 5
+          },
+          "purpose": "查找与2026年5月10日出差结束相关的差旅报销期限规定",
+          "observation_summary": "hits=5",
+          "injected": false,
+          "next_step": 3,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D06",
+            "passage_id": "P01"
+          },
+          "next_basis": "确认2026年4月1日及以后行程结束的差旅报销期限为15天"
+        },
+        {
+          "step": 3,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D06",
+            "passage_id": "P01"
+          },
+          "purpose": "确认2026年4月1日及以后行程结束的差旅报销期限为15天",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 4,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D06",
+            "passage_id": "P02"
+          },
+          "next_basis": "确认替代关系及适用范围，确保引用完整"
+        },
+        {
+          "step": 4,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D06",
+            "passage_id": "P02"
+          },
+          "purpose": "确认替代关系及适用范围，确保引用完整",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 5,
+          "next_action": "finish:answered",
+          "next_arguments": null,
+          "next_basis": "根据《差旅报销期限统一执行通知》（2026年4月1日发布），您于2026年5月10日结束的出差，应在行程结束后15天内提交差旅报销。因此，报销期限为15天。"
+        }
+      ],
+      "mode": "real",
+      "model": "qwen-flash",
+      "engine_revision": "45e43d27c1e5e696c902b378c88f631e6685b321e034ac6af0a05de867e36981",
+      "model_configuration": {
+        "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+        "stream": true,
+        "enable_thinking": false,
+        "json_mode": true,
+        "prompt_revision": "8fef82a485cf47e9e07ed12592ff2c6d3e3347eadfe5443c925c93e55a8aa448",
+        "action_protocol": "native",
+        "action_stream": false,
+        "review_prompt_revision": "a171d3050a3282ad4c45ce752ed229f98e1c82408c9f3fba2011d7a501378b6b",
+        "context_prompt_revision": "8b914d763b3316659edae9c6937ab34f036aa3b9009f069ffe29cb402d4f1e39",
+        "applicability_prompt_revision": "74c926f3c766628d138c131fe1896150a795d40a59d2636cc4f6dcf4a5a5bbed",
+        "evidence_review": "answered_only",
+        "conversation_protocol": "native-tool-messages-v1"
+      },
+      "corpus_revision": "1b1d6f8bed969adc5e775380431c60957a95c2428bf906563f32cf6c34b8bc07",
+      "budgets": {
+        "max_model_calls": 12,
+        "max_tool_calls": 6,
+        "model_timeout": 60,
+        "tool_timeout": 10,
+        "max_validation_errors": 3
+      },
+      "request": {
+        "question": "我这次出差在2026年5月10日结束，差旅报销期限多久？"
+      },
+      "case_id": "B03",
+      "source_report": "examples\\stage4\\verified-release\\evaluation-results.json",
+      "repeat_index": 1,
+      "run_id": "20261028T110041Z-0738b31f21ce",
+      "directory": "examples\\stage4\\verified-release\\B03\\20261028T110041Z-0738b31f21ce",
+      "artifact_sha256": {
+        "input.json": "18b9917cf2d1f11418107a5bad2e1ce59a98702b2c1adef63ab45bcb190fcd66",
+        "output.json": "41e91dfdddb5c80f53f411ef54f8f1d337aeff824c6d37eddb86529ae6985854",
+        "trace.jsonl": "b48da65dd12b667c0049f1bfe28587b08cfad39e8c7ad475f170c7a19066f997"
+      }
+    },
+    {
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true,
+        "snapshot_matches": true,
+        "budgets_respected": true,
+        "read_observations_match_corpus": true,
+        "result_and_evidence_valid": true,
+        "reason_code_matches": true,
+        "trace_envelope": true,
+        "trace_sequence": true,
+        "report_matches_artifacts": true,
+        "input_matches_fixture": true,
+        "fault_config_matches": true,
+        "actual_tool_counts": true,
+        "model_count_has_trace_markers": true,
+        "tool_call_links": true,
+        "tool_observations_replay": true
+      },
+      "passed": true,
+      "status": "needs_clarification",
+      "reason_code": "missing_user_context",
+      "answer": "差旅报销的期限根据员工所属部门不同而有所区别：总部员工应在行程结束后30天内提交报销申请 [C1]；海外分支机构员工应在行程结束后15天内提交报销申请 [C2]。请确认您所属的员工类型（总部员工或海外分支机构员工），以便获取准确的报销期限要求。",
+      "follow_up_question": "请问您是总部员工还是海外分支机构员工？",
+      "gaps": [
+        "用户所属员工类型未明确"
+      ],
+      "citations": [
+        {
+          "citation_id": "C1",
+          "document_id": "D01",
+          "passage_id": "P01",
+          "version_date": "2026-01-10",
+          "quote": "本条适用于总部员工：差旅报销应在行程结束后30天内提交。"
+        },
+        {
+          "citation_id": "C2",
+          "document_id": "D02",
+          "passage_id": "P01",
+          "version_date": "2026-03-15",
+          "quote": "本条适用于海外分支机构员工：差旅报销应在行程结束后15天内提交。"
+        }
+      ],
+      "model_calls": 9,
+      "tool_calls": 3,
+      "duration_seconds": 13.702,
+      "observed_action_after_tool": true,
+      "transitions": [
+        {
+          "step": 2,
+          "tool": "search_documents",
+          "arguments": {
+            "query": "差旅报销期限规定",
+            "top_k": 5
+          },
+          "purpose": "查找差旅报销的期限相关制度依据",
+          "observation_summary": "hits=5",
+          "injected": false,
+          "next_step": 3,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "next_basis": "读取总部员工差旅报销期限的具体规定"
+        },
+        {
+          "step": 3,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "purpose": "读取总部员工差旅报销期限的具体规定",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 4,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D02",
+            "passage_id": "P01"
+          },
+          "next_basis": "读取海外分支机构员工差旅报销期限的具体规定"
+        },
+        {
+          "step": 4,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D02",
+            "passage_id": "P01"
+          },
+          "purpose": "读取海外分支机构员工差旅报销期限的具体规定",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 6,
+          "next_action": "finish:answered",
+          "next_arguments": null,
+          "next_basis": "差旅报销的期限根据员工所属部门不同而有所区别：总部员工应在行程结束后30天内提交报销申请；海外分支机构员工应在行程结束后15天内提交报销申请。"
+        }
+      ],
+      "mode": "real",
+      "model": "qwen-flash",
+      "engine_revision": "45e43d27c1e5e696c902b378c88f631e6685b321e034ac6af0a05de867e36981",
+      "model_configuration": {
+        "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+        "stream": true,
+        "enable_thinking": false,
+        "json_mode": true,
+        "prompt_revision": "8fef82a485cf47e9e07ed12592ff2c6d3e3347eadfe5443c925c93e55a8aa448",
+        "action_protocol": "native",
+        "action_stream": false,
+        "review_prompt_revision": "a171d3050a3282ad4c45ce752ed229f98e1c82408c9f3fba2011d7a501378b6b",
+        "context_prompt_revision": "8b914d763b3316659edae9c6937ab34f036aa3b9009f069ffe29cb402d4f1e39",
+        "applicability_prompt_revision": "74c926f3c766628d138c131fe1896150a795d40a59d2636cc4f6dcf4a5a5bbed",
+        "evidence_review": "answered_only",
+        "conversation_protocol": "native-tool-messages-v1"
+      },
+      "corpus_revision": "41ee9d5cc610f890f2f559a601035c898c58cc0d20ad8789f61cfec3c0dd0fbd",
+      "budgets": {
+        "max_model_calls": 12,
+        "max_tool_calls": 6,
+        "model_timeout": 60,
+        "tool_timeout": 10,
+        "max_validation_errors": 3
+      },
+      "request": {
+        "question": "差旅报销期限多久？"
+      },
+      "case_id": "B04",
+      "source_report": "examples\\stage4\\verified-release\\evaluation-results.json",
+      "repeat_index": 1,
+      "run_id": "20261028T110051Z-0c10ffd187e2",
+      "directory": "examples\\stage4\\verified-release\\B04\\20261028T110051Z-0c10ffd187e2",
+      "artifact_sha256": {
+        "input.json": "993f4b79bc666dfea794e8e9e0015d73c23db9e98c937935c012f024961e1470",
+        "output.json": "2b6f722bbc370f07544077d698200e90cbfa12f039654be577af931360bf1b72",
+        "trace.jsonl": "af6b231a281ebcbf56b9654432c37453bf451b4a19d9d38d6a45b89b67c6295c"
+      }
+    },
+    {
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true,
+        "snapshot_matches": true,
+        "budgets_respected": true,
+        "read_observations_match_corpus": true,
+        "result_and_evidence_valid": true,
+        "failure_observed": true,
+        "model_acted_after_failure": true,
+        "trace_envelope": true,
+        "trace_sequence": true,
+        "report_matches_artifacts": true,
+        "input_matches_fixture": true,
+        "fault_config_matches": true,
+        "actual_tool_counts": true,
+        "model_count_has_trace_markers": true,
+        "tool_call_links": true,
+        "tool_observations_replay": true
+      },
+      "passed": true,
+      "status": "incomplete",
+      "reason_code": "budget_exhausted",
+      "answer": "任务未完成：模型调用额度已用尽，尚未得到通过校验的最终结果。",
+      "follow_up_question": null,
+      "gaps": [
+        "模型调用额度已用尽，尚未得到通过校验的最终结果。"
+      ],
+      "citations": [],
+      "model_calls": 12,
+      "tool_calls": 5,
+      "duration_seconds": 11.899,
+      "observed_action_after_tool": true,
+      "transitions": [
+        {
+          "step": 2,
+          "tool": "search_documents",
+          "arguments": {
+            "query": "差旅报销提交期限 行程结束后",
+            "top_k": 5
+          },
+          "purpose": "查找差旅报销应在行程结束后多久内提交的具体时间要求",
+          "observation_summary": "hits=5",
+          "injected": false,
+          "next_step": 3,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "next_basis": "读取差旅报销提交期限的具体规定"
+        },
+        {
+          "step": 3,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "purpose": "读取差旅报销提交期限的具体规定",
+          "observation_summary": "unavailable",
+          "injected": true,
+          "next_step": 4,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D03",
+            "passage_id": "P01"
+          },
+          "next_basis": "读取差旅报销材料清单中的相关要求"
+        },
+        {
+          "step": 4,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D03",
+            "passage_id": "P01"
+          },
+          "purpose": "读取差旅报销材料清单中的相关要求",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 5,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D04",
+            "passage_id": "P01"
+          },
+          "next_basis": "读取出差申请流程中关于行程安排的规定"
+        },
+        {
+          "step": 5,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D04",
+            "passage_id": "P01"
+          },
+          "purpose": "读取出差申请流程中关于行程安排的规定",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 7,
+          "next_action": "finish:answered",
+          "next_arguments": null,
+          "next_basis": "差旅报销应在行程结束后30天内提交。"
+        },
+        {
+          "step": 8,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "purpose": "读取差旅报销提交期限的具体规定，该文档为检索结果中排名第一的候选",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 9,
+          "next_action": "finish:answered",
+          "next_arguments": null,
+          "next_basis": "差旅报销应在行程结束后30天内提交。"
+        }
+      ],
+      "mode": "real",
+      "model": "qwen-flash",
+      "engine_revision": "45e43d27c1e5e696c902b378c88f631e6685b321e034ac6af0a05de867e36981",
+      "model_configuration": {
+        "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+        "stream": true,
+        "enable_thinking": false,
+        "json_mode": true,
+        "prompt_revision": "8fef82a485cf47e9e07ed12592ff2c6d3e3347eadfe5443c925c93e55a8aa448",
+        "action_protocol": "native",
+        "action_stream": false,
+        "review_prompt_revision": "a171d3050a3282ad4c45ce752ed229f98e1c82408c9f3fba2011d7a501378b6b",
+        "context_prompt_revision": "8b914d763b3316659edae9c6937ab34f036aa3b9009f069ffe29cb402d4f1e39",
+        "applicability_prompt_revision": "74c926f3c766628d138c131fe1896150a795d40a59d2636cc4f6dcf4a5a5bbed",
+        "evidence_review": "answered_only",
+        "conversation_protocol": "native-tool-messages-v1"
+      },
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "budgets": {
+        "max_model_calls": 12,
+        "max_tool_calls": 6,
+        "model_timeout": 60,
+        "tool_timeout": 10,
+        "max_validation_errors": 3
+      },
+      "request": {
+        "question": "差旅报销应在行程结束后多久内提交？"
+      },
+      "case_id": "B08",
+      "source_report": "examples\\stage4\\verified-release\\evaluation-results.json",
+      "repeat_index": 1,
+      "run_id": "20261028T110105Z-2c3f71733cbd",
+      "directory": "examples\\stage4\\verified-release\\B08\\20261028T110105Z-2c3f71733cbd",
+      "artifact_sha256": {
+        "input.json": "d1e103bb5ef245c070f2eb26fef01e447036e5743a02af1f4e22f30497ce175e",
+        "output.json": "ff770385b50999a73e79295b83fba04efad57bae9f9a464c60a3e38dc5516923",
+        "trace.jsonl": "3b99ef3736e0755339c06212027ed6b5dd3956a0af71fc00983f76ef7a8f4dc9"
+      }
+    },
+    {
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true,
+        "snapshot_matches": true,
+        "budgets_respected": true,
+        "read_observations_match_corpus": true,
+        "result_and_evidence_valid": true,
+        "reason_code_matches": true,
+        "no_unnecessary_tools": true,
+        "trace_envelope": true,
+        "trace_sequence": true,
+        "report_matches_artifacts": true,
+        "input_matches_fixture": true,
+        "fault_config_matches": true,
+        "actual_tool_counts": true,
+        "model_count_has_trace_markers": true,
+        "tool_call_links": true,
+        "tool_observations_replay": true
+      },
+      "passed": true,
+      "status": "needs_clarification",
+      "reason_code": "ambiguous_reference",
+      "answer": "请明确查询事项。",
+      "follow_up_question": "您是想了解哪项业务或申请所需的材料？",
+      "gaps": [
+        "具体缺少的主题或指代信息"
+      ],
+      "citations": [],
+      "model_calls": 1,
+      "tool_calls": 0,
+      "duration_seconds": 0.799,
+      "observed_action_after_tool": false,
+      "transitions": [],
+      "mode": "real",
+      "model": "qwen-flash",
+      "engine_revision": "45e43d27c1e5e696c902b378c88f631e6685b321e034ac6af0a05de867e36981",
+      "model_configuration": {
+        "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+        "stream": true,
+        "enable_thinking": false,
+        "json_mode": true,
+        "prompt_revision": "8fef82a485cf47e9e07ed12592ff2c6d3e3347eadfe5443c925c93e55a8aa448",
+        "action_protocol": "native",
+        "action_stream": false,
+        "review_prompt_revision": "a171d3050a3282ad4c45ce752ed229f98e1c82408c9f3fba2011d7a501378b6b",
+        "context_prompt_revision": "8b914d763b3316659edae9c6937ab34f036aa3b9009f069ffe29cb402d4f1e39",
+        "applicability_prompt_revision": "74c926f3c766628d138c131fe1896150a795d40a59d2636cc4f6dcf4a5a5bbed",
+        "evidence_review": "answered_only",
+        "conversation_protocol": "native-tool-messages-v1"
+      },
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "budgets": {
+        "max_model_calls": 12,
+        "max_tool_calls": 6,
+        "model_timeout": 60,
+        "tool_timeout": 10,
+        "max_validation_errors": 3
+      },
+      "request": {
+        "question": "那要交什么材料？"
+      },
+      "case_id": "B11",
+      "source_report": "examples\\stage4\\verified-release\\evaluation-results.json",
+      "repeat_index": 1,
+      "run_id": "20261028T110117Z-ead754d4eba3",
+      "directory": "examples\\stage4\\verified-release\\B11\\20261028T110117Z-ead754d4eba3",
+      "artifact_sha256": {
+        "input.json": "84c6a5a469d2a813141354ecff12174a35625eab2105980c49a33b45a3b68f66",
+        "output.json": "9d111b0d2a2397592f9ecb489944b4c81ab001ac73da950b2ea3529e3f551ca8",
+        "trace.jsonl": "379bcb4716f05f3b035a7abf95bafbd63938f401382a7db166e2466b9e702512"
+      }
+    },
+    {
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true,
+        "snapshot_matches": true,
+        "budgets_respected": true,
+        "read_observations_match_corpus": true,
+        "result_and_evidence_valid": true,
+        "trace_envelope": true,
+        "trace_sequence": true,
+        "report_matches_artifacts": true,
+        "input_matches_fixture": true,
+        "fault_config_matches": true,
+        "actual_tool_counts": true,
+        "model_count_has_trace_markers": true,
+        "tool_call_links": true,
+        "tool_observations_replay": true
+      },
+      "passed": true,
+      "status": "answered",
+      "reason_code": null,
+      "answer": "差旅报销应在行程结束后30天内提交[C1]。",
+      "follow_up_question": null,
+      "gaps": [],
+      "citations": [
+        {
+          "citation_id": "C1",
+          "document_id": "D01",
+          "passage_id": "P01",
+          "version_date": "2026-01-10",
+          "quote": "差旅报销应在行程结束后30天内提交。"
+        }
+      ],
+      "model_calls": 9,
+      "tool_calls": 3,
+      "duration_seconds": 8.822,
+      "observed_action_after_tool": true,
+      "transitions": [
+        {
+          "step": 2,
+          "tool": "search_documents",
+          "arguments": {
+            "query": "差旅报销提交时限 行程结束后",
+            "top_k": 5
+          },
+          "purpose": "查找差旅报销应在行程结束后多久内提交的相关规定",
+          "observation_summary": "hits=0",
+          "injected": true,
+          "next_step": 3,
+          "next_action": "search_documents",
+          "next_arguments": {
+            "query": "差旅报销时限 规定 提交期限",
+            "top_k": 5
+          },
+          "next_basis": "尝试使用不同关键词检索差旅报销提交期限的相关规定"
+        },
+        {
+          "step": 3,
+          "tool": "search_documents",
+          "arguments": {
+            "query": "差旅报销时限 规定 提交期限",
+            "top_k": 5
+          },
+          "purpose": "尝试使用不同关键词检索差旅报销提交期限的相关规定",
+          "observation_summary": "hits=5",
+          "injected": false,
+          "next_step": 4,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "next_basis": "读取差旅报销提交时限的具体规定"
+        },
+        {
+          "step": 4,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "purpose": "读取差旅报销提交时限的具体规定",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 5,
+          "next_action": "finish:answered",
+          "next_arguments": null,
+          "next_basis": "差旅报销应在行程结束后30天内提交。"
+        }
+      ],
+      "mode": "real",
+      "model": "qwen-flash",
+      "engine_revision": "45e43d27c1e5e696c902b378c88f631e6685b321e034ac6af0a05de867e36981",
+      "model_configuration": {
+        "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+        "stream": true,
+        "enable_thinking": false,
+        "json_mode": true,
+        "prompt_revision": "8fef82a485cf47e9e07ed12592ff2c6d3e3347eadfe5443c925c93e55a8aa448",
+        "action_protocol": "native",
+        "action_stream": false,
+        "review_prompt_revision": "a171d3050a3282ad4c45ce752ed229f98e1c82408c9f3fba2011d7a501378b6b",
+        "context_prompt_revision": "8b914d763b3316659edae9c6937ab34f036aa3b9009f069ffe29cb402d4f1e39",
+        "applicability_prompt_revision": "74c926f3c766628d138c131fe1896150a795d40a59d2636cc4f6dcf4a5a5bbed",
+        "evidence_review": "answered_only",
+        "conversation_protocol": "native-tool-messages-v1"
+      },
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "budgets": {
+        "max_model_calls": 12,
+        "max_tool_calls": 6,
+        "model_timeout": 60,
+        "tool_timeout": 10,
+        "max_validation_errors": 3
+      },
+      "request": {
+        "question": "差旅报销应在行程结束后多久内提交？"
+      },
+      "case_id": "B12",
+      "source_report": "examples\\stage4\\verified-release\\evaluation-results.json",
+      "repeat_index": 1,
+      "run_id": "20261028T110118Z-38dd69de8b3b",
+      "directory": "examples\\stage4\\verified-release\\B12\\20261028T110118Z-38dd69de8b3b",
+      "artifact_sha256": {
+        "input.json": "d1e103bb5ef245c070f2eb26fef01e447036e5743a02af1f4e22f30497ce175e",
+        "output.json": "633030fab8c55852392e53df5b2bc2243dc29941a0d47c55c1e13a12142296ef",
+        "trace.jsonl": "25f977a08755ecb368ce43beba9611b804d3f2f3d1246839dcc1c299ee9ef885"
+      }
+    },
+    {
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true,
+        "snapshot_matches": true,
+        "budgets_respected": true,
+        "read_observations_match_corpus": true,
+        "result_and_evidence_valid": true,
+        "required_passages_cited": true,
+        "expected_facts_present": true,
+        "trace_envelope": true,
+        "trace_sequence": true,
+        "report_matches_artifacts": true,
+        "input_matches_fixture": true,
+        "fault_config_matches": true,
+        "actual_tool_counts": true,
+        "model_count_has_trace_markers": true,
+        "tool_call_links": true,
+        "tool_observations_replay": true
+      },
+      "passed": true,
+      "status": "answered",
+      "reason_code": null,
+      "answer": "星帧剪辑2.0桌面版支持将字幕导出为SRT或TXT格式。SRT文件包含字幕时间信息，TXT文件仅包含字幕文本 [C1][C2]。",
+      "follow_up_question": null,
+      "gaps": [],
+      "citations": [
+        {
+          "citation_id": "C1",
+          "document_id": "D05",
+          "passage_id": "P01",
+          "version_date": "2026-02-20",
+          "quote": "星帧剪辑2.0桌面版支持将项目字幕导出为SRT或TXT文件；本条仅适用于2.0桌面版，不说明移动端或其他版本的导出能力。"
+        },
+        {
+          "citation_id": "C2",
+          "document_id": "D05",
+          "passage_id": "P02",
+          "version_date": "2026-02-20",
+          "quote": "在星帧剪辑2.0桌面版中，可在字幕面板选择“导出字幕”，再选择SRT或TXT格式并保存。SRT文件包含字幕时间信息，TXT文件仅包含字幕文本。"
+        }
+      ],
+      "model_calls": 9,
+      "tool_calls": 3,
+      "duration_seconds": 11.396,
+      "observed_action_after_tool": true,
+      "transitions": [
+        {
+          "step": 2,
+          "tool": "search_documents",
+          "arguments": {
+            "query": "星帧剪辑2.0 桌面版 字幕导出格式",
+            "top_k": 5
+          },
+          "purpose": "查找星帧剪辑2.0桌面版支持的字幕导出格式",
+          "observation_summary": "hits=2",
+          "injected": false,
+          "next_step": 3,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D05",
+            "passage_id": "P01"
+          },
+          "next_basis": "确认星帧剪辑2.0桌面版支持的字幕导出格式"
+        },
+        {
+          "step": 3,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D05",
+            "passage_id": "P01"
+          },
+          "purpose": "确认星帧剪辑2.0桌面版支持的字幕导出格式",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 4,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D05",
+            "passage_id": "P02"
+          },
+          "next_basis": "确认字幕导出格式的具体说明及区别"
+        },
+        {
+          "step": 4,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D05",
+            "passage_id": "P02"
+          },
+          "purpose": "确认字幕导出格式的具体说明及区别",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 6,
+          "next_action": "finish:answered",
+          "next_arguments": null,
+          "next_basis": "星帧剪辑2.0桌面版支持将字幕导出为SRT或TXT格式。SRT文件包含字幕时间信息，TXT文件仅包含字幕文本。"
+        }
+      ],
+      "mode": "real",
+      "model": "qwen-flash",
+      "engine_revision": "45e43d27c1e5e696c902b378c88f631e6685b321e034ac6af0a05de867e36981",
+      "model_configuration": {
+        "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+        "stream": true,
+        "enable_thinking": false,
+        "json_mode": true,
+        "prompt_revision": "8fef82a485cf47e9e07ed12592ff2c6d3e3347eadfe5443c925c93e55a8aa448",
+        "action_protocol": "native",
+        "action_stream": false,
+        "review_prompt_revision": "a171d3050a3282ad4c45ce752ed229f98e1c82408c9f3fba2011d7a501378b6b",
+        "context_prompt_revision": "8b914d763b3316659edae9c6937ab34f036aa3b9009f069ffe29cb402d4f1e39",
+        "applicability_prompt_revision": "74c926f3c766628d138c131fe1896150a795d40a59d2636cc4f6dcf4a5a5bbed",
+        "evidence_review": "answered_only",
+        "conversation_protocol": "native-tool-messages-v1"
+      },
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "budgets": {
+        "max_model_calls": 12,
+        "max_tool_calls": 6,
+        "model_timeout": 60,
+        "tool_timeout": 10,
+        "max_validation_errors": 3
+      },
+      "request": {
+        "question": "星帧剪辑2.0桌面版可以把字幕导出为什么格式？"
+      },
+      "case_id": "B15",
+      "source_report": "examples\\stage4\\verified-release\\evaluation-results.json",
+      "repeat_index": 1,
+      "run_id": "20261028T110127Z-813a8eabce61",
+      "directory": "examples\\stage4\\verified-release\\B15\\20261028T110127Z-813a8eabce61",
+      "artifact_sha256": {
+        "input.json": "20f3d5d43fbe32712dad1a4ae7ca3d4b0fd8498cf06da358e3c7180b8e2aced9",
+        "output.json": "7c31e82cdf3a95788f7a90731da0de56beac30fe27c31cc84469279de7787d4a",
+        "trace.jsonl": "90f33bad1d4b000688e0b9943797dcb7bc3a1c8002afec539be017a57edc67b6"
+      }
+    },
+    {
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true,
+        "snapshot_matches": true,
+        "budgets_respected": true,
+        "read_observations_match_corpus": true,
+        "result_and_evidence_valid": true,
+        "required_passages_cited": true,
+        "expected_facts_present": true,
+        "trace_envelope": true,
+        "trace_sequence": true,
+        "report_matches_artifacts": true,
+        "input_matches_fixture": true,
+        "fault_config_matches": true,
+        "actual_tool_counts": true,
+        "model_count_has_trace_markers": true,
+        "tool_call_links": true,
+        "tool_observations_replay": true
+      },
+      "passed": true,
+      "status": "answered",
+      "reason_code": null,
+      "answer": "差旅报销应在行程结束后30天内提交[C1]。",
+      "follow_up_question": null,
+      "gaps": [],
+      "citations": [
+        {
+          "citation_id": "C1",
+          "document_id": "D01",
+          "passage_id": "P01",
+          "version_date": "2026-01-10",
+          "quote": "差旅报销应在行程结束后30天内提交。"
+        }
+      ],
+      "model_calls": 8,
+      "tool_calls": 2,
+      "duration_seconds": 6.943,
+      "observed_action_after_tool": true,
+      "transitions": [
+        {
+          "step": 2,
+          "tool": "search_documents",
+          "arguments": {
+            "query": "差旅报销提交时限 行程结束后",
+            "top_k": 5
+          },
+          "purpose": "查找差旅报销在行程结束后需在多长时间内提交的制度规定",
+          "observation_summary": "hits=5",
+          "injected": false,
+          "next_step": 3,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "next_basis": "读取差旅报销提交时限的具体规定"
+        },
+        {
+          "step": 3,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "purpose": "读取差旅报销提交时限的具体规定",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 5,
+          "next_action": "finish:answered",
+          "next_arguments": null,
+          "next_basis": "差旅报销应在行程结束后30天内提交。"
+        }
+      ],
+      "mode": "real",
+      "model": "qwen-flash",
+      "engine_revision": "45e43d27c1e5e696c902b378c88f631e6685b321e034ac6af0a05de867e36981",
+      "model_configuration": {
+        "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+        "stream": true,
+        "enable_thinking": false,
+        "json_mode": true,
+        "prompt_revision": "8fef82a485cf47e9e07ed12592ff2c6d3e3347eadfe5443c925c93e55a8aa448",
+        "action_protocol": "native",
+        "action_stream": false,
+        "review_prompt_revision": "a171d3050a3282ad4c45ce752ed229f98e1c82408c9f3fba2011d7a501378b6b",
+        "context_prompt_revision": "8b914d763b3316659edae9c6937ab34f036aa3b9009f069ffe29cb402d4f1e39",
+        "applicability_prompt_revision": "74c926f3c766628d138c131fe1896150a795d40a59d2636cc4f6dcf4a5a5bbed",
+        "evidence_review": "answered_only",
+        "conversation_protocol": "native-tool-messages-v1"
+      },
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "budgets": {
+        "max_model_calls": 12,
+        "max_tool_calls": 6,
+        "model_timeout": 60,
+        "tool_timeout": 10,
+        "max_validation_errors": 3
+      },
+      "request": {
+        "question": "差旅报销应在行程结束后多久内提交？"
+      },
+      "case_id": "A01",
+      "source_report": "examples\\stage4\\verified-release\\evaluation-results.json",
+      "repeat_index": 2,
+      "run_id": "20261028T110138Z-e6a628c62750",
+      "directory": "examples\\stage4\\verified-release\\A01\\20261028T110138Z-e6a628c62750",
+      "artifact_sha256": {
+        "input.json": "d1e103bb5ef245c070f2eb26fef01e447036e5743a02af1f4e22f30497ce175e",
+        "output.json": "355ebe3812ec4cdc470fa7d514582119b2c271c1f5cdb4421147502c489f5228",
+        "trace.jsonl": "fa2f639b4c59130a60e97b434add902837e914a90cb7c493f8ecf4fc8669835b"
+      }
+    },
+    {
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true,
+        "snapshot_matches": true,
+        "budgets_respected": true,
+        "read_observations_match_corpus": true,
+        "result_and_evidence_valid": true,
+        "reason_code_matches": true,
+        "required_passages_cited": true,
+        "expected_facts_present": true,
+        "trace_envelope": true,
+        "trace_sequence": true,
+        "report_matches_artifacts": true,
+        "input_matches_fixture": true,
+        "fault_config_matches": true,
+        "actual_tool_counts": true,
+        "model_count_has_trace_markers": true,
+        "tool_call_links": true,
+        "tool_observations_replay": true
+      },
+      "passed": true,
+      "status": "needs_clarification",
+      "reason_code": "document_conflict",
+      "answer": "关于差旅报销期限，存在两项冲突规定：一项要求在行程结束后30天内提交（[C1]），另一项要求在15天内提交（[C2]）。目前未找到明确的制度优先级或适用范围说明以解决冲突。由于缺乏依据确定应采纳哪一规定，无法做出最终判断。",
+      "follow_up_question": "请确认应遵循哪一份差旅报销期限规定，或提供相关制度的优先级、适用范围等补充说明？",
+      "gaps": [
+        "未找到制度优先级或适用范围说明以解决冲突"
+      ],
+      "citations": [
+        {
+          "citation_id": "C1",
+          "document_id": "D01",
+          "passage_id": "P01",
+          "version_date": "2026-01-10",
+          "quote": "差旅报销应在行程结束后30天内提交。"
+        },
+        {
+          "citation_id": "C2",
+          "document_id": "D02",
+          "passage_id": "P01",
+          "version_date": "2026-03-15",
+          "quote": "差旅报销应在行程结束后15天内提交。"
+        }
+      ],
+      "model_calls": 8,
+      "tool_calls": 4,
+      "duration_seconds": 12.133,
+      "observed_action_after_tool": true,
+      "transitions": [
+        {
+          "step": 2,
+          "tool": "search_documents",
+          "arguments": {
+            "query": "差旅报销期限规定",
+            "top_k": 5
+          },
+          "purpose": "查找差旅报销的期限相关制度依据",
+          "observation_summary": "hits=5",
+          "injected": false,
+          "next_step": 3,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "next_basis": "获取差旅报销期限的具体规定"
+        },
+        {
+          "step": 3,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "purpose": "获取差旅报销期限的具体规定",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 4,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D02",
+            "passage_id": "P01"
+          },
+          "next_basis": "获取另一份差旅报销期限的规定，以确认是否存在冲突"
+        },
+        {
+          "step": 4,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D02",
+            "passage_id": "P01"
+          },
+          "purpose": "获取另一份差旅报销期限的规定，以确认是否存在冲突",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 5,
+          "next_action": "finish:needs_clarification",
+          "next_arguments": null,
+          "next_basis": "关于差旅报销期限，存在两项冲突规定：一项要求在行程结束后30天内提交（[D01]），另一项要求在15天内提交（[D02]）。因未提供制度优先级或适用范围，无法确定应采纳哪一规定。"
+        },
+        {
+          "step": 7,
+          "tool": "search_documents",
+          "arguments": {
+            "query": "差旅报销规定 优先级 适用范围",
+            "top_k": 5
+          },
+          "purpose": "查找关于差旅报销制度的优先级或适用范围说明，以解决D01与D02之间的冲突",
+          "observation_summary": "hits=5",
+          "injected": false,
+          "next_step": 8,
+          "next_action": "finish:needs_clarification",
+          "next_arguments": null,
+          "next_basis": "关于差旅报销期限，存在两项冲突规定：一项要求在行程结束后30天内提交（[C1]），另一项要求在15天内提交（[C2]）。目前未找到明确的制度优先级或适用范围说明以解决冲突。由于缺乏依据确定应采纳哪一规定，无法做出最终判断。"
+        }
+      ],
+      "mode": "real",
+      "model": "qwen-flash",
+      "engine_revision": "45e43d27c1e5e696c902b378c88f631e6685b321e034ac6af0a05de867e36981",
+      "model_configuration": {
+        "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+        "stream": true,
+        "enable_thinking": false,
+        "json_mode": true,
+        "prompt_revision": "8fef82a485cf47e9e07ed12592ff2c6d3e3347eadfe5443c925c93e55a8aa448",
+        "action_protocol": "native",
+        "action_stream": false,
+        "review_prompt_revision": "a171d3050a3282ad4c45ce752ed229f98e1c82408c9f3fba2011d7a501378b6b",
+        "context_prompt_revision": "8b914d763b3316659edae9c6937ab34f036aa3b9009f069ffe29cb402d4f1e39",
+        "applicability_prompt_revision": "74c926f3c766628d138c131fe1896150a795d40a59d2636cc4f6dcf4a5a5bbed",
+        "evidence_review": "answered_only",
+        "conversation_protocol": "native-tool-messages-v1"
+      },
+      "corpus_revision": "801490841d72e569f8061c9ece1aee2cf4429afb22281ae4841b2e8b1da51b94",
+      "budgets": {
+        "max_model_calls": 12,
+        "max_tool_calls": 6,
+        "model_timeout": 60,
+        "tool_timeout": 10,
+        "max_validation_errors": 3
+      },
+      "request": {
+        "question": "差旅报销期限多久？"
+      },
+      "case_id": "A02",
+      "source_report": "examples\\stage4\\verified-release\\evaluation-results.json",
+      "repeat_index": 2,
+      "run_id": "20261028T110145Z-0f91971048db",
+      "directory": "examples\\stage4\\verified-release\\A02\\20261028T110145Z-0f91971048db",
+      "artifact_sha256": {
+        "input.json": "993f4b79bc666dfea794e8e9e0015d73c23db9e98c937935c012f024961e1470",
+        "output.json": "c5f8575c976d04e89da1811b8b1d94a2b03d0beb2ed61e345a55856d300ad4df",
+        "trace.jsonl": "ac7610e8497f135a986e849e2f54287f784ad6c1764a0d787895522a34e7e24e"
+      }
+    },
+    {
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true,
+        "snapshot_matches": true,
+        "budgets_respected": true,
+        "read_observations_match_corpus": true,
+        "result_and_evidence_valid": true,
+        "reason_code_matches": true,
+        "trace_envelope": true,
+        "trace_sequence": true,
+        "report_matches_artifacts": true,
+        "input_matches_fixture": true,
+        "fault_config_matches": true,
+        "actual_tool_counts": true,
+        "model_count_has_trace_markers": true,
+        "tool_call_links": true,
+        "tool_observations_replay": true
+      },
+      "passed": true,
+      "status": "unanswerable",
+      "reason_code": "insufficient_evidence",
+      "answer": "未找到关于公司提供的育儿假具体天数的相关规定。",
+      "follow_up_question": null,
+      "gaps": [
+        "缺乏关于企业育儿假天数的具体制度依据"
+      ],
+      "citations": [],
+      "model_calls": 4,
+      "tool_calls": 2,
+      "duration_seconds": 2.995,
+      "observed_action_after_tool": true,
+      "transitions": [
+        {
+          "step": 2,
+          "tool": "search_documents",
+          "arguments": {
+            "query": "公司育儿假天数规定",
+            "top_k": 5
+          },
+          "purpose": "查找公司提供的育儿假具体天数的相关规定",
+          "observation_summary": "hits=0",
+          "injected": false,
+          "next_step": 3,
+          "next_action": "search_documents",
+          "next_arguments": {
+            "query": "企业育儿假政策 天数",
+            "top_k": 5
+          },
+          "next_basis": "扩大搜索范围，查找企业层面的育儿假天数政策"
+        },
+        {
+          "step": 3,
+          "tool": "search_documents",
+          "arguments": {
+            "query": "企业育儿假政策 天数",
+            "top_k": 5
+          },
+          "purpose": "扩大搜索范围，查找企业层面的育儿假天数政策",
+          "observation_summary": "hits=0",
+          "injected": false,
+          "next_step": 4,
+          "next_action": "finish:unanswerable",
+          "next_arguments": null,
+          "next_basis": "未找到关于公司提供的育儿假具体天数的相关规定。"
+        }
+      ],
+      "mode": "real",
+      "model": "qwen-flash",
+      "engine_revision": "45e43d27c1e5e696c902b378c88f631e6685b321e034ac6af0a05de867e36981",
+      "model_configuration": {
+        "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+        "stream": true,
+        "enable_thinking": false,
+        "json_mode": true,
+        "prompt_revision": "8fef82a485cf47e9e07ed12592ff2c6d3e3347eadfe5443c925c93e55a8aa448",
+        "action_protocol": "native",
+        "action_stream": false,
+        "review_prompt_revision": "a171d3050a3282ad4c45ce752ed229f98e1c82408c9f3fba2011d7a501378b6b",
+        "context_prompt_revision": "8b914d763b3316659edae9c6937ab34f036aa3b9009f069ffe29cb402d4f1e39",
+        "applicability_prompt_revision": "74c926f3c766628d138c131fe1896150a795d40a59d2636cc4f6dcf4a5a5bbed",
+        "evidence_review": "answered_only",
+        "conversation_protocol": "native-tool-messages-v1"
+      },
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "budgets": {
+        "max_model_calls": 12,
+        "max_tool_calls": 6,
+        "model_timeout": 60,
+        "tool_timeout": 10,
+        "max_validation_errors": 3
+      },
+      "request": {
+        "question": "公司的育儿假有多少天？"
+      },
+      "case_id": "A03",
+      "source_report": "examples\\stage4\\verified-release\\evaluation-results.json",
+      "repeat_index": 2,
+      "run_id": "20261028T110157Z-5e9741fc5110",
+      "directory": "examples\\stage4\\verified-release\\A03\\20261028T110157Z-5e9741fc5110",
+      "artifact_sha256": {
+        "input.json": "de0264d0287136b3da7d7aa9e6d7f7029b37eb414528013d2163cca5ac8c6652",
+        "output.json": "9d7eb99cd103aa0265f7108576dcea9d558c9b694a2a61ecf934a1b137f2533c",
+        "trace.jsonl": "77578fb4d3d287f3c0ff12064bfcb52368dbe9f51f5be14934a1ea056712f690"
+      }
+    },
+    {
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true,
+        "snapshot_matches": true,
+        "budgets_respected": true,
+        "read_observations_match_corpus": true,
+        "result_and_evidence_valid": true,
+        "required_passages_cited": true,
+        "expected_facts_present": true,
+        "trace_envelope": true,
+        "trace_sequence": true,
+        "report_matches_artifacts": true,
+        "input_matches_fixture": true,
+        "fault_config_matches": true,
+        "actual_tool_counts": true,
+        "model_count_has_trace_markers": true,
+        "tool_call_links": true,
+        "tool_observations_replay": true
+      },
+      "passed": true,
+      "status": "answered",
+      "reason_code": null,
+      "answer": "出差结束后最晚应在30天内提交报销申请[C1]。",
+      "follow_up_question": null,
+      "gaps": [],
+      "citations": [
+        {
+          "citation_id": "C1",
+          "document_id": "D01",
+          "passage_id": "P01",
+          "version_date": "2026-01-10",
+          "quote": "差旅报销应在行程结束后30天内提交。"
+        }
+      ],
+      "model_calls": 8,
+      "tool_calls": 2,
+      "duration_seconds": 6.85,
+      "observed_action_after_tool": true,
+      "transitions": [
+        {
+          "step": 2,
+          "tool": "search_documents",
+          "arguments": {
+            "query": "出差报销申请提交期限 最晚时间",
+            "top_k": 5
+          },
+          "purpose": "查找关于出差结束后提交报销申请最晚时限的规定",
+          "observation_summary": "hits=5",
+          "injected": false,
+          "next_step": 3,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "next_basis": "读取差旅报销提交规定的具体时限内容"
+        },
+        {
+          "step": 3,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "purpose": "读取差旅报销提交规定的具体时限内容",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 5,
+          "next_action": "finish:answered",
+          "next_arguments": null,
+          "next_basis": "出差结束后最晚应在30天内提交报销申请。"
+        }
+      ],
+      "mode": "real",
+      "model": "qwen-flash",
+      "engine_revision": "45e43d27c1e5e696c902b378c88f631e6685b321e034ac6af0a05de867e36981",
+      "model_configuration": {
+        "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+        "stream": true,
+        "enable_thinking": false,
+        "json_mode": true,
+        "prompt_revision": "8fef82a485cf47e9e07ed12592ff2c6d3e3347eadfe5443c925c93e55a8aa448",
+        "action_protocol": "native",
+        "action_stream": false,
+        "review_prompt_revision": "a171d3050a3282ad4c45ce752ed229f98e1c82408c9f3fba2011d7a501378b6b",
+        "context_prompt_revision": "8b914d763b3316659edae9c6937ab34f036aa3b9009f069ffe29cb402d4f1e39",
+        "applicability_prompt_revision": "74c926f3c766628d138c131fe1896150a795d40a59d2636cc4f6dcf4a5a5bbed",
+        "evidence_review": "answered_only",
+        "conversation_protocol": "native-tool-messages-v1"
+      },
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "budgets": {
+        "max_model_calls": 12,
+        "max_tool_calls": 6,
+        "model_timeout": 60,
+        "tool_timeout": 10,
+        "max_validation_errors": 3
+      },
+      "request": {
+        "question": "出差结束后最晚多久交报销？"
+      },
+      "case_id": "A04",
+      "source_report": "examples\\stage4\\verified-release\\evaluation-results.json",
+      "repeat_index": 2,
+      "run_id": "20261028T110200Z-35136318fc22",
+      "directory": "examples\\stage4\\verified-release\\A04\\20261028T110200Z-35136318fc22",
+      "artifact_sha256": {
+        "input.json": "a2400bf086b3cf44fe8c9d069e5acb3f00cf89ba7bb624dbe7d30ce7df866ea0",
+        "output.json": "3d3c51a017118e1c0590ec86e62e7953740fde8514c0f0d9d5b6e63f9656da2f",
+        "trace.jsonl": "4ce08bd2bdce5e7606b95e46737dffe40d4acbc6dd6e7818ebc23c7df03a063a"
+      }
+    },
+    {
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true,
+        "snapshot_matches": true,
+        "budgets_respected": true,
+        "read_observations_match_corpus": true,
+        "result_and_evidence_valid": true,
+        "required_passages_cited": true,
+        "expected_facts_present": true,
+        "trace_envelope": true,
+        "trace_sequence": true,
+        "report_matches_artifacts": true,
+        "input_matches_fixture": true,
+        "fault_config_matches": true,
+        "actual_tool_counts": true,
+        "model_count_has_trace_markers": true,
+        "tool_call_links": true,
+        "tool_observations_replay": true
+      },
+      "passed": true,
+      "status": "answered",
+      "reason_code": null,
+      "answer": "申请差旅报销时，应提交已审批的出差申请单、费用明细表及与费用对应的发票。涉及交通或住宿费用的，还应提交对应的行程凭证或住宿账单。[C1]",
+      "follow_up_question": null,
+      "gaps": [],
+      "citations": [
+        {
+          "citation_id": "C1",
+          "document_id": "D03",
+          "passage_id": "P01",
+          "version_date": "2026-01-12",
+          "quote": "申请差旅报销时，应提交已审批的出差申请单、费用明细表及与费用对应的发票。涉及交通或住宿费用的，还应提交对应的行程凭证或住宿账单。"
+        }
+      ],
+      "model_calls": 8,
+      "tool_calls": 2,
+      "duration_seconds": 8.759,
+      "observed_action_after_tool": true,
+      "transitions": [
+        {
+          "step": 2,
+          "tool": "search_documents",
+          "arguments": {
+            "query": "差旅报销需要提交的材料",
+            "top_k": 5
+          },
+          "purpose": "查找差旅报销所需材料清单",
+          "observation_summary": "hits=5",
+          "injected": false,
+          "next_step": 3,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D03",
+            "passage_id": "P01"
+          },
+          "next_basis": "获取差旅报销所需材料的完整清单"
+        },
+        {
+          "step": 3,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D03",
+            "passage_id": "P01"
+          },
+          "purpose": "获取差旅报销所需材料的完整清单",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 5,
+          "next_action": "finish:answered",
+          "next_arguments": null,
+          "next_basis": "申请差旅报销时，应提交已审批的出差申请单、费用明细表及与费用对应的发票。涉及交通或住宿费用的，还应提交对应的行程凭证或住宿账单。"
+        }
+      ],
+      "mode": "real",
+      "model": "qwen-flash",
+      "engine_revision": "45e43d27c1e5e696c902b378c88f631e6685b321e034ac6af0a05de867e36981",
+      "model_configuration": {
+        "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+        "stream": true,
+        "enable_thinking": false,
+        "json_mode": true,
+        "prompt_revision": "8fef82a485cf47e9e07ed12592ff2c6d3e3347eadfe5443c925c93e55a8aa448",
+        "action_protocol": "native",
+        "action_stream": false,
+        "review_prompt_revision": "a171d3050a3282ad4c45ce752ed229f98e1c82408c9f3fba2011d7a501378b6b",
+        "context_prompt_revision": "8b914d763b3316659edae9c6937ab34f036aa3b9009f069ffe29cb402d4f1e39",
+        "applicability_prompt_revision": "74c926f3c766628d138c131fe1896150a795d40a59d2636cc4f6dcf4a5a5bbed",
+        "evidence_review": "answered_only",
+        "conversation_protocol": "native-tool-messages-v1"
+      },
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "budgets": {
+        "max_model_calls": 12,
+        "max_tool_calls": 6,
+        "model_timeout": 60,
+        "tool_timeout": 10,
+        "max_validation_errors": 3
+      },
+      "request": {
+        "question": "那需要哪些材料？",
+        "history": [
+          {
+            "role": "user",
+            "content": "差旅报销应在行程结束后多久内提交？"
+          },
+          {
+            "role": "assistant",
+            "content": "依据D01，应在行程结束后30天内提交。"
+          }
+        ]
+      },
+      "case_id": "A05",
+      "source_report": "examples\\stage4\\verified-release\\evaluation-results.json",
+      "repeat_index": 2,
+      "run_id": "20261028T110207Z-4f02eb8ffcb0",
+      "directory": "examples\\stage4\\verified-release\\A05\\20261028T110207Z-4f02eb8ffcb0",
+      "artifact_sha256": {
+        "input.json": "cf34fb8056d107f22c4a653326ca32185c3d230c07f0c776289535cf9699d583",
+        "output.json": "c46aa18aaf2d1ec5c430f73f7626780dc0161669ed2f708884560aa99058c529",
+        "trace.jsonl": "b0e0dc2b5ba73bee154f79051bef72b11b93b955d9be72558ebcaf1be50f105c"
+      }
+    },
+    {
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true,
+        "snapshot_matches": true,
+        "budgets_respected": true,
+        "read_observations_match_corpus": true,
+        "result_and_evidence_valid": true,
+        "reason_code_matches": true,
+        "failure_observed": true,
+        "model_acted_after_failure": true,
+        "trace_envelope": true,
+        "trace_sequence": true,
+        "report_matches_artifacts": true,
+        "input_matches_fixture": true,
+        "fault_config_matches": true,
+        "actual_tool_counts": true,
+        "model_count_has_trace_markers": true,
+        "tool_call_links": true,
+        "tool_observations_replay": true
+      },
+      "passed": true,
+      "status": "incomplete",
+      "reason_code": "tool_failure",
+      "answer": "无法获取差旅报销提交时限的完整制度依据，因关键文档片段读取失败。已尝试两次读取，但未能成功获取原文内容。",
+      "follow_up_question": null,
+      "gaps": [
+        "无法读取《差旅报销提交规定》中关于提交时限的具体条款"
+      ],
+      "citations": [],
+      "model_calls": 8,
+      "tool_calls": 5,
+      "duration_seconds": 7.625,
+      "observed_action_after_tool": true,
+      "transitions": [
+        {
+          "step": 2,
+          "tool": "search_documents",
+          "arguments": {
+            "query": "差旅报销提交时限 行程结束后",
+            "top_k": 5
+          },
+          "purpose": "查找差旅报销在行程结束后需在多长时间内提交的制度规定",
+          "observation_summary": "hits=5",
+          "injected": false,
+          "next_step": 3,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "next_basis": "读取差旅报销提交时限的具体规定"
+        },
+        {
+          "step": 3,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "purpose": "读取差旅报销提交时限的具体规定",
+          "observation_summary": "unavailable",
+          "injected": true,
+          "next_step": 4,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D03",
+            "passage_id": "P01"
+          },
+          "next_basis": "读取差旅报销材料清单中关于提交时限的说明"
+        },
+        {
+          "step": 4,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D03",
+            "passage_id": "P01"
+          },
+          "purpose": "读取差旅报销材料清单中关于提交时限的说明",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 5,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D04",
+            "passage_id": "P01"
+          },
+          "next_basis": "读取出差申请流程中关于行程安排与报销关系的说明"
+        },
+        {
+          "step": 5,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D04",
+            "passage_id": "P01"
+          },
+          "purpose": "读取出差申请流程中关于行程安排与报销关系的说明",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 6,
+          "next_action": "finish:needs_clarification",
+          "next_arguments": null,
+          "next_basis": "差旅报销应在行程结束后多久内提交，目前缺少明确的制度依据。虽然有文档提及30天内提交，但该条款未能成功读取，其他相关文档也未提供具体时限。建议确认正式制度文件中的相关规定。"
+        },
+        {
+          "step": 7,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "purpose": "再次尝试读取差旅报销提交时限的具体规定，因首次读取失败",
+          "observation_summary": "unavailable",
+          "injected": true,
+          "next_step": 8,
+          "next_action": "finish:incomplete",
+          "next_arguments": null,
+          "next_basis": "无法获取差旅报销提交时限的完整制度依据，因关键文档片段读取失败。已尝试两次读取，但未能成功获取原文内容。"
+        }
+      ],
+      "mode": "real",
+      "model": "qwen-flash",
+      "engine_revision": "45e43d27c1e5e696c902b378c88f631e6685b321e034ac6af0a05de867e36981",
+      "model_configuration": {
+        "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+        "stream": true,
+        "enable_thinking": false,
+        "json_mode": true,
+        "prompt_revision": "8fef82a485cf47e9e07ed12592ff2c6d3e3347eadfe5443c925c93e55a8aa448",
+        "action_protocol": "native",
+        "action_stream": false,
+        "review_prompt_revision": "a171d3050a3282ad4c45ce752ed229f98e1c82408c9f3fba2011d7a501378b6b",
+        "context_prompt_revision": "8b914d763b3316659edae9c6937ab34f036aa3b9009f069ffe29cb402d4f1e39",
+        "applicability_prompt_revision": "74c926f3c766628d138c131fe1896150a795d40a59d2636cc4f6dcf4a5a5bbed",
+        "evidence_review": "answered_only",
+        "conversation_protocol": "native-tool-messages-v1"
+      },
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "budgets": {
+        "max_model_calls": 12,
+        "max_tool_calls": 6,
+        "model_timeout": 60,
+        "tool_timeout": 10,
+        "max_validation_errors": 3
+      },
+      "request": {
+        "question": "差旅报销应在行程结束后多久内提交？"
+      },
+      "case_id": "A06",
+      "source_report": "examples\\stage4\\verified-release\\evaluation-results.json",
+      "repeat_index": 2,
+      "run_id": "20261028T110216Z-48dfb3af7d8c",
+      "directory": "examples\\stage4\\verified-release\\A06\\20261028T110216Z-48dfb3af7d8c",
+      "artifact_sha256": {
+        "input.json": "d1e103bb5ef245c070f2eb26fef01e447036e5743a02af1f4e22f30497ce175e",
+        "output.json": "da8e8d6bf83f5f5ffc2f77004ec5efeda598118230348b7ab2d6193c8f5db1fb",
+        "trace.jsonl": "5e20849d1df4597634ab086593aaadf5146b71efba0486b9cc5dcb16f7353645"
+      }
+    },
+    {
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true,
+        "snapshot_matches": true,
+        "budgets_respected": true,
+        "read_observations_match_corpus": true,
+        "result_and_evidence_valid": true,
+        "expected_facts_present": true,
+        "trace_envelope": true,
+        "trace_sequence": true,
+        "report_matches_artifacts": true,
+        "input_matches_fixture": true,
+        "fault_config_matches": true,
+        "actual_tool_counts": true,
+        "model_count_has_trace_markers": true,
+        "tool_call_links": true,
+        "tool_observations_replay": true
+      },
+      "passed": true,
+      "status": "answered",
+      "reason_code": null,
+      "answer": "差旅报销应在行程结束后45天内提交[C1]。",
+      "follow_up_question": null,
+      "gaps": [],
+      "citations": [
+        {
+          "citation_id": "C1",
+          "document_id": "D01",
+          "passage_id": "P01",
+          "version_date": "2026-01-10",
+          "quote": "差旅报销应在行程结束后45天内提交。"
+        }
+      ],
+      "model_calls": 8,
+      "tool_calls": 2,
+      "duration_seconds": 6.939,
+      "observed_action_after_tool": true,
+      "transitions": [
+        {
+          "step": 2,
+          "tool": "search_documents",
+          "arguments": {
+            "query": "差旅报销提交期限 行程结束后",
+            "top_k": 5
+          },
+          "purpose": "查找差旅报销应在行程结束后多久内提交的相关规定",
+          "observation_summary": "hits=5",
+          "injected": false,
+          "next_step": 3,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "next_basis": "读取差旅报销提交期限的具体规定"
+        },
+        {
+          "step": 3,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "purpose": "读取差旅报销提交期限的具体规定",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 5,
+          "next_action": "finish:answered",
+          "next_arguments": null,
+          "next_basis": "差旅报销应在行程结束后45天内提交。"
+        }
+      ],
+      "mode": "real",
+      "model": "qwen-flash",
+      "engine_revision": "45e43d27c1e5e696c902b378c88f631e6685b321e034ac6af0a05de867e36981",
+      "model_configuration": {
+        "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+        "stream": true,
+        "enable_thinking": false,
+        "json_mode": true,
+        "prompt_revision": "8fef82a485cf47e9e07ed12592ff2c6d3e3347eadfe5443c925c93e55a8aa448",
+        "action_protocol": "native",
+        "action_stream": false,
+        "review_prompt_revision": "a171d3050a3282ad4c45ce752ed229f98e1c82408c9f3fba2011d7a501378b6b",
+        "context_prompt_revision": "8b914d763b3316659edae9c6937ab34f036aa3b9009f069ffe29cb402d4f1e39",
+        "applicability_prompt_revision": "74c926f3c766628d138c131fe1896150a795d40a59d2636cc4f6dcf4a5a5bbed",
+        "evidence_review": "answered_only",
+        "conversation_protocol": "native-tool-messages-v1"
+      },
+      "corpus_revision": "cf57241fed2ae88897ae8db032e54b8dcd012f882fd852ee7121f3e192889e30",
+      "budgets": {
+        "max_model_calls": 12,
+        "max_tool_calls": 6,
+        "model_timeout": 60,
+        "tool_timeout": 10,
+        "max_validation_errors": 3
+      },
+      "request": {
+        "question": "差旅报销应在行程结束后多久内提交？"
+      },
+      "case_id": "B01",
+      "source_report": "examples\\stage4\\verified-release\\evaluation-results.json",
+      "repeat_index": 2,
+      "run_id": "20261028T110223Z-cee50445d561",
+      "directory": "examples\\stage4\\verified-release\\B01\\20261028T110223Z-cee50445d561",
+      "artifact_sha256": {
+        "input.json": "d1e103bb5ef245c070f2eb26fef01e447036e5743a02af1f4e22f30497ce175e",
+        "output.json": "2f7221eaaa41626bd0fc30ad3e7a00603828282ddcd87eecd2e0cf71131f2599",
+        "trace.jsonl": "087d6fa566082e62af60db0e29717351123aa7641955d6df7ebbbc6c22028604"
+      }
+    },
+    {
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true,
+        "snapshot_matches": true,
+        "budgets_respected": true,
+        "read_observations_match_corpus": true,
+        "result_and_evidence_valid": true,
+        "required_passages_cited": true,
+        "expected_facts_present": true,
+        "trace_envelope": true,
+        "trace_sequence": true,
+        "report_matches_artifacts": true,
+        "input_matches_fixture": true,
+        "fault_config_matches": true,
+        "actual_tool_counts": true,
+        "model_count_has_trace_markers": true,
+        "tool_call_links": true,
+        "tool_observations_replay": true
+      },
+      "passed": true,
+      "status": "answered",
+      "reason_code": null,
+      "answer": "根据《差旅报销期限统一执行通知》（2026年4月1日发布），您于2026年5月10日结束的出差，差旅报销应在行程结束后15天内提交。该规定自2026年4月1日起施行，适用于所有部门和地区，且已明确替代此前的30天期限规定 [C1]。同时，该通知明确替代D01和D02中的报销提交期限条款 [C2]。",
+      "follow_up_question": null,
+      "gaps": [],
+      "citations": [
+        {
+          "citation_id": "C1",
+          "document_id": "D06",
+          "passage_id": "P01",
+          "version_date": "2026-04-01",
+          "quote": "自2026年4月1日起，行程结束日期在2026年4月1日及以后的差旅报销，统一在行程结束后15天内提交，适用于本企业所有部门和地区的员工。"
+        },
+        {
+          "citation_id": "C2",
+          "document_id": "D06",
+          "passage_id": "P02",
+          "version_date": "2026-04-01",
+          "quote": "对于行程结束日期在2026年4月1日及以后的差旅报销，本通知替代D01《差旅报销提交规定》和D02《差旅费用报销办理说明》中的报销提交期限条款。"
+        }
+      ],
+      "model_calls": 9,
+      "tool_calls": 3,
+      "duration_seconds": 12.867,
+      "observed_action_after_tool": true,
+      "transitions": [
+        {
+          "step": 2,
+          "tool": "search_documents",
+          "arguments": {
+            "query": "差旅报销期限 规定 2026年5月10日 出差结束",
+            "top_k": 5
+          },
+          "purpose": "查找2026年5月10日出差结束后的差旅报销期限规定",
+          "observation_summary": "hits=5",
+          "injected": false,
+          "next_step": 3,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D06",
+            "passage_id": "P01"
+          },
+          "next_basis": "确认2026年4月1日及以后出差结束的差旅报销期限为15天"
+        },
+        {
+          "step": 3,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D06",
+            "passage_id": "P01"
+          },
+          "purpose": "确认2026年4月1日及以后出差结束的差旅报销期限为15天",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 4,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D06",
+            "passage_id": "P02"
+          },
+          "next_basis": "确认替代关系及适用范围，确保引用完整"
+        },
+        {
+          "step": 4,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D06",
+            "passage_id": "P02"
+          },
+          "purpose": "确认替代关系及适用范围，确保引用完整",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 6,
+          "next_action": "finish:answered",
+          "next_arguments": null,
+          "next_basis": "根据《差旅报销期限统一执行通知》（2026年4月1日发布），您于2026年5月10日结束的出差，差旅报销应在行程结束后15天内提交。该规定自2026年4月1日起施行，适用于所有部门和地区，且已明确替代此前的30天期限规定。"
+        }
+      ],
+      "mode": "real",
+      "model": "qwen-flash",
+      "engine_revision": "45e43d27c1e5e696c902b378c88f631e6685b321e034ac6af0a05de867e36981",
+      "model_configuration": {
+        "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+        "stream": true,
+        "enable_thinking": false,
+        "json_mode": true,
+        "prompt_revision": "8fef82a485cf47e9e07ed12592ff2c6d3e3347eadfe5443c925c93e55a8aa448",
+        "action_protocol": "native",
+        "action_stream": false,
+        "review_prompt_revision": "a171d3050a3282ad4c45ce752ed229f98e1c82408c9f3fba2011d7a501378b6b",
+        "context_prompt_revision": "8b914d763b3316659edae9c6937ab34f036aa3b9009f069ffe29cb402d4f1e39",
+        "applicability_prompt_revision": "74c926f3c766628d138c131fe1896150a795d40a59d2636cc4f6dcf4a5a5bbed",
+        "evidence_review": "answered_only",
+        "conversation_protocol": "native-tool-messages-v1"
+      },
+      "corpus_revision": "1b1d6f8bed969adc5e775380431c60957a95c2428bf906563f32cf6c34b8bc07",
+      "budgets": {
+        "max_model_calls": 12,
+        "max_tool_calls": 6,
+        "model_timeout": 60,
+        "tool_timeout": 10,
+        "max_validation_errors": 3
+      },
+      "request": {
+        "question": "我这次出差在2026年5月10日结束，差旅报销期限多久？"
+      },
+      "case_id": "B03",
+      "source_report": "examples\\stage4\\verified-release\\evaluation-results.json",
+      "repeat_index": 2,
+      "run_id": "20261028T110230Z-798621f19c69",
+      "directory": "examples\\stage4\\verified-release\\B03\\20261028T110230Z-798621f19c69",
+      "artifact_sha256": {
+        "input.json": "18b9917cf2d1f11418107a5bad2e1ce59a98702b2c1adef63ab45bcb190fcd66",
+        "output.json": "201b4d1ae72376d35f551a274b2b4e3f21a104c9c70c8f906c4867a733c6c6aa",
+        "trace.jsonl": "aa017760aba88379b01b08ab998aaf1cd6516a814be5fe895f35eceb988b6f7a"
+      }
+    },
+    {
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true,
+        "snapshot_matches": true,
+        "budgets_respected": true,
+        "read_observations_match_corpus": true,
+        "result_and_evidence_valid": true,
+        "reason_code_matches": true,
+        "trace_envelope": true,
+        "trace_sequence": true,
+        "report_matches_artifacts": true,
+        "input_matches_fixture": true,
+        "fault_config_matches": true,
+        "actual_tool_counts": true,
+        "model_count_has_trace_markers": true,
+        "tool_call_links": true,
+        "tool_observations_replay": true
+      },
+      "passed": true,
+      "status": "needs_clarification",
+      "reason_code": "missing_user_context",
+      "answer": "差旅报销期限因员工所属部门而异：总部员工需在行程结束后30天内提交，海外分支机构员工则需在15天内提交。[C1][C2] 请说明您是总部员工还是海外分支机构员工，以便确认适用的具体期限。",
+      "follow_up_question": "请问您是总部员工还是海外分支机构员工？",
+      "gaps": [
+        "用户所属部门或工作地点未明确"
+      ],
+      "citations": [
+        {
+          "citation_id": "C1",
+          "document_id": "D01",
+          "passage_id": "P01",
+          "version_date": "2026-01-10",
+          "quote": "本条适用于总部员工：差旅报销应在行程结束后30天内提交。"
+        },
+        {
+          "citation_id": "C2",
+          "document_id": "D02",
+          "passage_id": "P01",
+          "version_date": "2026-03-15",
+          "quote": "本条适用于海外分支机构员工：差旅报销应在行程结束后15天内提交。"
+        }
+      ],
+      "model_calls": 9,
+      "tool_calls": 3,
+      "duration_seconds": 13.914,
+      "observed_action_after_tool": true,
+      "transitions": [
+        {
+          "step": 2,
+          "tool": "search_documents",
+          "arguments": {
+            "query": "差旅报销期限规定",
+            "top_k": 5
+          },
+          "purpose": "查找关于差旅报销时间限制的具体条款",
+          "observation_summary": "hits=5",
+          "injected": false,
+          "next_step": 3,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "next_basis": "获取总部员工差旅报销期限的具体规定"
+        },
+        {
+          "step": 3,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "purpose": "获取总部员工差旅报销期限的具体规定",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 4,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D02",
+            "passage_id": "P01"
+          },
+          "next_basis": "获取海外分支机构员工差旅报销期限的具体规定"
+        },
+        {
+          "step": 4,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D02",
+            "passage_id": "P01"
+          },
+          "purpose": "获取海外分支机构员工差旅报销期限的具体规定",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 5,
+          "next_action": "finish:answered",
+          "next_arguments": null,
+          "next_basis": "差旅报销的期限根据员工所属部门有所不同：总部员工应在行程结束后30天内提交报销申请，而海外分支机构员工则应在行程结束后15天内提交。[D01][D02]"
+        }
+      ],
+      "mode": "real",
+      "model": "qwen-flash",
+      "engine_revision": "45e43d27c1e5e696c902b378c88f631e6685b321e034ac6af0a05de867e36981",
+      "model_configuration": {
+        "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+        "stream": true,
+        "enable_thinking": false,
+        "json_mode": true,
+        "prompt_revision": "8fef82a485cf47e9e07ed12592ff2c6d3e3347eadfe5443c925c93e55a8aa448",
+        "action_protocol": "native",
+        "action_stream": false,
+        "review_prompt_revision": "a171d3050a3282ad4c45ce752ed229f98e1c82408c9f3fba2011d7a501378b6b",
+        "context_prompt_revision": "8b914d763b3316659edae9c6937ab34f036aa3b9009f069ffe29cb402d4f1e39",
+        "applicability_prompt_revision": "74c926f3c766628d138c131fe1896150a795d40a59d2636cc4f6dcf4a5a5bbed",
+        "evidence_review": "answered_only",
+        "conversation_protocol": "native-tool-messages-v1"
+      },
+      "corpus_revision": "41ee9d5cc610f890f2f559a601035c898c58cc0d20ad8789f61cfec3c0dd0fbd",
+      "budgets": {
+        "max_model_calls": 12,
+        "max_tool_calls": 6,
+        "model_timeout": 60,
+        "tool_timeout": 10,
+        "max_validation_errors": 3
+      },
+      "request": {
+        "question": "差旅报销期限多久？"
+      },
+      "case_id": "B04",
+      "source_report": "examples\\stage4\\verified-release\\evaluation-results.json",
+      "repeat_index": 2,
+      "run_id": "20261028T110243Z-595a21696775",
+      "directory": "examples\\stage4\\verified-release\\B04\\20261028T110243Z-595a21696775",
+      "artifact_sha256": {
+        "input.json": "993f4b79bc666dfea794e8e9e0015d73c23db9e98c937935c012f024961e1470",
+        "output.json": "9fa87e30825acaab1c0d5e4ff00f5cbafdecdd684b1d0d5c7a18ab30f7d34383",
+        "trace.jsonl": "38680a2e74ac3ebe166e1ccac335aacfe3da90c4733f14a557acda9cfa844b59"
+      }
+    },
+    {
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true,
+        "snapshot_matches": true,
+        "budgets_respected": true,
+        "read_observations_match_corpus": true,
+        "result_and_evidence_valid": true,
+        "failure_observed": true,
+        "model_acted_after_failure": true,
+        "trace_envelope": true,
+        "trace_sequence": true,
+        "report_matches_artifacts": true,
+        "input_matches_fixture": true,
+        "fault_config_matches": true,
+        "actual_tool_counts": true,
+        "model_count_has_trace_markers": true,
+        "tool_call_links": true,
+        "tool_observations_replay": true
+      },
+      "passed": true,
+      "status": "incomplete",
+      "reason_code": "tool_failure",
+      "answer": "无法获取《差旅报销提交规定》中关于提交时限的完整内容，因读取失败且无其他文档明确说明差旅报销提交时限。尽管已读取其他相关文档，但均未提及具体时间要求，且核心依据未能成功读取。",
+      "follow_up_question": null,
+      "gaps": [
+        "差旅报销提交时限的具体天数要求"
+      ],
+      "citations": [],
+      "model_calls": 11,
+      "tool_calls": 6,
+      "duration_seconds": 12.221,
+      "observed_action_after_tool": true,
+      "transitions": [
+        {
+          "step": 2,
+          "tool": "search_documents",
+          "arguments": {
+            "query": "差旅报销提交时限 行程结束后",
+            "top_k": 5
+          },
+          "purpose": "查找差旅报销在行程结束后需在多长时间内提交的制度规定",
+          "observation_summary": "hits=5",
+          "injected": false,
+          "next_step": 3,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "next_basis": "读取差旅报销提交时限的具体规定"
+        },
+        {
+          "step": 3,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "purpose": "读取差旅报销提交时限的具体规定",
+          "observation_summary": "unavailable",
+          "injected": true,
+          "next_step": 4,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D03",
+            "passage_id": "P01"
+          },
+          "next_basis": "读取差旅报销材料清单中的相关要求，确认是否涉及提交时限"
+        },
+        {
+          "step": 4,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D03",
+            "passage_id": "P01"
+          },
+          "purpose": "读取差旅报销材料清单中的相关要求，确认是否涉及提交时限",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 5,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D03",
+            "passage_id": "P02"
+          },
+          "next_basis": "读取差旅报销材料清单中关于材料缺失时的处理要求，确认是否隐含提交时限"
+        },
+        {
+          "step": 5,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D03",
+            "passage_id": "P02"
+          },
+          "purpose": "读取差旅报销材料清单中关于材料缺失时的处理要求，确认是否隐含提交时限",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 7,
+          "next_action": "finish:unanswerable",
+          "next_arguments": null,
+          "next_basis": "未找到关于差旅报销应在行程结束后多久内提交的具体时限规定。现有文档仅说明需提交已审批的出差申请单、费用明细表及发票等材料，但未明确提交时间限制。"
+        },
+        {
+          "step": 8,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D04",
+            "passage_id": "P01"
+          },
+          "purpose": "读取出差申请流程中关于行程安排与审批的规定，确认是否隐含报销提交时限",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 9,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D04",
+            "passage_id": "P02"
+          },
+          "next_basis": "读取出差申请与变更流程中关于行程变更的规定，确认是否涉及报销提交时限"
+        },
+        {
+          "step": 9,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D04",
+            "passage_id": "P02"
+          },
+          "purpose": "读取出差申请与变更流程中关于行程变更的规定，确认是否涉及报销提交时限",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 10,
+          "next_action": "finish:unanswerable",
+          "next_arguments": null,
+          "next_basis": "未找到关于差旅报销应在行程结束后多久内提交的具体时限规定。现有文档仅说明需提交已审批的出差申请单、费用明细表及发票等材料，但未明确提交时间限制。尽管检索到《差旅报销提交规定》中提及‘行程结束后30天内提交’，但该条目因读取失败未能验证，其余文档均未涉及提交时限。"
+        }
+      ],
+      "mode": "real",
+      "model": "qwen-flash",
+      "engine_revision": "45e43d27c1e5e696c902b378c88f631e6685b321e034ac6af0a05de867e36981",
+      "model_configuration": {
+        "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+        "stream": true,
+        "enable_thinking": false,
+        "json_mode": true,
+        "prompt_revision": "8fef82a485cf47e9e07ed12592ff2c6d3e3347eadfe5443c925c93e55a8aa448",
+        "action_protocol": "native",
+        "action_stream": false,
+        "review_prompt_revision": "a171d3050a3282ad4c45ce752ed229f98e1c82408c9f3fba2011d7a501378b6b",
+        "context_prompt_revision": "8b914d763b3316659edae9c6937ab34f036aa3b9009f069ffe29cb402d4f1e39",
+        "applicability_prompt_revision": "74c926f3c766628d138c131fe1896150a795d40a59d2636cc4f6dcf4a5a5bbed",
+        "evidence_review": "answered_only",
+        "conversation_protocol": "native-tool-messages-v1"
+      },
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "budgets": {
+        "max_model_calls": 12,
+        "max_tool_calls": 6,
+        "model_timeout": 60,
+        "tool_timeout": 10,
+        "max_validation_errors": 3
+      },
+      "request": {
+        "question": "差旅报销应在行程结束后多久内提交？"
+      },
+      "case_id": "B08",
+      "source_report": "examples\\stage4\\verified-release\\evaluation-results.json",
+      "repeat_index": 2,
+      "run_id": "20261028T110257Z-d19a1324c54e",
+      "directory": "examples\\stage4\\verified-release\\B08\\20261028T110257Z-d19a1324c54e",
+      "artifact_sha256": {
+        "input.json": "d1e103bb5ef245c070f2eb26fef01e447036e5743a02af1f4e22f30497ce175e",
+        "output.json": "bd8dcfb6374b0aaefc8f2476bd52646fbf9181469cde953e1fe487ea4fb99310",
+        "trace.jsonl": "24776338aeb7f96307eb53eb33fea6c7beb2c8243bde754c632e96c693e467ae"
+      }
+    },
+    {
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true,
+        "snapshot_matches": true,
+        "budgets_respected": true,
+        "read_observations_match_corpus": true,
+        "result_and_evidence_valid": true,
+        "reason_code_matches": true,
+        "no_unnecessary_tools": true,
+        "trace_envelope": true,
+        "trace_sequence": true,
+        "report_matches_artifacts": true,
+        "input_matches_fixture": true,
+        "fault_config_matches": true,
+        "actual_tool_counts": true,
+        "model_count_has_trace_markers": true,
+        "tool_call_links": true,
+        "tool_observations_replay": true
+      },
+      "passed": true,
+      "status": "needs_clarification",
+      "reason_code": "ambiguous_reference",
+      "answer": "请明确查询事项。",
+      "follow_up_question": "您是想了解哪项业务或申请所需的材料？",
+      "gaps": [
+        "具体缺少的主题或指代信息"
+      ],
+      "citations": [],
+      "model_calls": 1,
+      "tool_calls": 0,
+      "duration_seconds": 1.098,
+      "observed_action_after_tool": false,
+      "transitions": [],
+      "mode": "real",
+      "model": "qwen-flash",
+      "engine_revision": "45e43d27c1e5e696c902b378c88f631e6685b321e034ac6af0a05de867e36981",
+      "model_configuration": {
+        "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+        "stream": true,
+        "enable_thinking": false,
+        "json_mode": true,
+        "prompt_revision": "8fef82a485cf47e9e07ed12592ff2c6d3e3347eadfe5443c925c93e55a8aa448",
+        "action_protocol": "native",
+        "action_stream": false,
+        "review_prompt_revision": "a171d3050a3282ad4c45ce752ed229f98e1c82408c9f3fba2011d7a501378b6b",
+        "context_prompt_revision": "8b914d763b3316659edae9c6937ab34f036aa3b9009f069ffe29cb402d4f1e39",
+        "applicability_prompt_revision": "74c926f3c766628d138c131fe1896150a795d40a59d2636cc4f6dcf4a5a5bbed",
+        "evidence_review": "answered_only",
+        "conversation_protocol": "native-tool-messages-v1"
+      },
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "budgets": {
+        "max_model_calls": 12,
+        "max_tool_calls": 6,
+        "model_timeout": 60,
+        "tool_timeout": 10,
+        "max_validation_errors": 3
+      },
+      "request": {
+        "question": "那要交什么材料？"
+      },
+      "case_id": "B11",
+      "source_report": "examples\\stage4\\verified-release\\evaluation-results.json",
+      "repeat_index": 2,
+      "run_id": "20261028T110310Z-d91886bc1ae7",
+      "directory": "examples\\stage4\\verified-release\\B11\\20261028T110310Z-d91886bc1ae7",
+      "artifact_sha256": {
+        "input.json": "84c6a5a469d2a813141354ecff12174a35625eab2105980c49a33b45a3b68f66",
+        "output.json": "157e31d6381750e1d2a58ce84746b77f038edb7baf017ea3268af15864b6925c",
+        "trace.jsonl": "2f444a517846a42d47b1d4025670d8c20c5fd0ff802648c057da2790b8e0ea0f"
+      }
+    },
+    {
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true,
+        "snapshot_matches": true,
+        "budgets_respected": true,
+        "read_observations_match_corpus": true,
+        "result_and_evidence_valid": true,
+        "trace_envelope": true,
+        "trace_sequence": true,
+        "report_matches_artifacts": true,
+        "input_matches_fixture": true,
+        "fault_config_matches": true,
+        "actual_tool_counts": true,
+        "model_count_has_trace_markers": true,
+        "tool_call_links": true,
+        "tool_observations_replay": true
+      },
+      "passed": true,
+      "status": "answered",
+      "reason_code": null,
+      "answer": "差旅报销应在行程结束后30天内提交[C1]。",
+      "follow_up_question": null,
+      "gaps": [],
+      "citations": [
+        {
+          "citation_id": "C1",
+          "document_id": "D01",
+          "passage_id": "P01",
+          "version_date": "2026-01-10",
+          "quote": "差旅报销应在行程结束后30天内提交。"
+        }
+      ],
+      "model_calls": 9,
+      "tool_calls": 3,
+      "duration_seconds": 8.175,
+      "observed_action_after_tool": true,
+      "transitions": [
+        {
+          "step": 2,
+          "tool": "search_documents",
+          "arguments": {
+            "query": "差旅报销提交时限 行程结束后",
+            "top_k": 5
+          },
+          "purpose": "查找差旅报销应在行程结束后多久内提交的相关规定",
+          "observation_summary": "hits=0",
+          "injected": true,
+          "next_step": 3,
+          "next_action": "search_documents",
+          "next_arguments": {
+            "query": "差旅报销 时限 提交 时间 行程结束",
+            "top_k": 5
+          },
+          "next_basis": "尝试使用更灵活的关键词组合查找差旅报销提交时限规定"
+        },
+        {
+          "step": 3,
+          "tool": "search_documents",
+          "arguments": {
+            "query": "差旅报销 时限 提交 时间 行程结束",
+            "top_k": 5
+          },
+          "purpose": "尝试使用更灵活的关键词组合查找差旅报销提交时限规定",
+          "observation_summary": "hits=5",
+          "injected": false,
+          "next_step": 4,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "next_basis": "读取差旅报销提交时限的具体规定原文"
+        },
+        {
+          "step": 4,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D01",
+            "passage_id": "P01"
+          },
+          "purpose": "读取差旅报销提交时限的具体规定原文",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 6,
+          "next_action": "finish:answered",
+          "next_arguments": null,
+          "next_basis": "差旅报销应在行程结束后30天内提交。"
+        }
+      ],
+      "mode": "real",
+      "model": "qwen-flash",
+      "engine_revision": "45e43d27c1e5e696c902b378c88f631e6685b321e034ac6af0a05de867e36981",
+      "model_configuration": {
+        "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+        "stream": true,
+        "enable_thinking": false,
+        "json_mode": true,
+        "prompt_revision": "8fef82a485cf47e9e07ed12592ff2c6d3e3347eadfe5443c925c93e55a8aa448",
+        "action_protocol": "native",
+        "action_stream": false,
+        "review_prompt_revision": "a171d3050a3282ad4c45ce752ed229f98e1c82408c9f3fba2011d7a501378b6b",
+        "context_prompt_revision": "8b914d763b3316659edae9c6937ab34f036aa3b9009f069ffe29cb402d4f1e39",
+        "applicability_prompt_revision": "74c926f3c766628d138c131fe1896150a795d40a59d2636cc4f6dcf4a5a5bbed",
+        "evidence_review": "answered_only",
+        "conversation_protocol": "native-tool-messages-v1"
+      },
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "budgets": {
+        "max_model_calls": 12,
+        "max_tool_calls": 6,
+        "model_timeout": 60,
+        "tool_timeout": 10,
+        "max_validation_errors": 3
+      },
+      "request": {
+        "question": "差旅报销应在行程结束后多久内提交？"
+      },
+      "case_id": "B12",
+      "source_report": "examples\\stage4\\verified-release\\evaluation-results.json",
+      "repeat_index": 2,
+      "run_id": "20261028T110311Z-c8a98f2263ca",
+      "directory": "examples\\stage4\\verified-release\\B12\\20261028T110311Z-c8a98f2263ca",
+      "artifact_sha256": {
+        "input.json": "d1e103bb5ef245c070f2eb26fef01e447036e5743a02af1f4e22f30497ce175e",
+        "output.json": "1d66054f8b4337fb93827912cce4a5005c4a57d8c50415f7e619aff86bcefec9",
+        "trace.jsonl": "906ad84c7d167716c78d55674dda1dabf46dce85497772e064ec291ef05f22d9"
+      }
+    },
+    {
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true,
+        "snapshot_matches": true,
+        "budgets_respected": true,
+        "read_observations_match_corpus": true,
+        "result_and_evidence_valid": true,
+        "required_passages_cited": true,
+        "expected_facts_present": true,
+        "trace_envelope": true,
+        "trace_sequence": true,
+        "report_matches_artifacts": true,
+        "input_matches_fixture": true,
+        "fault_config_matches": true,
+        "actual_tool_counts": true,
+        "model_count_has_trace_markers": true,
+        "tool_call_links": true,
+        "tool_observations_replay": true
+      },
+      "passed": true,
+      "status": "answered",
+      "reason_code": null,
+      "answer": "星帧剪辑2.0桌面版支持将字幕导出为SRT或TXT格式。SRT文件包含字幕时间信息，TXT文件仅包含字幕文本 [C1][C2]。",
+      "follow_up_question": null,
+      "gaps": [],
+      "citations": [
+        {
+          "citation_id": "C1",
+          "document_id": "D05",
+          "passage_id": "P01",
+          "version_date": "2026-02-20",
+          "quote": "星帧剪辑2.0桌面版支持将项目字幕导出为SRT或TXT文件；本条仅适用于2.0桌面版，不说明移动端或其他版本的导出能力。"
+        },
+        {
+          "citation_id": "C2",
+          "document_id": "D05",
+          "passage_id": "P02",
+          "version_date": "2026-02-20",
+          "quote": "在星帧剪辑2.0桌面版中，可在字幕面板选择“导出字幕”，再选择SRT或TXT格式并保存。SRT文件包含字幕时间信息，TXT文件仅包含字幕文本。"
+        }
+      ],
+      "model_calls": 9,
+      "tool_calls": 3,
+      "duration_seconds": 10.938,
+      "observed_action_after_tool": true,
+      "transitions": [
+        {
+          "step": 2,
+          "tool": "search_documents",
+          "arguments": {
+            "query": "星帧剪辑2.0桌面版 字幕导出 格式",
+            "top_k": 5
+          },
+          "purpose": "查找星帧剪辑2.0桌面版支持的字幕导出格式",
+          "observation_summary": "hits=2",
+          "injected": false,
+          "next_step": 3,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D05",
+            "passage_id": "P01"
+          },
+          "next_basis": "获取星帧剪辑2.0桌面版字幕导出格式的完整说明"
+        },
+        {
+          "step": 3,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D05",
+            "passage_id": "P01"
+          },
+          "purpose": "获取星帧剪辑2.0桌面版字幕导出格式的完整说明",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 4,
+          "next_action": "read_passage",
+          "next_arguments": {
+            "document_id": "D05",
+            "passage_id": "P02"
+          },
+          "next_basis": "获取星帧剪辑2.0桌面版字幕导出格式的详细说明"
+        },
+        {
+          "step": 4,
+          "tool": "read_passage",
+          "arguments": {
+            "document_id": "D05",
+            "passage_id": "P02"
+          },
+          "purpose": "获取星帧剪辑2.0桌面版字幕导出格式的详细说明",
+          "observation_summary": "Original passage read",
+          "injected": false,
+          "next_step": 6,
+          "next_action": "finish:answered",
+          "next_arguments": null,
+          "next_basis": "星帧剪辑2.0桌面版支持将字幕导出为SRT或TXT格式。SRT文件包含字幕时间信息，TXT文件仅包含字幕文本。"
+        }
+      ],
+      "mode": "real",
+      "model": "qwen-flash",
+      "engine_revision": "45e43d27c1e5e696c902b378c88f631e6685b321e034ac6af0a05de867e36981",
+      "model_configuration": {
+        "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+        "stream": true,
+        "enable_thinking": false,
+        "json_mode": true,
+        "prompt_revision": "8fef82a485cf47e9e07ed12592ff2c6d3e3347eadfe5443c925c93e55a8aa448",
+        "action_protocol": "native",
+        "action_stream": false,
+        "review_prompt_revision": "a171d3050a3282ad4c45ce752ed229f98e1c82408c9f3fba2011d7a501378b6b",
+        "context_prompt_revision": "8b914d763b3316659edae9c6937ab34f036aa3b9009f069ffe29cb402d4f1e39",
+        "applicability_prompt_revision": "74c926f3c766628d138c131fe1896150a795d40a59d2636cc4f6dcf4a5a5bbed",
+        "evidence_review": "answered_only",
+        "conversation_protocol": "native-tool-messages-v1"
+      },
+      "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+      "budgets": {
+        "max_model_calls": 12,
+        "max_tool_calls": 6,
+        "model_timeout": 60,
+        "tool_timeout": 10,
+        "max_validation_errors": 3
+      },
+      "request": {
+        "question": "星帧剪辑2.0桌面版可以把字幕导出为什么格式？"
+      },
+      "case_id": "B15",
+      "source_report": "examples\\stage4\\verified-release\\evaluation-results.json",
+      "repeat_index": 2,
+      "run_id": "20261028T110319Z-2b8709ddea04",
+      "directory": "examples\\stage4\\verified-release\\B15\\20261028T110319Z-2b8709ddea04",
+      "artifact_sha256": {
+        "input.json": "20f3d5d43fbe32712dad1a4ae7ca3d4b0fd8498cf06da358e3c7180b8e2aced9",
+        "output.json": "6ad2ae20b3751c8982dbb01e9d9b3bd7530c6fef2c7e97d88b5b36590016cef4",
+        "trace.jsonl": "419f441eb919bacf2eb052914b7f3234f30e9de8dd921c8b561ecd8fed643509"
+      }
+    }
+  ],
+  "pairs": [
+    {
+      "kind": "paraphrase",
+      "left_run": "20261028T105940Z-e980e0c567a1",
+      "right_run": "20261028T110005Z-e681265ede4b",
+      "checks": {
+        "same_configuration": true,
+        "both_run_checks_passed": true,
+        "same_snapshot": true,
+        "same_original_rule": true,
+        "both_answered": true
+      },
+      "passed": true
+    },
+    {
+      "kind": "replacement",
+      "left_run": "20261028T105940Z-e980e0c567a1",
+      "right_run": "20261028T110034Z-b4766b4caf79",
+      "checks": {
+        "same_configuration": true,
+        "both_run_checks_passed": true,
+        "same_request": true,
+        "changed_snapshot": true,
+        "rule_and_answer_changed": true
+      },
+      "passed": true
+    },
+    {
+      "kind": "conflict_scenario",
+      "left_run": "20261028T105940Z-e980e0c567a1",
+      "right_run": "20261028T105946Z-2938ac7a2ea6",
+      "checks": {
+        "same_configuration": true,
+        "both_run_checks_passed": true,
+        "changed_snapshot": true,
+        "changed_outcome": true,
+        "both_sides_cited": true,
+        "changed_tool_path": true
+      },
+      "passed": true
+    },
+    {
+      "kind": "paraphrase",
+      "left_run": "20261028T110138Z-e6a628c62750",
+      "right_run": "20261028T110200Z-35136318fc22",
+      "checks": {
+        "same_configuration": true,
+        "both_run_checks_passed": true,
+        "same_snapshot": true,
+        "same_original_rule": true,
+        "both_answered": true
+      },
+      "passed": true
+    },
+    {
+      "kind": "replacement",
+      "left_run": "20261028T110138Z-e6a628c62750",
+      "right_run": "20261028T110223Z-cee50445d561",
+      "checks": {
+        "same_configuration": true,
+        "both_run_checks_passed": true,
+        "same_request": true,
+        "changed_snapshot": true,
+        "rule_and_answer_changed": true
+      },
+      "passed": true
+    },
+    {
+      "kind": "conflict_scenario",
+      "left_run": "20261028T110138Z-e6a628c62750",
+      "right_run": "20261028T110145Z-0f91971048db",
+      "checks": {
+        "same_configuration": true,
+        "both_run_checks_passed": true,
+        "changed_snapshot": true,
+        "changed_outcome": true,
+        "both_sides_cited": true,
+        "changed_tool_path": true
+      },
+      "passed": true
+    }
+  ],
+  "by_case": {
+    "A01": {
+      "recorded": 2,
+      "audit_passed": 2,
+      "status_counts": {
+        "answered": 2
+      }
+    },
+    "A02": {
+      "recorded": 2,
+      "audit_passed": 2,
+      "status_counts": {
+        "needs_clarification": 2
+      }
+    },
+    "A03": {
+      "recorded": 2,
+      "audit_passed": 2,
+      "status_counts": {
+        "unanswerable": 2
+      }
+    },
+    "A04": {
+      "recorded": 2,
+      "audit_passed": 2,
+      "status_counts": {
+        "answered": 2
+      }
+    },
+    "A05": {
+      "recorded": 2,
+      "audit_passed": 2,
+      "status_counts": {
+        "answered": 2
+      }
+    },
+    "A06": {
+      "recorded": 2,
+      "audit_passed": 2,
+      "status_counts": {
+        "incomplete": 2
+      }
+    },
+    "B01": {
+      "recorded": 2,
+      "audit_passed": 2,
+      "status_counts": {
+        "answered": 2
+      }
+    },
+    "B03": {
+      "recorded": 2,
+      "audit_passed": 2,
+      "status_counts": {
+        "answered": 2
+      }
+    },
+    "B04": {
+      "recorded": 2,
+      "audit_passed": 2,
+      "status_counts": {
+        "needs_clarification": 2
+      }
+    },
+    "B08": {
+      "recorded": 2,
+      "audit_passed": 2,
+      "status_counts": {
+        "incomplete": 2
+      }
+    },
+    "B11": {
+      "recorded": 2,
+      "audit_passed": 2,
+      "status_counts": {
+        "needs_clarification": 2
+      }
+    },
+    "B12": {
+      "recorded": 2,
+      "audit_passed": 2,
+      "status_counts": {
+        "answered": 2
+      }
+    },
+    "B15": {
+      "recorded": 2,
+      "audit_passed": 2,
+      "status_counts": {
+        "answered": 2
+      }
+    }
+  },
+  "coverage": {
+    "A01": true,
+    "A02": true,
+    "A03": true,
+    "A04": true,
+    "A05": true,
+    "A06": true
+  },
+  "problems": [],
+  "passed": true
+}

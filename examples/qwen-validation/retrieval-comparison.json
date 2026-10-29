@@ -1,0 +1,28 @@
+{
+  "source_trace": "examples\\B03\\20261028T093210Z-f38c63f29d80\\trace.jsonl",
+  "query": {
+    "query": "差旅报销期限",
+    "top_k": 5
+  },
+  "before": [
+    "D06/P03",
+    "D01/P01",
+    "D02/P01",
+    "D03/P01",
+    "D04/P01"
+  ],
+  "after": [
+    "D06/P03",
+    "D06/P02",
+    "D01/P01",
+    "D06/P01",
+    "D02/P01"
+  ],
+  "expected_clauses": [
+    "D06/P01",
+    "D06/P02"
+  ],
+  "before_operative_recall": 0.0,
+  "after_operative_recall": 1.0,
+  "limitations": "Single observed query; not a general retrieval benchmark."
+}

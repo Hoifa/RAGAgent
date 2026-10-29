@@ -1,0 +1,114 @@
+{
+  "archive_sha256": "1e08deb265fbd43cd137bc0baf9448522f7a2ca311967c37bc6e7d459e77fb99",
+  "engine_revision": "418fa95eeeba5be011a09300202397407254b01e033cfd69af6bdcdf4b0be91d",
+  "archive_files": 1184,
+  "python_version": "3.9.10",
+  "model_credentials_removed_from_child_environment": true,
+  "unit_test_count": 112,
+  "steps": [
+    {
+      "name": "unit-tests",
+      "arguments": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "exit_matches": true
+    },
+    {
+      "name": "mock-evaluation",
+      "arguments": [
+        "-m",
+        "src.kb_agent.evaluate",
+        "--mode",
+        "mock",
+        "--output-dir",
+        "run-artifacts/mock"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "exit_matches": true
+    },
+    {
+      "name": "cli-smoke",
+      "arguments": [
+        "-m",
+        "src.kb_agent",
+        "--mode",
+        "mock",
+        "--input",
+        "tests/fixtures/inputs/A01.json",
+        "--mock-script",
+        "tests/fixtures/mock/A01.json",
+        "--case-id",
+        "A01",
+        "--output-dir",
+        "run-artifacts/cli"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "exit_matches": true
+    },
+    {
+      "name": "controlled-boundaries",
+      "arguments": [
+        "scripts/run_boundary_checks.py",
+        "--output-dir",
+        "run-artifacts/controlled"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "exit_matches": true
+    },
+    {
+      "name": "real-evidence-audit",
+      "arguments": [
+        "scripts/audit_evidence.py",
+        "--report",
+        "examples/stage5/verified-candidate/evaluation-results.json",
+        "--require-cases",
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B07",
+        "B08",
+        "B09",
+        "B11",
+        "B12",
+        "B15",
+        "B16",
+        "B17",
+        "--output-dir",
+        "run-artifacts/audit"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "exit_matches": true
+    }
+  ],
+  "checks": {
+    "no_local_env": true,
+    "tests_executed": true,
+    "command_exit_codes": true,
+    "six_mock_cases_passed": true,
+    "cli_answered_in_mock": true,
+    "nine_controlled_cases_passed": true,
+    "real_evidence_reproduces_known_failures": true,
+    "all_real_artifacts_intact": true
+  },
+  "passed": true,
+  "meaning": "Package reproducibility only. Known business failures are preserved; this is not full semantic acceptance.",
+  "workspace": "workspace/ (retained for inspection; no original project files rewritten)"
+}

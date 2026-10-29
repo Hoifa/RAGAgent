@@ -1,0 +1,21 @@
+{
+  "reviewer": "AI-assisted source/answer review, candidate review pending",
+  "findings": [
+    {
+      "case_id": "B03",
+      "repeat_index": 1,
+      "directory": "examples\\stage4\\release-validation\\B03\\20261028T104748Z-1ab7910a9631",
+      "finding": "Unrequested calendar deadline calculation (2026-05-25) beyond the documented no-calendar-tool scope.",
+      "automatic_checks_at_that_time": "passed",
+      "disposition": "Preserved; added date-provenance guard and new verified-release cohort."
+    },
+    {
+      "case_id": "B03",
+      "repeat_index": 2,
+      "directory": "examples\\stage4\\release-validation\\B03\\20261028T104944Z-35e452d42501",
+      "finding": "Unrequested calendar deadline calculation (2026-05-25) beyond the documented no-calendar-tool scope.",
+      "automatic_checks_at_that_time": "passed",
+      "disposition": "Preserved; added date-provenance guard and new verified-release cohort."
+    }
+  ]
+}

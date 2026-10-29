@@ -1,0 +1,40 @@
+{
+  "run_id": "20261028T102547Z-5d1bca7c2943",
+  "mode": "real",
+  "model": "qwen-flash",
+  "resolved_question": "公司的育儿假有多少天？",
+  "runtime_version": "1.1",
+  "model_configuration": {
+    "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+    "stream": true,
+    "enable_thinking": false,
+    "json_mode": true,
+    "prompt_revision": "921a7fea9fdf57524a0052a7144d537b54e24f77303cbf07fba38d0ba5dcea1f",
+    "action_protocol": "native",
+    "action_stream": false,
+    "review_prompt_revision": "a171d3050a3282ad4c45ce752ed229f98e1c82408c9f3fba2011d7a501378b6b",
+    "context_prompt_revision": "8b914d763b3316659edae9c6937ab34f036aa3b9009f069ffe29cb402d4f1e39",
+    "evidence_review": "answered_only",
+    "conversation_protocol": "chronological-v2"
+  },
+  "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+  "budgets": {
+    "max_model_calls": 8,
+    "max_tool_calls": 6,
+    "model_timeout": 60,
+    "tool_timeout": 10,
+    "max_validation_errors": 3
+  },
+  "model_calls": 6,
+  "tool_calls": 3,
+  "result": {
+    "status": "needs_clarification",
+    "reason_code": "missing_user_context",
+    "answer": "公司育儿假的具体天数在当前提供的文档中未提及。现有材料仅涉及差旅报销提交时间及材料清单要求，与育儿假天数无关。请确认是否需查询其他人力资源相关政策或补充制度来源。",
+    "citations": [],
+    "gaps": [
+      "育儿假天数的具体规定"
+    ],
+    "follow_up_question": "您是否需要查询其他人力资源相关政策，或提供更具体的制度名称以获取育儿假天数信息？"
+  }
+}

@@ -1,0 +1,261 @@
+{
+  "phase": 5,
+  "final_batch": "verified-candidate",
+  "local_tests": 104,
+  "controlled_total": 9,
+  "controlled_passed": 9,
+  "real_total": 36,
+  "finite_passed": 30,
+  "core_total": 12,
+  "core_finite_passed": 12,
+  "by_case": {
+    "A01": {
+      "recorded": 2,
+      "audit_passed": 2,
+      "status_counts": {
+        "answered": 2
+      }
+    },
+    "A02": {
+      "recorded": 2,
+      "audit_passed": 2,
+      "status_counts": {
+        "needs_clarification": 2
+      }
+    },
+    "A03": {
+      "recorded": 2,
+      "audit_passed": 2,
+      "status_counts": {
+        "unanswerable": 2
+      }
+    },
+    "A04": {
+      "recorded": 2,
+      "audit_passed": 2,
+      "status_counts": {
+        "answered": 2
+      }
+    },
+    "A05": {
+      "recorded": 2,
+      "audit_passed": 2,
+      "status_counts": {
+        "answered": 2
+      }
+    },
+    "A06": {
+      "recorded": 2,
+      "audit_passed": 2,
+      "status_counts": {
+        "incomplete": 2
+      }
+    },
+    "B01": {
+      "recorded": 2,
+      "audit_passed": 2,
+      "status_counts": {
+        "answered": 2
+      }
+    },
+    "B02": {
+      "recorded": 2,
+      "audit_passed": 1,
+      "status_counts": {
+        "incomplete": 1,
+        "needs_clarification": 1
+      }
+    },
+    "B03": {
+      "recorded": 2,
+      "audit_passed": 1,
+      "status_counts": {
+        "answered": 1,
+        "incomplete": 1
+      }
+    },
+    "B04": {
+      "recorded": 2,
+      "audit_passed": 2,
+      "status_counts": {
+        "needs_clarification": 2
+      }
+    },
+    "B07": {
+      "recorded": 2,
+      "audit_passed": 1,
+      "status_counts": {
+        "needs_clarification": 1,
+        "incomplete": 1
+      }
+    },
+    "B08": {
+      "recorded": 2,
+      "audit_passed": 2,
+      "status_counts": {
+        "answered": 2
+      }
+    },
+    "B09": {
+      "recorded": 2,
+      "audit_passed": 2,
+      "status_counts": {
+        "answered": 2
+      }
+    },
+    "B11": {
+      "recorded": 2,
+      "audit_passed": 1,
+      "status_counts": {
+        "needs_clarification": 1,
+        "answered": 1
+      }
+    },
+    "B12": {
+      "recorded": 2,
+      "audit_passed": 2,
+      "status_counts": {
+        "answered": 2
+      }
+    },
+    "B15": {
+      "recorded": 2,
+      "audit_passed": 2,
+      "status_counts": {
+        "answered": 2
+      }
+    },
+    "B16": {
+      "recorded": 2,
+      "audit_passed": 1,
+      "status_counts": {
+        "incomplete": 1,
+        "needs_clarification": 1
+      }
+    },
+    "B17": {
+      "recorded": 2,
+      "audit_passed": 1,
+      "status_counts": {
+        "needs_clarification": 1,
+        "incomplete": 1
+      }
+    }
+  },
+  "status_counts": {
+    "answered": 18,
+    "needs_clarification": 9,
+    "unanswerable": 2,
+    "incomplete": 7
+  },
+  "source_engine_revisions": [
+    "418fa95eeeba5be011a09300202397407254b01e033cfd69af6bdcdf4b0be91d"
+  ],
+  "model_configurations": [
+    {
+      "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+      "stream": true,
+      "enable_thinking": false,
+      "json_mode": true,
+      "prompt_revision": "be084aa13b2f5f8e4a285e44e717947776020cfbc3bca7468f4a5f3ea4689a5f",
+      "action_protocol": "native",
+      "action_stream": false,
+      "review_prompt_revision": "3ca53b41df967e84934206d8c6c57ae65b26ec600f8e8b0b228f0f791d31e4c3",
+      "context_prompt_revision": "a5ed23b3e75a4d61a2cfbca310e05a1e39956a559181614293ee47c45586e51c",
+      "applicability_prompt_revision": "6983bb53022cea107ecfc9db52aafa6157e347399ae5e6f3e684ddbe2b37ac30",
+      "evidence_review": "answered_only",
+      "reference_resolution": "action_loop",
+      "conversation_protocol": "native-tool-messages-v1"
+    }
+  ],
+  "pair_total": 8,
+  "pair_passed": 7,
+  "recovery_B08": {
+    "runs": 2,
+    "answered": 2
+  },
+  "ai_review_issue_runs": 5,
+  "additional_finite_passes_with_ai_findings": 4,
+  "candidate_independent_review": "not_recorded",
+  "readiness": "not_all_acceptance_passed",
+  "development_batches": [
+    {
+      "batch": "action-loop-pilot",
+      "completed": 6,
+      "finite_passed": 5,
+      "engine_revisions": [
+        "4b3d4915243f8013c3cf7dc7ca57b63589ccf74176a21ab14cc1cbaa1392e32c"
+      ]
+    },
+    {
+      "batch": "boundary-real",
+      "completed": 8,
+      "finite_passed": 0,
+      "engine_revisions": [
+        "45e43d27c1e5e696c902b378c88f631e6685b321e034ac6af0a05de867e36981"
+      ]
+    },
+    {
+      "batch": "conflict-guard-pilot",
+      "completed": 4,
+      "finite_passed": 3,
+      "engine_revisions": [
+        "418fa95eeeba5be011a09300202397407254b01e033cfd69af6bdcdf4b0be91d"
+      ]
+    },
+    {
+      "batch": "context-review-fix",
+      "completed": 4,
+      "finite_passed": 3,
+      "engine_revisions": [
+        "21041db581e05578c435b05fef222908753c2e5657ba481ff6f85f9a79fd1e12"
+      ]
+    },
+    {
+      "batch": "final-regression",
+      "completed": 36,
+      "finite_passed": 29,
+      "engine_revisions": [
+        "4b3d4915243f8013c3cf7dc7ca57b63589ccf74176a21ab14cc1cbaa1392e32c"
+      ]
+    },
+    {
+      "batch": "fix-pilot",
+      "completed": 5,
+      "finite_passed": 2,
+      "engine_revisions": [
+        "1d174e016e5104fa85dd4420b78d84c15b317f6a0f514fa3cad6a6b9e3ffaa54"
+      ]
+    },
+    {
+      "batch": "frozen-regression",
+      "completed": 36,
+      "finite_passed": 30,
+      "engine_revisions": [
+        "21041db581e05578c435b05fef222908753c2e5657ba481ff6f85f9a79fd1e12"
+      ]
+    },
+    {
+      "batch": "premature-clarification-fix",
+      "completed": 2,
+      "finite_passed": 0,
+      "engine_revisions": [
+        "8be69b8dc7691bc7dd76c3b74c520a12dc12d32143ff3917b98d96887ba4934d"
+      ]
+    },
+    {
+      "batch": "verified-candidate",
+      "completed": 36,
+      "finite_passed": 30,
+      "engine_revisions": [
+        "418fa95eeeba5be011a09300202397407254b01e033cfd69af6bdcdf4b0be91d"
+      ]
+    }
+  ],
+  "limitations": [
+    "Finite and AI-assisted checks are separate; no full semantic pass rate is claimed.",
+    "A02 round 2 still suggests event time can resolve undocumented precedence; core finite 12/12 is not full core semantic acceptance.",
+    "Development batches have different code and must not be pooled into a fixed-configuration reliability estimate.",
+    "Paired conflict_scenario uses different phrasings; only conflict uses identical input."
+  ]
+}

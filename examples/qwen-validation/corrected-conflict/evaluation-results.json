@@ -1,0 +1,23 @@
+{
+  "runs": [
+    {
+      "case_id": "A02",
+      "execution": "executed",
+      "mode": "real",
+      "run_id": "20261028T094214Z-4981ef906ebc",
+      "directory": "examples\\qwen-validation\\corrected-conflict\\A02\\20261028T094214Z-4981ef906ebc",
+      "model": "qwen-flash",
+      "corpus_revision": "801490841d72e569f8061c9ece1aee2cf4429afb22281ae4841b2e8b1da51b94",
+      "fault_injection": null,
+      "status": "needs_clarification",
+      "checks": {
+        "status_matches": true,
+        "required_documents_present": true,
+        "conflict_investigated": true
+      },
+      "semantic_review": "not_performed",
+      "react_proven": false
+    }
+  ],
+  "limitations": "Mock scripts validate workflow only. Status/citation-ID checks do not prove semantics or real ReAct; inspect traces manually."
+}

@@ -1,0 +1,40 @@
+{
+  "run_id": "20261028T102559Z-058bbab3528c",
+  "mode": "real",
+  "model": "qwen-flash",
+  "resolved_question": "差旅报销应在行程结束后多久内提交？",
+  "runtime_version": "1.1",
+  "model_configuration": {
+    "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+    "stream": true,
+    "enable_thinking": false,
+    "json_mode": true,
+    "prompt_revision": "921a7fea9fdf57524a0052a7144d537b54e24f77303cbf07fba38d0ba5dcea1f",
+    "action_protocol": "native",
+    "action_stream": false,
+    "review_prompt_revision": "a171d3050a3282ad4c45ce752ed229f98e1c82408c9f3fba2011d7a501378b6b",
+    "context_prompt_revision": "8b914d763b3316659edae9c6937ab34f036aa3b9009f069ffe29cb402d4f1e39",
+    "evidence_review": "answered_only",
+    "conversation_protocol": "chronological-v2"
+  },
+  "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+  "budgets": {
+    "max_model_calls": 8,
+    "max_tool_calls": 6,
+    "model_timeout": 60,
+    "tool_timeout": 10,
+    "max_validation_errors": 3
+  },
+  "model_calls": 8,
+  "tool_calls": 4,
+  "result": {
+    "status": "incomplete",
+    "reason_code": "budget_exhausted",
+    "answer": "任务未完成：模型调用额度已用尽，尚未得到通过校验的最终结果。",
+    "citations": [],
+    "gaps": [
+      "模型调用额度已用尽，尚未得到通过校验的最终结果。"
+    ],
+    "follow_up_question": null
+  }
+}

@@ -1,0 +1,3 @@
+# Keep source and historical evidence bytes identical across checkouts.
+# Engine and artifact SHA-256 values must not change with core.autocrlf.
+* -text

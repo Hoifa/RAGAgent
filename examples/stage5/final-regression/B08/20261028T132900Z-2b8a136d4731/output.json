@@ -1,0 +1,43 @@
+{
+  "run_id": "20261028T132900Z-2b8a136d4731",
+  "mode": "real",
+  "model": "qwen-flash",
+  "resolved_question": "差旅报销应在行程结束后多久内提交？",
+  "runtime_version": "1.1",
+  "engine_revision": "4b3d4915243f8013c3cf7dc7ca57b63589ccf74176a21ab14cc1cbaa1392e32c",
+  "model_configuration": {
+    "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+    "stream": true,
+    "enable_thinking": false,
+    "json_mode": true,
+    "prompt_revision": "98da97877d3f0699d87285d866ebdbc62535e36198e39fbc020f6f3f0b8bebe0",
+    "action_protocol": "native",
+    "action_stream": false,
+    "review_prompt_revision": "3ca53b41df967e84934206d8c6c57ae65b26ec600f8e8b0b228f0f791d31e4c3",
+    "context_prompt_revision": "a5ed23b3e75a4d61a2cfbca310e05a1e39956a559181614293ee47c45586e51c",
+    "applicability_prompt_revision": "6983bb53022cea107ecfc9db52aafa6157e347399ae5e6f3e684ddbe2b37ac30",
+    "evidence_review": "answered_only",
+    "reference_resolution": "action_loop",
+    "conversation_protocol": "native-tool-messages-v1"
+  },
+  "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+  "budgets": {
+    "max_model_calls": 12,
+    "max_tool_calls": 6,
+    "model_timeout": 60,
+    "tool_timeout": 10,
+    "max_validation_errors": 3
+  },
+  "model_calls": 8,
+  "tool_calls": 3,
+  "result": {
+    "status": "incomplete",
+    "reason_code": "tool_failure",
+    "answer": "无法确认差旅报销提交期限，因首次读取规定原文时出现工具故障，虽后续重试成功，但初始失败未被记录为可用证据。需重新获取完整证据链以确保合规性。",
+    "citations": [],
+    "gaps": [
+      "首次读取 D01-P01 时发生工具故障，未成功获取原文证据"
+    ],
+    "follow_up_question": null
+  }
+}

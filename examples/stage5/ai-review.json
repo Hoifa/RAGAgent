@@ -1,0 +1,327 @@
+{
+  "reviewer": "AI-assisted answer review, not candidate independent verification",
+  "scope": "Read all 36 final outputs and quotations; inspected critical traces; source and trace integrity checks are automated in final-audit. No internal model reasoning was requested.",
+  "limitations": "No additional issue observed is not a proof of complete semantic correctness. These cases were used during development, not blind evaluation.",
+  "runs": [
+    {
+      "case_id": "A01",
+      "repeat_index": 1,
+      "run_id": "20261028T133634Z-52e3eb66263c",
+      "finite_checks_passed": true,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    },
+    {
+      "case_id": "A02",
+      "repeat_index": 1,
+      "run_id": "20261028T133640Z-4b2da5066d92",
+      "finite_checks_passed": true,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    },
+    {
+      "case_id": "A03",
+      "repeat_index": 1,
+      "run_id": "20261028T133653Z-9b96fa9fb31a",
+      "finite_checks_passed": true,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    },
+    {
+      "case_id": "A04",
+      "repeat_index": 1,
+      "run_id": "20261028T133656Z-d65c230ff125",
+      "finite_checks_passed": true,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    },
+    {
+      "case_id": "A05",
+      "repeat_index": 1,
+      "run_id": "20261028T133702Z-563e68aea4b2",
+      "finite_checks_passed": true,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    },
+    {
+      "case_id": "A06",
+      "repeat_index": 1,
+      "run_id": "20261028T133710Z-a60b8e25c113",
+      "finite_checks_passed": true,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    },
+    {
+      "case_id": "B01",
+      "repeat_index": 1,
+      "run_id": "20261028T133714Z-184a6c191a77",
+      "finite_checks_passed": true,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    },
+    {
+      "case_id": "B02",
+      "repeat_index": 1,
+      "run_id": "20261028T133720Z-f67ee110415e",
+      "finite_checks_passed": false,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    },
+    {
+      "case_id": "B03",
+      "repeat_index": 1,
+      "run_id": "20261028T133731Z-785f64426a7c",
+      "finite_checks_passed": true,
+      "verdict": "issues_found",
+      "findings": [
+        {
+          "severity": "medium",
+          "type": "citation_placement",
+          "note": "The supersession claim is followed by C2/C3, whose quotes only state the older deadlines. C4 later supplies the real supersession evidence; place that marker directly with the supersession claim."
+        }
+      ]
+    },
+    {
+      "case_id": "B04",
+      "repeat_index": 1,
+      "run_id": "20261028T133756Z-29723d35caaa",
+      "finite_checks_passed": true,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    },
+    {
+      "case_id": "B07",
+      "repeat_index": 1,
+      "run_id": "20261028T133805Z-2453116cf334",
+      "finite_checks_passed": true,
+      "verdict": "issues_found",
+      "findings": [
+        {
+          "severity": "high",
+          "type": "wrong_clarification_target",
+          "note": "The user has not selected which of two topics they mean. The answer instead requests trip dates and subtitle-operation context, assuming both topics. Finite status and zero-tool checks missed this."
+        }
+      ]
+    },
+    {
+      "case_id": "B08",
+      "repeat_index": 1,
+      "run_id": "20261028T133808Z-5fbba3bcae6f",
+      "finite_checks_passed": true,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    },
+    {
+      "case_id": "B09",
+      "repeat_index": 1,
+      "run_id": "20261028T133818Z-4298cfa6a2e1",
+      "finite_checks_passed": true,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    },
+    {
+      "case_id": "B11",
+      "repeat_index": 1,
+      "run_id": "20261028T133827Z-3e9b5ff15eaf",
+      "finite_checks_passed": true,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    },
+    {
+      "case_id": "B12",
+      "repeat_index": 1,
+      "run_id": "20261028T133829Z-8eeb2a60cb3b",
+      "finite_checks_passed": true,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    },
+    {
+      "case_id": "B15",
+      "repeat_index": 1,
+      "run_id": "20261028T133838Z-d351bf9112b7",
+      "finite_checks_passed": true,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    },
+    {
+      "case_id": "B16",
+      "repeat_index": 1,
+      "run_id": "20261028T133852Z-b418bde02633",
+      "finite_checks_passed": false,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    },
+    {
+      "case_id": "B17",
+      "repeat_index": 1,
+      "run_id": "20261028T133919Z-897870b9f7fb",
+      "finite_checks_passed": true,
+      "verdict": "issues_found",
+      "findings": [
+        {
+          "severity": "medium",
+          "type": "missing_claim_citation",
+          "note": "The answer states D06 does not apply before April 1, but cites only D01/D02. D06 was read, so the claim has observed support but lacks its own output citation."
+        }
+      ]
+    },
+    {
+      "case_id": "A01",
+      "repeat_index": 2,
+      "run_id": "20261028T133943Z-14688063edbe",
+      "finite_checks_passed": true,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    },
+    {
+      "case_id": "A02",
+      "repeat_index": 2,
+      "run_id": "20261028T133949Z-55c7e0c57d0d",
+      "finite_checks_passed": true,
+      "verdict": "issues_found",
+      "findings": [
+        {
+          "severity": "high",
+          "type": "clarification_cannot_resolve_conflict",
+          "note": "The follow-up asks for event time as if it could select a policy, but neither conflicting document states temporal precedence. Confirm applicable policy or obtain explicit precedence evidence."
+        }
+      ]
+    },
+    {
+      "case_id": "A03",
+      "repeat_index": 2,
+      "run_id": "20261028T134003Z-70352deb6f5d",
+      "finite_checks_passed": true,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    },
+    {
+      "case_id": "A04",
+      "repeat_index": 2,
+      "run_id": "20261028T134005Z-ba1782acf2aa",
+      "finite_checks_passed": true,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    },
+    {
+      "case_id": "A05",
+      "repeat_index": 2,
+      "run_id": "20261028T134014Z-42f22f0d6a1c",
+      "finite_checks_passed": true,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    },
+    {
+      "case_id": "A06",
+      "repeat_index": 2,
+      "run_id": "20261028T134022Z-7e7a009a6c2c",
+      "finite_checks_passed": true,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    },
+    {
+      "case_id": "B01",
+      "repeat_index": 2,
+      "run_id": "20261028T134027Z-3212459699f1",
+      "finite_checks_passed": true,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    },
+    {
+      "case_id": "B02",
+      "repeat_index": 2,
+      "run_id": "20261028T134034Z-cc3ccb590691",
+      "finite_checks_passed": true,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    },
+    {
+      "case_id": "B03",
+      "repeat_index": 2,
+      "run_id": "20261028T134049Z-59c3b363a105",
+      "finite_checks_passed": false,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    },
+    {
+      "case_id": "B04",
+      "repeat_index": 2,
+      "run_id": "20261028T134102Z-945fb249df89",
+      "finite_checks_passed": true,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    },
+    {
+      "case_id": "B07",
+      "repeat_index": 2,
+      "run_id": "20261028T134111Z-b24d3ef2a623",
+      "finite_checks_passed": false,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    },
+    {
+      "case_id": "B08",
+      "repeat_index": 2,
+      "run_id": "20261028T134127Z-ee346a0bc7f0",
+      "finite_checks_passed": true,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    },
+    {
+      "case_id": "B09",
+      "repeat_index": 2,
+      "run_id": "20261028T134137Z-d610353527d7",
+      "finite_checks_passed": true,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    },
+    {
+      "case_id": "B11",
+      "repeat_index": 2,
+      "run_id": "20261028T134147Z-9d457b3d21fd",
+      "finite_checks_passed": false,
+      "verdict": "issues_found",
+      "findings": [
+        {
+          "severity": "high",
+          "type": "guessed_topic",
+          "note": "No history identifies the business topic. The model guessed travel reimbursement and answered a different, unsupported user intent. Automated case checks already fail this run."
+        }
+      ]
+    },
+    {
+      "case_id": "B12",
+      "repeat_index": 2,
+      "run_id": "20261028T134157Z-faaa6e05ca7f",
+      "finite_checks_passed": true,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    },
+    {
+      "case_id": "B15",
+      "repeat_index": 2,
+      "run_id": "20261028T134205Z-1acb80d3e271",
+      "finite_checks_passed": true,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    },
+    {
+      "case_id": "B16",
+      "repeat_index": 2,
+      "run_id": "20261028T134219Z-718e7c44d8ed",
+      "finite_checks_passed": true,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    },
+    {
+      "case_id": "B17",
+      "repeat_index": 2,
+      "run_id": "20261028T134232Z-219d3a8ccab6",
+      "finite_checks_passed": false,
+      "verdict": "no_additional_issue_observed",
+      "findings": []
+    }
+  ],
+  "runs_with_findings": 5,
+  "additional_finite_passes_with_findings": 4
+}

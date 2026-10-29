@@ -1,0 +1,24 @@
+{
+  "run_id": "20261028T054427Z-8b15fad08bfb",
+  "mode": "mock",
+  "model": "scripted-offline-mock",
+  "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+  "budgets": {
+    "max_model_calls": 8,
+    "max_tool_calls": 6,
+    "model_timeout": 60,
+    "tool_timeout": 10
+  },
+  "model_calls": 4,
+  "tool_calls": 3,
+  "result": {
+    "status": "incomplete",
+    "reason_code": "tool_failure",
+    "answer": "原文读取持续失败，无法核验报销期限，任务未完成。",
+    "citations": [],
+    "gaps": [
+      "需要成功读取报销期限原文。"
+    ],
+    "follow_up_question": null
+  }
+}

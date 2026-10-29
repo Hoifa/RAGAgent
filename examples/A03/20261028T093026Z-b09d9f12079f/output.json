@@ -1,0 +1,31 @@
+{
+  "run_id": "20261028T093026Z-b09d9f12079f",
+  "mode": "real",
+  "model": "qwen-flash",
+  "model_configuration": {
+    "endpoint": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1/chat/completions",
+    "stream": true,
+    "enable_thinking": true,
+    "json_mode": false,
+    "prompt_revision": "a86bc43217e505984a9421735c10708fa508c7b73ec5b3f35408bc74474f614c"
+  },
+  "corpus_revision": "42a7778a0976df9b8260ddcf098c6627b80ed986a04dfbf9a84cc40bb331d4e5",
+  "budgets": {
+    "max_model_calls": 8,
+    "max_tool_calls": 6,
+    "model_timeout": 60,
+    "tool_timeout": 10
+  },
+  "model_calls": 3,
+  "tool_calls": 2,
+  "result": {
+    "status": "unanswerable",
+    "reason_code": "insufficient_evidence",
+    "answer": "未找到公司关于育儿假天数的具体规定。",
+    "citations": [],
+    "gaps": [
+      "无相关制度文档匹配关键词'育儿假'及'育儿假 天数'"
+    ],
+    "follow_up_question": null
+  }
+}
